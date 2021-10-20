@@ -1,0 +1,185 @@
+.header {
+    width: 100%;
+    text-align: center;
+}
+.header-top {
+    z-index: 1;
+    min-height: 470px;
+    display: flex;
+    width: 100%;
+    background-color: rgb(88, 177, 236);
+    position: relative;
+    overflow: hidden;
+}
+.left-top {
+    z-index: -1;
+    position: absolute;
+    left: 0px;
+    bottom: -19px;
+}
+.left-top img {
+    height: 60%;
+}
+.text-top {
+    text-align: center;
+    display: block;
+    color: rgb(39, 33, 33);
+
+}
+.right-top {
+    z-index: -1;
+    right: 0px;
+    top: -85px;
+    position: absolute;
+}
+.right-top img {
+    height: 60%;
+}
+.main {
+    margin: 40px 20px 60px;
+
+}
+.filter {
+    text-align: center;
+    font-family: sans-serif;
+    margin-top: 30px auto 20px;
+    font-size: 25px;
+    font-weight: 700;
+}
+.filter-btn {
+    display: block;
+}                                                                   
+.btn-style {
+    height: 36px;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 18px;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 2px 2px 2px rgba(190, 176, 176, 0.705);
+    margin: 10px auto;
+    padding: 8px 16px;
+
+}
+.location{
+    min-width: 115px;
+    width: 115px;
+    min-width: 115px;
+    display: block;
+    padding: 0px 16px;
+    outline: none;
+}
+.filter-search {
+    margin: 40px auto;
+}
+.filter-search input {
+    height: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 380px;
+    font-size: 17px;
+    padding-left: 15px;
+    border: none;
+    box-shadow: 2px 2px 2px rgba(190, 176, 176, 0.705);
+    outline: none;
+}
+.cards-title {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-bottom: 40px;
+
+}
+.wrapper-cards {
+    display: grid;
+     
+    /* margin: 5% 3%; */
+    grid-gap: 10px;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.card {
+    width: 290px;
+    text-align: center;
+    color: whitesmoke;
+    box-shadow: 0px 0px 3px 3px rgba(190, 186, 186, 0.589);
+    height: 420px;
+    border-radius: 10px;
+    margin: 10px auto;
+    font-family: monospace;
+}
+.card img {
+    padding-top: 5%;
+    width: 80%;
+    height: 200px;
+    
+
+}
+.model {
+    color: rgb(44, 44, 44);
+    font-family: monospace;
+    font-size: 20px;
+    height: 10%;
+    margin: 5% auto
+}
+.btn-info {
+    height: 10%;
+    padding: 1% auto;
+}
+.btn-info button {
+    height: 34px;
+    border-radius: 17px;
+    border: none;
+    color: rgb(48, 48, 49);
+    background-color: whitesmoke;
+    margin: auto 5px;
+}
+.price {
+    height: 15%;
+    padding: 1% auto;
+    color: rgb(53, 187, 240);
+    margin: 5% auto;
+    font-size: 22px;
+    font-weight: 600;
+}
+.btn-buy {
+    height: 40px;
+    width: 110px;
+    border-radius: 20px;
+    border: none;
+    padding: 3% auto;
+    color: white;
+    background-color: rgb(56, 161, 231);
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+@media (min-width: 768px) {
+    .btn-style {
+        margin: 10px 7px;
+        width: fit-content;
+    }
+    .location {
+        margin: 10px auto;
+    }
+    .reset {
+        margin: 10px auto                                                                                               ;
+    }
+}
+@media (min-width: 768px) {
+    .location {
+        margin: 10px auto;                                                                          
+    }
+}
+@media (min-width: 1024px) {
+    .location {
+        display: inline;
+    }
+
+}
+@media (min-width: 1440px) {
+
+}

@@ -1,0 +1,12 @@
+html {
+    margin: 0px;
+}
+body {
+    margin: 0px;
+}
+.marg-t {
+    margin-top: 100px;
+    min-height: 490px;
+    width: 100%;
+}
+

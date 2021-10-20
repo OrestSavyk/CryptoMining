@@ -1,0 +1,155 @@
+.top-blok {
+    padding: 15px;
+}
+.left-blok {
+    display: none;
+    overflow: hidden;
+}
+.left-blok img {
+    height: 100%;
+}
+.right-blok {
+    text-align: center;
+
+}
+.right-form {
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.right-form h3 {
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgb(22, 149, 223);
+    font-family: sans-serif;
+    margin: 20px auto;
+}
+.right-form input {
+    display: block;
+    width: 290px;
+    height: 52px;
+    border-radius: 52px;
+    border: 1px solid rgba(145, 143, 143, 0.486);
+    outline: none;
+    text-align: center;
+
+}
+.right-data {
+    display: block;
+    color: rgba(150, 146, 146, 0.781);
+    font-family: sans-serif;
+    margin: 5px auto;
+}
+.right-form input:hover {
+    transition: 0.9s;
+    box-shadow: 1px 1px 2px 2px rgba(105, 104, 104, 0.589);
+
+}
+.right-sign {
+    margin-top: 15px;
+    height: 40px;
+    border: 0px;
+    width: 90px;
+    border-radius: 40px;
+    background-color: rgb(37, 124, 182);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.right-old-users {
+    color: rgba(158, 156, 156, 0.795);
+    font-family: sans-serif;
+    font-size: 15px;
+    margin: 7px auto;
+}
+.right-old-users a {
+    color: rgb(56, 150, 187);
+    cursor: pointer;
+
+}
+
+.right-p {
+    display: flex;
+    justify-content: center;
+    color: rgb(56, 150, 187);
+    font-family: sans-serif;
+    font-size: 15px;
+    margin: 20px auto;
+}
+.right-telegram {
+    height: 35px;
+    width: 225px;
+    padding: 0px;
+    border: 0px;
+    background-color: rgb(33, 152, 199);
+    cursor: pointer;
+}
+.right-telegram a {
+    display: flex;
+}
+.right-telegram img {
+    height: 35px;
+    width: 35px;
+    background-color: rgb(33, 152, 199);
+
+}
+.right-telegram p {
+    color: white;
+    font-family: sans-serif;
+    margin: auto;
+    font-size: 16px;
+
+}
+@media (min-width: 768px) {
+    .top-blok {
+        display: grid;
+        grid-template-columns: auto 430px;
+        padding: 0px;
+    }
+    .left-blok {
+        display: block;
+        height: 100%;    }
+    /* .left-blok img {
+        height: 100%;
+    } */
+    .right-blok {
+        padding: auto;
+    }   
+}
+@media (min-width: 1024px) {
+    .top-blok {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    .left-blok {
+        /* max-height: 720px; */
+    }
+    
+    .right-blok {
+        padding: auto;
+        width: 100%;
+    }
+    .right-form input {
+        height: 42px;
+        width: 426px;
+        border-radius: 21px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

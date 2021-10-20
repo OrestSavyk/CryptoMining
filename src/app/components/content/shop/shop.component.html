@@ -1,0 +1,41 @@
+
+<div class="header">
+    <div class="header-top">
+        <div class="left-top"><img src="assets/shop /mock_one.png"></div>
+        <div class="text-top"><p>Your One Stop Shop for Crypto Miners based in North America</p></div>
+        <div class="right-top"><img src="assets/shop /banner2.png"></div>
+    </div>
+    <div class="main">
+        <div class="filter">Filter By</div>
+        <div class="filter-btn">
+            <input class="btn-style location" list="region" type="text" value="" placeholder="Region">
+            <datalist id="region">
+                <option value="The Americas"></option>
+                <option value="China/ Hong Kong"></option>
+                <option value="Europe/ Asia/ Africa"></option>
+            </datalist>
+            <input class="btn-style hashrate" type="button" value="Hashrate (TH)">
+            <input class="btn-style efficiency" type="button" value="Efficiency (W/TH)">
+            <input class="btn-style reset" type="button" value="Reset Filter">
+        </div>
+        <div class="filter-search">
+            <input type="text" placeholder="Search by manufacturer or model">
+        </div>
+        <div class="cards-title">Best Selling</div>
+        <div class="wrapper-cards">
+            <div class="card" *ngFor="let carditem of cardItem">
+                <div class="card-inner">
+                    <img src="{{ carditem.image }}" alt="i">
+                    <h4 class="model">{{ carditem.model }}</h4>
+                    <div class="btn-info">
+                        <button>{{ carditem.btnTH }} TH</button>
+                        <button>{{ carditem.btnPower }} w</button>
+                    </div>
+                    <p class="price">{{ carditem.price }}</p>
+                    <button class="btn-buy">Shop Now</button>
+                
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

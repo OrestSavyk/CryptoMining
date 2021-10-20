@@ -1,0 +1,49 @@
+<div class="header marg-t">
+    <div class="left">
+        <h3>Questions, Tips or Concerns?</h3>
+        <p class="left-info">Fill out the form on the right and we will get in touch 
+            with you within 24 Hours</p>
+        <p class="left-gratitude">Thank you for your interest in our tools and marketplace 
+            We are here to answer all your questions and want to hear from you about 
+            what you'd like to accomplish.</p><p class="left-gratitude-post">~Crypto Mining Tools Team</p>
+    </div>
+    <div class="right">
+        <div class="right-top">
+            <h3>Crypto Mining Tools Sales Form</h3>
+            <p>We are excited at the opportunity to do business together. Please answer the following questions so we can get a better understanding of your needs.</p>
+            <form class="right-form" [formGroup]="contactForm" (ngSubmit)="onGetContactValue(contactForm)">
+                <label for="inputName" class="right-input-data">Real Name
+                    <input id="inputName" type="text" formControlName="name">
+                </label>
+                <label for="inputCompany" class="right-input-data">Company Name (optional)
+                    <input id="inputCompany" type="text" formControlName="company">
+                </label>
+                <label for="inputEmail" class="right-input-data">Email
+                    <input id="inputEmail" type="text" formControlName="email">
+                </label>
+                <label for="inputPhone" class="right-input-data">Phone Number
+                    <input id="inputPhone" type="text"  formControlName="phone">
+                </label>
+                <label for="inputCountry" class="right-input-data">Country
+                    <input id="inputCountry" type="text" formControlName="country">
+                </label>
+                <label for="inputSocialChain" class="right-input-data">Social Platform Handle(optional)
+                    <input id="inputSocialChain" type="text" formControlName="socialChain">
+                </label>
+                <div class="top-radio">
+                    <label class="right-input-data-radio">I'm thinking about</label>
+                    <div class="input-setradio">
+                        <label><input class="input-radio" type="radio" value="Buying">Buying</label>
+                        <label><input class="input-radio" type="radio" value="Selling">Selling</label>
+                        <label><input class="input-radio" type="radio" value="Other">Other</label>
+                    </div>
+                </div>
+                <label for="inputMessage" class="right-input-data">Message/Note
+                    <input id="inputMessage" type="text" formControlName="message">
+                </label>
+                <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+                <p class="under-bnt-link">This site is protected by reCAPTCHA and the Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.</p>
+            </form>
+        </div>
+    </div>
+</div>

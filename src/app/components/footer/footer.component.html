@@ -1,0 +1,22 @@
+<div class="footer">
+    <div class="left-footer">
+        <img src="assets/title img/logo.png" alt="l">
+        <p> Crypto Mining Tools, 2021. All Rights Reserved</p>
+    </div>
+    <div class="footer-center">
+        <nav class="footer-nav-top">
+            <div *ngFor="let navfoot of navFootBtn" class="footer-navs"><a href="#">{{navfoot.name}}</a></div>
+        </nav>
+    </div>
+    
+    <div class="right-footer">
+        <div class="right-footer-top">
+            <div *ngFor='let icon of iconFoot' class="icon-footer">
+                <a [href]="icon.link" target="_blank">
+                    <img [src]="icon.image" alt="l">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="questions"><a href="#"><img src="assets/title img/image.crisp.chat_" alt="c"></a></div>
