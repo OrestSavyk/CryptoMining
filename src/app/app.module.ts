@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'; 
-import { v4 as uuidv1 } from '../../node_modules/uuid';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
