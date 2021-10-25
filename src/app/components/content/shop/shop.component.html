@@ -1,9 +1,10 @@
 
-<div class="header">
+<div class="header marg-t">
     <div class="header-top">
-        <div class="left-top"><img src="assets/shop /mock_one.png"></div>
+        <img class="left-top" src="assets/shop /mock_one.png">
+        <img class="right-top" src="assets/shop /banner2.png">
+        <img class="center-top" src="assets/shop /mock_three.png">
         <div class="text-top"><p>Your One Stop Shop for Crypto Miners based in North America</p></div>
-        <div class="right-top"><img src="assets/shop /banner2.png"></div>
     </div>
     <div class="main">
         <div class="filter">Filter By</div>
@@ -19,7 +20,7 @@
             <input class="btn-style reset" type="button" value="Reset Filter">
         </div>
         <div class="filter-search">
-            <input type="text" placeholder="Search by manufacturer or model">
+            <input #search type="text" (keydown.enter)="onEnterSearchTool($event)" placeholder="Search by manufacturer or model">
         </div>
         <div class="cards-title">Best Selling</div>
         <div class="wrapper-cards">
@@ -33,9 +34,18 @@
                     </div>
                     <p class="price">{{ carditem.price }}</p>
                     <button class="btn-buy">Shop Now</button>
-                
+                    <!-- <div id="modalWin" class="modal">
+                        <div class="modal-window">
+                            <h1>hello</h1>
+                            <button class="btn-close-modal">X</button>
+                        </div>
+                        <div class="overlay">hjvbibklj</div>
+                    </div>
+                 -->
                 </div>
             </div>
         </div>
     </div>    
 </div>
+<!-- 
+data-easy-toggle="#modalWin" data-easy-class="show"  -->

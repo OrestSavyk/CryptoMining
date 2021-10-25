@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CAROUSEL_CARD, INNER_CAROUSEL, LINK_ITEM } from './home.constants';
+import { CAROUSEL_CARD, FAQ_PARAGRAPH, INNER_CAROUSEL, LINK_ITEM } from './home.constants';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   carouselCard = CAROUSEL_CARD;
   innerCarousel = INNER_CAROUSEL;
   linkItem = LINK_ITEM;
+  faqParagraph = FAQ_PARAGRAPH;
   changeBlockDirection = false;
 
   constructor() { 

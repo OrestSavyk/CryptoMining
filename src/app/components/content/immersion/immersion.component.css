@@ -40,6 +40,7 @@
     margin: 70px auto;
     padding: auto;
     max-width: 600px;
+    height: fit-content;
 }
 .title-blok {
     width: 100%;
@@ -84,6 +85,22 @@
     grid-column-end: 7;
     padding-top: 10px;
     
+}
+.iteration-block {
+    display: grid;
+    overflow: scroll;
+    width: 100%;
+    grid-template-columns: repeat(5, auto);
+    grid-auto-rows: 50px;
+    border: 1px solid rgba(155, 152, 152, 0.829);
+    box-sizing: border-box;
+    font-weight: bold;
+}
+.title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
 .days-break-inner {
     display: grid;

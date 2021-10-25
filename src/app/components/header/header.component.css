@@ -13,7 +13,8 @@
 .header-top {
   display: flex;
   justify-content: space-between;
-  margin: 7px 16px;
+  margin: auto 16px;
+  margin-top: 10px;
 }
 #menu-toggle {
   opacity: 0;
@@ -74,9 +75,9 @@
   top: 0;
   left: -100%;
   width: 140px;
-  height: 100%;
+  height: -webkit-fill-available;
   margin: 0;
-  padding: 80px 0;
+  padding: 80px 0px 20px;
   list-style: none;
   text-align: center;
   background-color: #ECEFF1;
@@ -116,7 +117,13 @@
 .header-nav {
   display: none;
 }
+.header-btn-contact {
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: auto;
 
+
+}
 .header-btn-contact-basket {
   display: block;
   width: 44px;
@@ -125,8 +132,7 @@
   background-color: rgba(49, 146, 238, 0.651);
   border-radius: 50%;
   border: none;
-  margin-top: 25px;
-  margin-right: 10px;
+  margin: auto 10px auto auto;
   cursor: pointer;
 }
 .header-btn-contact-basket img {
@@ -135,22 +141,25 @@
 .header-btn-contact-top {
   display: none;
   cursor: pointer;
+  
 }
 @media (min-width: 1024px) {
   .hamburger-menu {
     display: none;
   }
   .header-nav {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    padding: 10px;
+    display: flex;
+    /* grid-template-columns: repeat(6, 1fr); */
+    justify-content: space-around;
   }
   .header-nav-top {
     padding: auto;
-    margin: auto 6%;
+    margin: auto 5% 0px;
   }
   .header-nav-top div {
     text-align: center;
+    min-width: 47px;
+
   }
   .header-nav-top a {
     text-decoration: none;

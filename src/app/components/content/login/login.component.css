@@ -1,5 +1,5 @@
 .top-blok {
-    padding: 15px;
+    /* padding: 15px; */
 }
 .left-blok {
     display: none;
@@ -9,12 +9,13 @@
     height: 100%;
 }
 .right-blok {
+    margin: auto 15px;
     text-align: center;
-
 }
 .right-form {
     display: inline-block;
     padding-bottom: 5px;
+    width: 100%;
 }
 .right-form h3 {
     font-size: 40px;
@@ -25,13 +26,14 @@
 }
 .right-form input {
     display: block;
-    width: 290px;
+    width: 100%;
     height: 52px;
     border-radius: 52px;
     border: 1px solid rgba(145, 143, 143, 0.486);
     outline: none;
     text-align: center;
-
+    box-sizing: border-box;
+    margin: auto;
 }
 .right-data {
     display: block;
@@ -82,16 +84,17 @@
     width: 225px;
     padding: 0px;
     border: 0px;
-    background-color: rgb(33, 152, 199);
+    background-color: rgb(0 155 216);
     cursor: pointer;
 }
 .right-telegram a {
     display: flex;
+    text-decoration: none;
 }
 .right-telegram img {
     height: 35px;
     width: 35px;
-    background-color: rgb(33, 152, 199);
+    background-color: rgb(0 155 216);
 
 }
 .right-telegram p {
@@ -114,7 +117,7 @@
         height: 100%;
     } */
     .right-blok {
-        padding: auto;
+        margin: auto; 
     }   
 }
 @media (min-width: 1024px) {
@@ -129,6 +132,8 @@
     .right-blok {
         padding: auto;
         width: 100%;
+        align-self: center;
+
     }
     .right-form input {
         height: 42px;

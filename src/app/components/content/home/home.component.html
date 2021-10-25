@@ -1,71 +1,31 @@
 <div class="header marg-t">
-    <div class="carousel-wrapper">
-        <div class="carousel-top">
-            <div [class]="inner.mainClass" class="carousel" *ngFor="let inner of innerCarousel">
-                <div class="carousel-text"><h3>{{inner.boldText}}</h3><p>{{inner.lowerText}}</p><button>{{inner.buttonName}}</button></div>
-                <img class="carousel-photo" [src]="inner.source" [alt]="inner.alt">
+    <div class="inner-header">
+        <!-- <div class="carousel-wrapper">
+            <div class="carousel-top">
+                <div [class]="inner.mainClass" class="carousel" *ngFor="let inner of innerCarousel">
+                    <div class="carousel-text"><h3>{{inner.boldText}}</h3><p>{{inner.lowerText}}</p><button>{{inner.buttonName}}</button></div>
+                    <img class="carousel-photo" [src]="inner.source" [alt]="inner.alt">
+                </div>
+                <div class="carousel-btn--next"></div>
+                <div class="carousel-btn--prev"></div>
             </div>
-            <div class="carousel-btn--next"></div>
-            <div class="carousel-btn--prev"></div>
+        </div> -->
+        <h3 class="title">Crypto Mining Tools</h3>
+        <div class="all-about-crypto" >
+            <div class="all-about-crypto-blok" *ngFor="let item of linkItem">
+                <div class="img-computer" [class.block-order]="item.orderImg === 1"><img [src]="item.source" alt="compucter"></div>
+                <div class="link-info">
+                    <a [routerLink]="item.link">{{item.title}}</a>
+                    <p>{{item.paragraph}}</p>
+                </div>
+            </div>        
         </div>
-    </div>
-    <h3 class="title">Crypto Mining Tools</h3>
-    <div class="all-about-crypto" >
-        <div class="all-about-crypto-blok" *ngFor="let item of linkItem">
-            <div class="img-computer" [class.block-order]="item.orderImg === 1"><img [src]="item.source" alt="compucter"></div>
-            <div class="link-info">
-                <a [routerLink]="item.link">{{item.title}}</a>
-                <p>{{item.paragraph}}</p>
+        <div class="faq-head">FAQ</div>
+        <div class="faq">
+            <div class="faq-blok" *ngFor="let paragraph of faqParagraph">
+                <p class="faq-blok-title">{{ paragraph.title }}</p>
+                <p class="faq-blok-info">{{ paragraph.info }}</p>
             </div>
-        </div>        
-    </div>
-    <div class="faq-head">FAQ</div>
-    <div class="faq">
-        <div class="faq-blok">
-            <p class="faq-blok-title">Why am i required to log in with my Telegram account?</p>
-            <p>
-                If you would like to use some of the more advanced futures of our
-                bitcoin mining profitability and mining hardware comparison tools,
-                you will need to authenticate with Telegram first. Features like
-                editing and saving your miners custom prices, wattage and speed
-                are only possible for users who are logged in. It is a simple process
-                and you only need to authenticate Telegram with CryptoMining. Tools once. 
-            </p>
-        </div>
-        <div class="faq-blok">
-            <p class="faq-blok-title">Why do you consider CryptoMining. Tools to be the best profitability
-                calculation software?</p>
-            <p>We like to think our free software for calculating bitcoin mining
-                profit is the best for many reasons. But, in short, we dont just use the 
-                same old crappy APIs that all of the other copied-and-pasted
-                calculators out there are using. We`ve built our tools from the 
-                ground up to be the most reliable, available and accurate in the 
-                industry. We also are working on providing access to our own API
-                that will allow you to implement our tools into your own websites or apps.
-            </p>
-        </div>
-        <div class="faq-blok">
-            <p class="faq-blok-title">Where can i get help with using these online bitcoin mining tools?</p>
-            <p>
-                <a>Connect with us on Telegram</a> to share your ideas and to request
-                new features.If you are looking for guidance on how to best use our
-                set of bitcoi mining calculators and to learn how to better
-                compare ASIC miners, feel free to say hello in our Telegram group.
-            </p>
-        </div>
-        <div class="faq-blok">
-            <p class="faq-blok-title">Where can i buy ASIC bitcoin miners?</p>
-            <p>There are many place online that sell mining gear, but you need to
-                be very careful to find the right sellers. CryptoMining. Tools has 
-                partnered with the <a>ASIC Miner Announcements</a> channel on 
-                Telegram to provide you with a good starting place for finding 
-                trusted sellers with available gear for sale. We always recommend 
-                using a professional escrow service when buying mining
-                equipment. The internet is ripe with scammers, especially in the  
-                crypto space. Please be careful, and also pass your buying 
-                decisions by other people in a public chat group before sending
-                anyone your hard-earned bitcoin.   
-            </p>
         </div>
     </div>
 </div>

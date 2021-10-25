@@ -20,6 +20,9 @@
     font-size: 18px;
 
 }
+.footer-center {
+    margin: 10px;
+}
 .footer-nav-top {
     height: 50%;
     display: flex;
@@ -45,7 +48,7 @@
 }
 .right-footer-top {
     display: flex;
-
+    margin-left: 15px;
 }
 .icon-footer {
     height: 25px;

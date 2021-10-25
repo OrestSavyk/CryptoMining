@@ -12,5 +12,8 @@ export class ShopComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onEnterSearchTool(event) {
+    console.log(event.target.value);
+  }
 
 }
