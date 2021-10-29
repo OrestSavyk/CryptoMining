@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <label for="inputMessage" class="right-input-data">Message/Note
-                    <input id="inputMessage" type="text" formControlName="message">
+                    <textarea id="inputMessage" type="text" formControlName="message" maxlength="500"></textarea>
                 </label>
                 <button type="submit" [disabled]="!contactForm.valid">Submit</button>
                 <p class="under-bnt-link">This site is protected by reCAPTCHA and the Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.</p>

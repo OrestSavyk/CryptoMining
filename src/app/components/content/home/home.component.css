@@ -166,7 +166,7 @@
 }
 @media (min-width: 768px) {
     .all-about-crypto {
-        margin: auto 5%;
+        /* margin: auto 5%; */
     }
     .faq {
         grid-template-columns: repeat(2, 50%);

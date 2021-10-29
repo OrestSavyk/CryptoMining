@@ -91,7 +91,17 @@
     border-style: none;
     outline: none;
     box-sizing: border-box;
-
+}
+.right-input-data textarea {
+    display: block;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    box-sizing: border-box;
+    max-height: 130px;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
 }
 .top-radio {
     display: block;
