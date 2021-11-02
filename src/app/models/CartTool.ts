@@ -1,4 +1,4 @@
-export interface CART_ITEM {
+export interface Cart {
     id: number,
     image?: string,
     manufacturer: string,

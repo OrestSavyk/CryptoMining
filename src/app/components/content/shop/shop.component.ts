@@ -1,27 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { CARD_ITEM } from './shop.constant';
-
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { Cart } from 'src/app/models/CartTool';
+import { CARD_ITEM } from '../cart/cart.constant';
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  cardItem = CARD_ITEM;
-
+  // modal: any
+  @Input()
+  dataModal: Cart;
   constructor() { }
 
   ngOnInit(): void {
   }
+  getModal(data: Cart) {
+    this.dataModal = data; 
+  }
   onEnterSearchTool(event) {
     console.log(event.target.value);
-  }
-  onOpenModal(id) {
-    const currentCard = this.cardItem.find(card => card.id == id )
-    document.getElementById('modalWin').style.display = 'flex';
-     
-  }
-  onCloseModal() {
-    document.getElementById('modalWin').style.display = 'none';
   }
 }

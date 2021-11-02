@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'; 
+// import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,8 @@ import { HomeComponent } from './components/content/home/home.component';
 import { ContactComponent } from './components/content/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartComponent } from './components/content/cart/cart.component';
+import { AdminComponent } from './components/content/admin/admin.component';
+import { ModalComponent } from './components/content/modal/modal.component';
 
 
 const appRoutes: Routes = [
@@ -45,7 +48,9 @@ const appRoutes: Routes = [
     LoginComponent,
     HomeComponent,
     ContactComponent,
-    CartComponent
+    CartComponent,
+    AdminComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule],
+    FormsModule
+    // MatDialogModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

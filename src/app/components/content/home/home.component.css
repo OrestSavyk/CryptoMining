@@ -170,7 +170,7 @@
     }
     .faq {
         grid-template-columns: repeat(2, 50%);
-        grid-column-gap: 4%; 
+        /* grid-column-gap: 4%;  */
         margin: 15px;
     }
 }

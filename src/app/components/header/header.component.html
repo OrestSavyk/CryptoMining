@@ -19,7 +19,7 @@
         <div class="header-logo" routerLink=''><img src="assets/title img/logo.png" alt="l"></div>
         <nav class="header-nav">              
             <div class="header-nav-top" *ngFor="let nav of navButton">
-                <a [routerLink]="nav.link" routerLinkActive="active">
+                <a [routerLink]="nav.link">
                     <div>
                         <img [src]="nav.icon" alt="i">
                         <p>{{nav.name}}</p>
@@ -28,6 +28,7 @@
             </div>
         </nav>
         <div class="header-btn-contact">
+            <!-- <button class="header-btn-admin">Admin</button> -->
             <button class="header-btn-contact-basket" routerLink="/shop/cart"><img src="assets/title img/shopping-cart.png"></button>
             <button class="header-btn-contact-top" routerLink="/contact">Contact Us</button>
         </div>

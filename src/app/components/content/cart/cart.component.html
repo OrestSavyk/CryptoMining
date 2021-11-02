@@ -1,0 +1,14 @@
+<div class="wrapper-cards">
+    <div class="card" *ngFor="let item of cardItem">
+        <div class="card-inner">
+            <img class="card-imagine" src="{{ item.image }}" alt="i">
+            <h4 class="model">{{ item.model }}</h4>
+            <div class="btn-info">
+                <button>{{ item.btnTH }} TH</button>
+                <button>{{ item.btnPower }} w</button>
+            </div>
+            <p class="price">{{ item.price }}</p>
+            <button class="btn-buy" (click)="onOpenModal(item)">Shop Now</button>
+        </div>
+    </div>
+</div>
