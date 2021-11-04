@@ -10,9 +10,12 @@ export class ModalComponent implements OnInit {
   
   @Input()
   modal: Cart;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    console.log(this.modal);
+    
   }
   onCloseModal() {
     document.getElementById('modalWin').style.display = 'none';

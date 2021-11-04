@@ -15,16 +15,16 @@
                 <option value="China/ Hong Kong"></option>
                 <option value="Europe/ Asia/ Africa"></option>
             </datalist>
-            <input class="btn-style hashrate" type="button" value="Hashrate (TH)">
-            <input class="btn-style efficiency" type="button" value="Efficiency (W/TH)">
-            <input class="btn-style reset" type="button" value="Reset Filter">
+            <input class="btn-style hashrate" type="button" value="Hashrate (TH)" (click)="sortItemByHash($event)">
+            <input class="btn-style efficiency" type="button" value="Efficiency (W/TH)" (click)="sortItemByEfficiency($event)">
+            <input class="btn-style reset" type="button" value="Reset Filter" (click)="sortItemReset($event)">
         </div>
         <div class="filter-search">
             <input #search type="text" (keydown.enter)="onEnterSearchTool($event)" placeholder="Search by manufacturer or model">
         </div>
         <div class="cards-title">Best Selling</div>
-            <app-cart (bubbleUp)='getModal($event)'></app-cart>
-            <app-modal [modal]='dataModal'></app-modal>
+            <app-cart (bubbleUp)="getModal($event)"></app-cart>
+            <app-modal [modal]="dataModal"></app-modal>
                 <!-- <div class="card-inner">
                     <img class="card-imagine" src="{{ item.image }}" alt="i">
                     <h4 class="model">{{ item.model }}</h4>

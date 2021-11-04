@@ -23,6 +23,7 @@
     display: grid;
     width: fit-content;
     grid-template-columns: auto auto;
+    user-select: none;
 }
 .range input {
     display: block;
