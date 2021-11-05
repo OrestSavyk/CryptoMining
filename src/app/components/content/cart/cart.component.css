@@ -143,9 +143,6 @@
     .btn-style {
         width: fit-content;
     }
-    .price {
-        margin-right: 30px;
-    }
 }
 @media (min-width: 980px) {
     .location {

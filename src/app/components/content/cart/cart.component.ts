@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
 
   }
   private loadCards(): void {
-    this.cartService.getCart().subscribe((value: Cart[]) => {
+    this.cartService.getTool().subscribe((value: Cart[]) => {
       this.cardItem = value;
     });
   }

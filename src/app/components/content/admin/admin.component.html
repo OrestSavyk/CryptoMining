@@ -1,7 +1,11 @@
 <div class="header marg-t">
     <div class="header-inner">
+        <div style="display: flex;">
+            <button class="btn-choose-cart-action" (click)="buttonEdit = true">Edit Cart</button>
+            <button class="btn-choose-cart-action" (click)="buttonEdit = false">New Cart</button>
+        </div>
         <div class="top-form">
-            <form action="" class="admin-form" [formGroup]="cartForm" (ngSubmit)="onAddCartTool()">
+            <form action="" class="admin-form" [formGroup]="cartForm" (ngSubmit)="buttonEdit ? onSaveEdit() : onAddCartTool()">
                 <label for="id">Id</label>
                 <input id="id" type="number" formControlName="id">
                 <label for="manufacturer">Manufacturer</label>
@@ -23,22 +27,23 @@
                 <label for="weight">Weight</label>
                 <input id="weight" type="text" formControlName="weight">
                 <label for="price">Price</label>
-                <input id="price" type="number" formControlName="price">
+                <input id="price" type="text" formControlName="price">
                 <label for="availability">Availability</label>
                 <input id="availability" type="text" list="available" formControlName="availability">
                 <datalist id="available">
                     <option value="In stock"></option>
                     <option value="Sold out"></option>
                 </datalist>
-                <button type="submit" class="btn-cart-add">Add</button>
+                <button type="submit" class="btn-cart-add" *ngIf="buttonEdit">Save edit</button>
+                <button type="submit" class="btn-cart-add" *ngIf="!buttonEdit">Add</button>
             </form>
         </div>
         <h2>Tool Cards</h2>
         <div class="wrapper-cards"> 
-            <div class="card" *ngFor="let item of cardItem">
+            <div class="card" *ngFor="let item of cardItem" (click)="editCurrentCart(item)">
                 <div class="card-inner">
                     <div class="for-admin">
-                        <div class="card-id">{{ item.id }}</div>
+                        <div class="card-id">Id: {{ item.id }}</div>
                         <div class="btn-delete-card"><button (click)="onDeleteCard(item.id)">X</button></div>
                     </div>
                     <img class="card-imagine" src="{{ item.image }}" alt="i">

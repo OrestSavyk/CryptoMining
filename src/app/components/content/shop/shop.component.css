@@ -40,6 +40,8 @@
     font-size: 32px;
     display: block;
     color: #fff;
+    line-height: 35px;
+
 }
 
 @media (min-width: 765px) {

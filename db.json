@@ -41,6 +41,62 @@
       "algorithm": "SHA-256",
       "size": "150 x 225 x 390mm",
       "weight": "10500g"
+    },
+    {
+      "id": 266,
+      "manufacturer": "Macintosh",
+      "model": "LH45",
+      "image": "assets/card/card2.png",
+      "hash": 28,
+      "power": 2790,
+      "date": "2021-11-17",
+      "algorithm": "Mine",
+      "size": "27x27",
+      "weight": "1790g",
+      "price": 1650,
+      "availability": "In stock"
+    },
+    {
+      "id": 267,
+      "manufacturer": "Macintosh",
+      "model": "OM928",
+      "image": "assets/card/card2.png",
+      "hash": 10,
+      "power": 92,
+      "date": "2021-11-01",
+      "algorithm": "Mine",
+      "size": "27x27",
+      "weight": "1790g",
+      "price": "$1789 ~ $2810",
+      "availability": "In stock"
+    },
+    {
+      "id": 65,
+      "manufacturer": "NVIDIA",
+      "model": "HG15",
+      "image": "assets/card/card2.png",
+      "hash": 15,
+      "power": 2980,
+      "date": "2021-11-24",
+      "algorithm": "Mine",
+      "size": "27x27",
+      "weight": "1790g",
+      "price": "$1789 ~ $000",
+      "availability": "Sold out"
+    },
+    {
+      "id": 42,
+      "manufacturer": "MicroBT",
+      "model": "Whatsminer M30s",
+      "image": "assets/card/card4.png",
+      "hash": 229,
+      "power": 12688,
+      "date": "Apr 20, 2020",
+      "algorithm": "SHA-256",
+      "size": "150 x 225 x 390mm",
+      "weight": "10500g",
+      "price": "$1,880 ~ $2,699",
+      "availability": "In stock"
     }
   ]
 }

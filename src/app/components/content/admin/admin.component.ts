@@ -10,6 +10,8 @@ import * as uuid from 'uuid'
 })
 export class AdminComponent implements OnInit {
   public cartForm: FormGroup;
+  buttonEdit: boolean;
+  selectedItem: any;
   @Input()
   cardItem: Cart[] = [];
 
@@ -19,15 +21,14 @@ export class AdminComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private formBuilder: FormBuilder
-    ) { }
+    private formBuilder: FormBuilder) { 
+      this.devCartForm();
+    }
 
   ngOnInit(): void {
-    this.loadCards();
-    this.devCartForm();
-    
+    this.loadCards();    
   }
-  devCartForm(): void {
+  private devCartForm(): void {
     this.cartForm = this.formBuilder.group({
       id: [ '', (Validators.required,Validators.min(1))],
       manufacturer: [ '', (Validators.required,Validators.minLength(3))],
@@ -44,25 +45,38 @@ export class AdminComponent implements OnInit {
     })
   }
   private loadCards(): void {
-    this.cartService.getCart().subscribe((value) => {
+    this.cartService.getTool().subscribe((value) => {
       this.cardItem = value;
     })
     
   }
   onDeleteCard(id): void {
     // this.cardItem.splice((item.id - 1), 1)
-    this.cartService.removeCart(id).subscribe(() => {
+    this.cartService.removeTool(id).subscribe(() => {
       this.cardItem = this.cardItem.filter((cart) => cart.id !== id)
     })
     
   }
   onAddCartTool(): void {
     const newCartTool = {id: uuid.v4(), ...this.cartForm.value};
-    this.cartService.addCart(newCartTool).subscribe((tool: Cart) => {
+    this.cartService.addTool(newCartTool).subscribe((tool: Cart) => {
       this.cardItem = [...this.cardItem, tool];
       this.cartForm.reset();
     })
     
+  }
+  onSaveEdit(): void {
+    this.cartService.editTool(this.selectedItem.id, this.cartForm.value)
+      .subscribe((newEditedCart: Cart) => {
+
+    })
+    this.cartForm.reset(); 
+  }
+
+  editCurrentCart(item): void {
+    this.selectedItem = item;
+    this.buttonEdit = true;
+    this.cartForm.patchValue(this.selectedItem);
   }
 
 }

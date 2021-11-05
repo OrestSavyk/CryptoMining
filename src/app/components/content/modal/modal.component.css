@@ -131,7 +131,7 @@
     font-size: 14px;
 }
 .column-name {
-    font-weight: 600;
+    font-weight: 500;
     background: rgba(229, 245, 254, 0.616);
 }
 .modal-price {
@@ -139,7 +139,7 @@
 
 }
 .modal-availability {
-    font-weight: 600;
+    font-weight: 500;
     display: flex;
     justify-content: center;
 

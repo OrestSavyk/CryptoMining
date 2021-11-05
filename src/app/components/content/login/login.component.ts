@@ -25,7 +25,13 @@ export class LoginComponent implements OnInit {
     this.initLoginForm();
   }
   login(loginForm: FormGroup): void {
-    console.log(loginForm.value);
+    if (loginForm.value.email == 'admin@gmail.com' && loginForm.value.password == 'admin1111') {
+      console.log('hello admin');
+      
+      
+    }
+    console.log(loginForm.value)
+    
   }
 
   private initLoginForm(): void {

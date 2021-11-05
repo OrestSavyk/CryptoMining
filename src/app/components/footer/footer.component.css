@@ -41,6 +41,10 @@
     font-size: 18px;
     
 }
+.footer-navs a:hover {
+    transition: 0.9s;
+    color: rgba(100, 100, 100, 0.801);
+}
 .right-footer {
     width: 17%;
     display: flex;

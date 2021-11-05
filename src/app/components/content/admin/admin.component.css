@@ -2,9 +2,30 @@
     margin: auto 5%;
 
 }
+.header-inner h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 70px;
+}
 .top-form {
     padding: 10px 20px;
 
+}
+.btn-choose-cart-action {
+    border: 1px solid dodgerblue;
+    border-radius: 10px;
+    height: 35px;
+    font-size: 15px;
+    color: dodgerblue;
+    padding: 5px 10px;
+    font-weight: 500;
+    margin: 20px;
+} 
+.btn-choose-cart-action:hover {
+    transition: 0.9s;
+    background-color: rgb(0, 132, 255);
+    border: none;
+    color: white;
 }
 .admin-form {
     display: grid;
@@ -150,19 +171,12 @@
     .btn-style {
         width: fit-content;
     }
-    .price {
-        margin-right: 30px;
-    }
 }
 @media (min-width: 980px) {
     .top-form {
-        margin: 10% 25%;
+        margin: 5% 25%;
     }
     .location {
         display: inline;
-    }
-    .admin-form input {
-        /* width: 650px; */
-
     }
 }

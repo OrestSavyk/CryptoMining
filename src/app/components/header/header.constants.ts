@@ -1,18 +1,8 @@
 export const NAV_BUTTON = [
     {
-        name: 'Calculator',
-        link: '/calculator',
-        icon: 'assets/iconNav/calculator (1).png'
-    },
-    {
         name: 'Immersion',
         link: '/immersion',
         icon: 'assets/iconNav/immersion.png'
-    },
-    {
-        name: 'Comparison',
-        link: '/comparison',
-        icon: 'assets/iconNav/comparison.png'
     },
     {
         name: 'Shop',
@@ -28,7 +18,12 @@ export const NAV_BUTTON = [
         name: 'Log In',
         link: '/login',
         icon: 'assets/iconNav/login.png'
-    }
+    },
+    {
+        name: 'Admin',
+        link: '/admin',
+        icon: 'assets/iconNav/admin.png'
+    },
 ]
 // {
 //     "minerTools": [

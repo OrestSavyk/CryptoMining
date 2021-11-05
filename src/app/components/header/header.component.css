@@ -9,7 +9,9 @@
   top: 0px;
   overflow-x: hidden;
 }
-
+.active {
+  color: rgba(53, 53, 53, 0.87)!important;
+}
 .header-top {
   display: flex;
   justify-content: space-between;

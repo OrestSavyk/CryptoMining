@@ -16,17 +16,17 @@
     font-size: 18px;
     font-family: sans-serif;
     color: rgb(20, 20, 20);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .left-gratitude {
     color: rgb(22, 110, 145);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 17px;
     margin-bottom: 0px;
 }
 .left-gratitude-post {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 17px;
     color: rgb(20, 20, 20);
     margin-bottom: 0px;
@@ -42,7 +42,7 @@
 }
 .right-top h3 {
     font-size: 27px;
-    font-weight: 600;
+    font-weight: 500;
     font-family: sans-serif;
     color: rgb(20, 20, 20);
 }
@@ -65,12 +65,12 @@
     display: block;
     margin-bottom: 20px;
     /* margin: 20px auto 20px auto; */
-    font-weight: 600;
+    font-weight: 500;
     color: rgb(20, 20, 20);
 }
 .right-input-data-radio {
     display: flex;
-    font-weight: 600;
+    font-weight: 500;
     width: 50%;
     color: rgb(20, 20, 20);
 
