@@ -1,7 +1,7 @@
 <div id="modalWin">
     <div class="modal-window">
         <button class="btn-close-modal" (click)="onCloseModal()">X</button>
-        <h4 class="modal-model"> {{ modal.manufacturer }} {{ modal.model }} {{ modal.btnTH }} TH</h4>
+        <h4 class="modal-model"> {{ modal.manufacturer }} {{ modal.model }} {{ modal.hash }} TH</h4>
         <div class="modal-character">
             <img src="{{ modal.image }}" alt="i">
             <div class="modal-character-top">
@@ -12,9 +12,9 @@
                 <div>Miner name</div>
                 <div>{{ modal.model }}</div>
                 <div>Hashrate</div>
-                <div>{{ modal.btnTH }} TH</div>
+                <div>{{ modal.hash }} TH</div>
                 <div>Power (watts)</div>
-                <div>{{ modal.btnPower }}</div>
+                <div>{{ modal.power }} w</div>
                 <div>Release Date</div>
                 <div>{{ modal.date }}</div>
                 <div>Supported Algorithm</div>

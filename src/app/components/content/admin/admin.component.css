@@ -1,0 +1,168 @@
+.header-inner {
+    margin: auto 5%;
+
+}
+.top-form {
+    padding: 10px 20px;
+
+}
+.admin-form {
+    display: grid;
+    align-items: center;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.admin-form input {
+    width: 100%;
+    outline: none;
+    height: 34px;
+    box-sizing: border-box;
+    border: 1px solid rgba(51, 51, 51, 0.89);
+    padding-left: 6px;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px cornflowerblue;
+}
+.admin-form label {
+    margin: 15px 0px 5px;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+.btn-cart-add {
+    margin: 30px auto;
+    width: 60%;
+    height: 40px;
+    max-width: 140px;
+    border-radius: 14px;
+    font-size: 22px;
+    border: 1px solid rgb(0, 132, 255);
+    color: rgb(0, 132, 255);
+}
+.btn-cart-add:hover {
+    transition: 0.9s;
+    box-shadow: 1px 1px 6px rgba(190, 186, 186, 0.788);
+    color: whitesmoke;
+    background-color: rgb(0, 132, 255);
+}
+.wrapper-cards {
+    display: grid;
+    grid-gap: 30px;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    margin: auto 15px 90px;
+
+}
+.card {
+    width: 280px;
+    text-align: center;
+    color: whitesmoke;
+    box-shadow: 0px 0px 3px 3px rgba(190, 186, 186, 0.589);
+    height: 420px;
+    border-radius: 10px;
+    margin: 10px auto;
+    font-family: Poppins,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji!important;
+}
+.card:hover {
+    transition: 1.2s;
+    box-shadow: 0px 0px 6px 6px rgba(190, 186, 186, 0.747);
+}
+.for-admin {
+    display: flex;
+    padding: 10px 10px 0px 10px;
+}
+.card-id {
+    color: rgba(49, 48, 48, 0.904);
+    font-weight: 500;
+}
+.btn-delete-card {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 0px auto auto;
+}
+.btn-delete-card button {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: inherit;
+    background-color: rgba(240, 29, 29, 0.925);
+    color: white;
+    border: 0px;
+    font-weight: 600;
+}
+/* .btn-delete-card button:hover {
+    transition: 0.8s;
+    background-color: wheat;
+    border: 0.5px solid rgba(250, 43, 43, 0.829);
+} */
+.card-imagine {
+    /* padding-top: 5%; */
+    width: 80%;
+    height: 185px;
+}
+.model {
+    color: rgb(44, 44, 44);
+    font-family: monospace;
+    font-size: 20px;
+    height: 10%;
+    margin: 5% auto
+}
+.btn-info {
+    height: 10%;
+}
+.btn-info button {
+    height: 34px;
+    border-radius: 17px;
+    border: none;
+    color: rgb(48, 48, 49);
+    background-color: whitesmoke;
+    margin: auto 5px;
+}
+.price {
+    height: 15%;
+    padding: 1% auto;
+    color: rgb(53, 187, 240);
+    margin: 5% auto;
+    font-size: 22px;
+    font-weight: 600;
+}
+.btn-buy {
+    height: 40px;
+    width: 110px;
+    border-radius: 20px;
+    border: none;
+    padding: 3% auto;
+    color: white;
+    background-color: rgb(56, 161, 231);
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-buy:hover {
+    transition: 1.1s;
+    background-color: rgb(241, 245, 245);
+    color: rgb(31, 29, 29);
+}
+@media (min-width: 765px) {
+    .top-form {
+        margin: 10% 20%;
+    }
+    .btn-style {
+        width: fit-content;
+    }
+    .price {
+        margin-right: 30px;
+    }
+}
+@media (min-width: 980px) {
+    .top-form {
+        margin: 10% 25%;
+    }
+    .location {
+        display: inline;
+    }
+    .admin-form input {
+        /* width: 650px; */
+
+    }
+}

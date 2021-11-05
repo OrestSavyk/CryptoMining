@@ -1,1 +1,56 @@
-<p>admin works!</p>
+<div class="header marg-t">
+    <div class="header-inner">
+        <div class="top-form">
+            <form action="" class="admin-form" [formGroup]="cartForm" (ngSubmit)="onAddCartTool()">
+                <label for="id">Id</label>
+                <input id="id" type="number" formControlName="id">
+                <label for="manufacturer">Manufacturer</label>
+                <input id="manufacturer" type="text" formControlName="manufacturer">
+                <label for="model">Model</label>
+                <input id="model" type="text" formControlName="model">
+                <label for="image">Imagine</label>
+                <input id="image" type="text" formControlName="image">
+                <label for="hash">Hash</label>
+                <input id="hash" type="number" formControlName="hash">
+                <label for="power">Power</label>
+                <input id="power" type="number" formControlName="power">
+                <label for="date">Date</label>
+                <input id="date" type="date" formControlName="date">
+                <label for="algorithm">Algorithm</label>
+                <input id="algorithm" type="text" formControlName="algorithm">
+                <label for="size">Size</label>
+                <input id="size" type="text" formControlName="size">
+                <label for="weight">Weight</label>
+                <input id="weight" type="text" formControlName="weight">
+                <label for="price">Price</label>
+                <input id="price" type="number" formControlName="price">
+                <label for="availability">Availability</label>
+                <input id="availability" type="text" list="available" formControlName="availability">
+                <datalist id="available">
+                    <option value="In stock"></option>
+                    <option value="Sold out"></option>
+                </datalist>
+                <button type="submit" class="btn-cart-add">Add</button>
+            </form>
+        </div>
+        <h2>Tool Cards</h2>
+        <div class="wrapper-cards"> 
+            <div class="card" *ngFor="let item of cardItem">
+                <div class="card-inner">
+                    <div class="for-admin">
+                        <div class="card-id">{{ item.id }}</div>
+                        <div class="btn-delete-card"><button (click)="onDeleteCard(item.id)">X</button></div>
+                    </div>
+                    <img class="card-imagine" src="{{ item.image }}" alt="i">
+                    <h4 class="model">{{ item.model }}</h4>
+                    <div class="btn-info">
+                        <button>{{ item.hash }} TH</button>
+                        <button>{{ item.power }} w</button>
+                    </div>
+                    <p class="price">{{ item.price }}</p>
+                    <button class="btn-buy">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

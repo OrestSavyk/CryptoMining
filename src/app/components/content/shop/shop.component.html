@@ -1,100 +1,12 @@
-
 <div class="header marg-t">
-    <div class="header-top">
-        <img class="left-top" src="assets/shop /mock_one.png">
-        <img class="right-top" src="assets/shop /banner2.png">
-        <img class="center-top" src="assets/shop /mock_three.png">
-        <div class="text-top"><p>Your One Stop Shop for Crypto Miners based in North America</p></div>
+  <div class="header-top">
+    <img class="left-top" src="assets/shop /mock_one.png" />
+    <img class="right-top" src="assets/shop /banner2.png" />
+    <img class="center-top" src="assets/shop /mock_three.png" />
+    <div class="text-top">
+      <p>Your One Stop Shop for Crypto Miners based in North America</p>
     </div>
-    <div class="main">
-        <div class="filter">Filter By</div>
-        <div class="filter-btn">
-            <input class="btn-style location" list="region" type="text" value="" placeholder="Region">
-            <datalist id="region">
-                <option value="The Americas"></option>
-                <option value="China/ Hong Kong"></option>
-                <option value="Europe/ Asia/ Africa"></option>
-            </datalist>
-            <input class="btn-style hashrate" type="button" value="Hashrate (TH)" (click)="sortItemByHash($event)">
-            <input class="btn-style efficiency" type="button" value="Efficiency (W/TH)" (click)="sortItemByEfficiency($event)">
-            <input class="btn-style reset" type="button" value="Reset Filter" (click)="sortItemReset($event)">
-        </div>
-        <div class="filter-search">
-            <input #search type="text" (keydown.enter)="onEnterSearchTool($event)" placeholder="Search by manufacturer or model">
-        </div>
-        <div class="cards-title">Best Selling</div>
-            <app-cart (bubbleUp)="getModal($event)"></app-cart>
-            <app-modal [modal]="dataModal"></app-modal>
-                <!-- <div class="card-inner">
-                    <img class="card-imagine" src="{{ item.image }}" alt="i">
-                    <h4 class="model">{{ item.model }}</h4>
-                    <div class="btn-info">
-                        <button>{{ item.btnTH }} TH</button>
-                        <button>{{ item.btnPower }} w</button>
-                    </div>
-                    <p class="price">{{ item.price }}</p>
-                    <button class="btn-buy" (click)="onOpenModal()">Shop Now</button>
-                    <div id="modalWin">
-                        <div class="modal-window">
-                            <button class="btn-close-modal" (click)="onCloseModal()">X</button>
-                            <h4 class="modal-model"> {{ item.manufacturer }} {{ item.model }} {{ item.btnTH }} TH</h4>
-                            <div class="modal-character">
-                                <img src="{{ item.image }}" alt="i">
-                                <div class="modal-character-top">
-                                    <div class="column-name">Name</div>
-                                    <div class="column-name">Value</div>
-                                    <div>Manufacturer</div>
-                                    <div>{{ item.manufacturer }}</div>
-                                    <div>Miner name</div>
-                                    <div>{{ item.model }}</div>
-                                    <div>Hashrate</div>
-                                    <div>{{ item.btnTH }} TH</div>
-                                    <div>Power (watts)</div>
-                                    <div>{{ item.btnPower }}</div>
-                                    <div>Release Date</div>
-                                    <div>{{ item.date }}</div>
-                                    <div>Supported Algorithm</div>
-                                    <div>{{ item.algorithm }}</div>
-                                    <div>Size</div>
-                                    <div>{{ item.size }}</div>
-                                    <div>Weight</div>
-                                    <div>{{ item.weight }}</div>    
-                                </div>
-                            </div>
-                            <div class="modal-price">
-                                <div class="price">{{ item.price }}</div>
-                                <div class="modal-availability">Availability: {{ item.availability }} <div class="dot"></div></div>
-                            </div>
-                            <div class="more-info">
-                                <div class="title-top">Options Available</div>
-                                <div class="options-avail">
-                                    <div class="sort-top">Sort by Freshness</div>
-                                    <div class="sort-btn">
-                                        <button>Fresh</button>
-                                        <button>Ripe</button>
-                                        <button>Stale</button>
-                                    </div>
-                                    <div class="info-avail">
-                                        <ul>
-                                            <li>Sorry. This item is currently not in stock.</li>
-                                            <li>Check back soon to see if a seller in our marketplace has this product for sale.</li>
-                                            <li>If you own this product and wish to sell it, please register for an account</li>
-                                        </ul>
-                                    </div>
-                                    <div class="info-payment">
-                                        <ul>Note:
-                                            <li>To express interest in an item listed below, please add the item to the cart and go through the check out. Payment is not required when checking out.</li>
-                                            <li>To check if the inventory listed is still in stock or still available for the same price, add an item to the cart and check out. The seller will be notified of your request and will reply regarding the latest availability and pricing.</li>
-                                            <li>Shipping is not included in the price displayed.To discuss shipping costs with the seller, please add an item to the cart and then check out. We seller will then follow up with you to provide a shipping quote within 24 hours.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class=""></div>
-                            </div>
-                        </div>
-                    <div class="overlay"></div>
-                </div>
-            </div> -->
-    </div>    
+  </div>
+    <app-cart (bubbleUp)="getModal($event)"></app-cart>
+    <app-modal [modal]="dataModal"></app-modal>
 </div>
-

@@ -2,7 +2,8 @@
     /* padding: 60px 15px; */
 }
 .inner-header {
-    margin: 50px 5%;
+    margin: auto 5% 50px;
+    padding-top: 30px;
 }
 .carousel-wrapper {
     overflow: hidden;

@@ -138,7 +138,7 @@
   box-shadow: 0px 0px 4px rgba(94, 92, 92, 0.726);
 }
 .header-btn-contact-basket:hover {
-  transition: 0.8s;
+  transition: 0.9s;
   opacity: 1;
   background-color: rgb(226, 222, 222,1);
   box-shadow: 0px 0px 7px rgba(70, 68, 68, 0.726);
@@ -184,9 +184,13 @@
   .header-nav-top p {
     color: white;
     margin-top: 0px;
-    font-weight: bold;
+    font-weight: 500;
     text-align: center;
   } 
+  .header-nav-top p:hover {
+    transition: 0.9s;
+    color: rgba(100, 100, 100, 0.801);
+  }
   .header-logo img {
     height: 75px;
   }
@@ -204,7 +208,7 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
-    border-color: white;
+    border: 0.5px solid rgba(250, 247, 247, 0.863);
     background-color: rgb(0, 132, 255);
     color: white;
     margin: auto;
@@ -213,7 +217,7 @@
     }
   .header-btn-contact-top:hover {
     transition: 0.9s;
-    background-color: #fff;
+    background-color: rgb(226, 222, 222,1);
     color: rgb(0, 132, 255); 
   }
 }

@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   cardItem: Cart[] = [];
 
   @Output()
-  // cardItem: Cart[] = [];
+
   bubbleUp = new EventEmitter<Cart>();
 
   constructor(private cartService: CartService) { }
@@ -27,9 +27,27 @@ export class CartComponent implements OnInit {
       this.cardItem = value;
     });
   }
+  onSortItemHash(): void {
+    console.log(this.cardItem);
+    this.cardItem = this.cardItem.sort((a, b) => {
+      return a.hash < b.hash ? 1 : -1;
+    })
+    
+  }
+  onSortItemEfficiency(): void {
+    this.cardItem = this.cardItem.sort((a, b) => {
+      return a.power < b.power ? 1 : -1;
+    })
+  }
+  onResetFilter(): void {
+    
+  }
+  onEnterSearchTool(event) {
+    console.log(event.target.value);
+    event.target.value = '';
+  }
   onOpenModal(item: Cart): void {
     this.bubbleUp.emit(item);
-    // console.log(item);
     document.getElementById('modalWin').style.display = 'flex';
   }
 

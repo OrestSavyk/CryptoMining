@@ -27,13 +27,14 @@ const appRoutes: Routes = [
   // {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'contact', component: ContactComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'calculator', component: CalculatorComponent},
+  // {path: 'calculator', component: CalculatorComponent},
   {path: 'immersion', component: ImmersionComponent},
   {path: 'comparison', component: ComparisonComponent},
   {path: 'shop', component: ShopComponent, children:[
     {path: 'cart', component: CartComponent}
   ]},
-  {path: 'directory', component: DirectoryComponent}
+  {path: 'directory', component: DirectoryComponent},
+  {path: 'calculator', component: AdminComponent}
 ]
 @NgModule({
   declarations: [
