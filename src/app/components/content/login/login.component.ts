@@ -1,12 +1,14 @@
-import { HttpClient } from "@angular/common/http";
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from "@angular/forms";
-import { Router } from "@angular/router";
+import * as uuid from 'uuid'
+import { Observable } from "rxjs";
+import { Login } from "src/app/models/loginData";
+import { LoginService } from "src/app/services/login.service";
 
 @Component({
   selector: "app-login",
@@ -14,24 +16,30 @@ import { Router } from "@angular/router";
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
+  LoginArray: Login[] = [];
   public loginForm: FormGroup;
+  adminIn: boolean;
+
   constructor(
     private formBuilder: FormBuilder,
-    private httpClient: HttpClient,
-    private router: Router
-  ) {}
-
-  ngOnInit(): void {
+    private loginService: LoginService
+  ) {
     this.initLoginForm();
   }
-  login(loginForm: FormGroup): void {
-    if (loginForm.value.email == 'admin@gmail.com' && loginForm.value.password == 'admin1111') {
-      console.log('hello admin');
-      
-      
-    }
-    console.log(loginForm.value)
-    
+
+  ngOnInit(): void {
+    this.onLoadUser()
+  }
+  onAddLogin(): void {
+    if (this.loginForm.value.email == 'admin@gmail.com' && this.loginForm.value.password == 'admin1111') {
+      this.adminIn = true;      
+    } else {
+      const newLoginUser = {id: uuid.v4(), ...this.loginForm.value};      
+      this.loginService.addLogin(newLoginUser).subscribe((login: Login) => {
+      this.LoginArray = [...this.LoginArray, login]
+      })
+      this.loginForm.reset();
+    } 
   }
 
   private initLoginForm(): void {
@@ -40,21 +48,9 @@ export class LoginComponent implements OnInit {
       password: ["", [Validators.required, Validators.minLength(8)]],
     });
   }
-  // login() {
-  //   this.httpClient.get<any>("http://localhost:3000/login")
-  //   .subscribe(res =>{
-  //     const user = res.find((a: any)=> {
-  //       return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-  //     });
-  //     if(user) {
-  //       alert('Login Success!');
-  //       this.loginForm.reset();
-  //       this.router.navigate(['dashboard'])
-  //     }else {
-  //       alert("user not found");
-  //     }
-  //   },err=>{
-  //     alert("something went wrong!")
-  //   })
-  // }
+  private onLoadUser(): void{
+    this.loginService.getLogins().subscribe((value) => {
+      this.LoginArray = value;
+    })
+  }
 }

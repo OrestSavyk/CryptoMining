@@ -1,33 +1,34 @@
-<!-- <div id="modalWin" mat-dialog-content>
+
+<div id="modalWin" mat-dialog-content>
     <div class="modal-window">
-        <button class="btn-close-modal" (click)="onCloseModal()">X</button>
-        <h4 class="modal-model"> {{ modal.headname }} {{ modal.name }} {{ modal.hash }} TH</h4>
+        <button mat-button mat-dialog-close class="btn-close-modal">X</button>
+        <h4 class="modal-model"> {{ item.headname }} {{ item.name }} {{ item.hash }} TH</h4>
         <div class="modal-character">
-            <img src="{{ modal.image }}" alt="i">
+            <img src="{{ item.image }}" alt="i">
             <div class="modal-character-top">
                 <div class="column-name">Name</div>
                 <div class="column-name">Value</div>
                 <div>Manufacturer</div>
-                <div>{{ modal.headname }}</div>
+                <div>{{ item.headname }}</div>
                 <div>Miner name</div>
-                <div>{{ modal.name }}</div>
+                <div>{{ item.name }}</div>
                 <div>Hashrate</div>
-                <div>{{ modal.hash }} TH</div>
+                <div>{{ item.hash }} TH</div>
                 <div>Power (watts)</div>
-                <div>{{ modal.power }} w</div>
+                <div>{{ item.power }} w</div>
                 <div>Release Date</div>
-                <div>{{ modal.date }}</div>
+                <div>{{ item.date }}</div>
                 <div>Supported Algorithm</div>
-                <div>{{ modal.algorithm }}</div>
+                <div>{{ item.algorithm }}</div>
                 <div>Size</div>
-                <div>{{ modal.size }}</div>
+                <div>{{ item.size }}</div>
                 <div>Weight</div>
-                <div>{{ modal.weight }}</div>    
+                <div>{{ item.weight }}</div>    
             </div>
         </div>
         <div class="modal-price">
-            <div class="price">${{ modal.price }}</div>
-            <div class="modal-availability">Availability: {{ modal.availability }} </div>
+            <div class="price">${{ item.price }}</div>
+            <div class="modal-availability">Availability: {{ item.availability }} </div>
         </div>
         <div class="more-info">
             <div class="title-top">Options Available</div>
@@ -51,10 +52,10 @@
                         <li>To check if the inventory listed is still in stock or still available for the same price, add an item to the cart and check out. The seller will be notified of your request and will reply regarding the latest availability and pricing.</li>
                         <li>Shipping is not included in the price displayed.To discuss shipping costs with the seller, please add an item to the cart and then check out. We seller will then follow up with you to provide a shipping quote within 24 hours.</li>
                     </ul>
-                    <div class="btn-add-basket"  (click)="addToBasket(modal)"><img src="assets/title img/shopping-cart.png" alt="b"></div>
+                    <!-- <div class="btn-add-basket"  (click)="addToBasket(item)"><mat-icon aria-hidden="false">add_shopping_cart</mat-icon></div> -->
                 </div>
             </div>
             <div class=""></div>
         </div>
     </div>
-<div class="overlay" (click)="onCloseModal()"></div> -->
+<div class="overlay" ></div>

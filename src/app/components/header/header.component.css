@@ -92,7 +92,7 @@
   color: #333;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
 }
 .menu-item:hover {
@@ -116,15 +116,52 @@
   margin-left: 20px;
   cursor: pointer;
 }
+.mat-button-toggle-group {
+  border: none;
+}
+
+
+
+/* 
+.mat-button-toggle-label-content {
+  padding: 0px;
+} */
+.mat-button-toggle-appearance-standard {
+  background: none;
+}
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  padding: 0px;
+}
 .header-nav {
   display: none;
 }
 .header-btn-contact {
-  margin-right: 10px;
   margin-top: 20px;
   margin-bottom: auto;
+}
+.header-btn-admin {
+  width: 44px;
+  height: 44px;
+  display: block;
+  background-color: rgba(241, 241, 241, 1);
+  box-shadow: 0px 0px 4px rgba(94, 92, 92, 0.726);
+  border-radius: 50%;
+  border: none;
+  margin: auto;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-right: 5px;
+}
+.header-btn-admin:hover {
+  transition: 0.9s;
+  opacity: 1;
+  background-color: rgb(226, 222, 222,1);
+  box-shadow: 0px 0px 7px rgba(70, 68, 68, 0.726);
 
-
+}
+.header-btn-admin img {
+  height: 20px;
+  margin: auto;
 }
 .header-btn-contact-basket {
   display: block;
@@ -134,7 +171,7 @@
   background-color: rgba(241, 241, 241, 1);
   border-radius: 50%;
   border: none;
-  margin: auto 10px auto auto;
+  margin: auto;
   cursor: pointer;
   opacity: 0.7;
   box-shadow: 0px 0px 4px rgba(94, 92, 92, 0.726);
@@ -157,6 +194,7 @@
   width: auto;
   height: auto;
   text-align: center;
+  display: flex;
 }
 @media (min-width: 1024px) {
   .hamburger-menu {
@@ -164,12 +202,9 @@
   }
   .header-nav {
     display: flex;
-    /* grid-template-columns: repeat(6, 1fr); */
-    justify-content: space-around;
   }
   .header-nav-top {
-    padding: auto;
-    margin: auto 5% 0px;
+    margin: auto 10px;
   }
   .header-nav-top div {
     text-align: center;
@@ -178,13 +213,15 @@
   }
   .header-nav-top a {
     text-decoration: none;
+    color: rgba(29, 28, 28, 0.932);
+    font-size: 18px;
+    font-weight: 400;
   }
   .header-nav-top img {
     width: 35px;
     color: white;
   }
   .header-nav-top p {
-    color: white;
     margin-top: 0px;
     font-weight: 500;
     text-align: center;
@@ -197,9 +234,14 @@
     height: 75px;
   }
   .header-btn-contact {
-    display: grid;
-    grid-template-columns: 45px auto;
+    display: flex;
     margin-right: 20px;
+  }
+  .header-btn-admin {
+    margin-right: 15px;
+  }
+  .header-btn-contact-basket {
+    margin: auto 10px auto auto;
   }
   .header-btn-contact-top {
     display: block;
@@ -222,6 +264,10 @@
     background-color: rgb(226, 222, 222,1);
     color: rgb(0, 132, 255); 
   }
+}
+.active {
+  color:  rgb(226, 222, 222,1)!important;
+
 }
 
 

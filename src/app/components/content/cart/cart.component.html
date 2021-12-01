@@ -1,12 +1,34 @@
 <div class="main">
-    <div class="filter">Filter By</div>
-    <div class="filter-btn">
+  <div class="filter">Filter By</div>
+  <div class="filter-btn">
+    <mat-form-field appearance="fill" class="sort-item">
+      <mat-label class="sort-item-label">Filter</mat-label>
+      <mat-select (selectionChange)="onFilterHash($event)">
+        <mat-option
+          *ngFor="let filterItem of filterItems"
+          [value]="filterItem.value"
+          >{{ filterItem.title }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="sort-item">
+      <mat-label>Sort</mat-label>
+      <mat-select (selectionChange)="onSortItem($event)">
+        <mat-option
+          *ngFor="let sortItem of sortItems"
+          [value]="sortItem.value"
+          >{{ sortItem.title }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <!-- <form action="">
       <input
         class="btn-style location"
         list="region"
         type="text"
         value=""
-        placeholder="Region"/>
+        placeholder="Region"
+      />
       <datalist id="region">
         <option value="The Americas"></option>
         <option value="China/ Hong Kong"></option>
@@ -16,38 +38,79 @@
         class="btn-style btn-click-down hashrate"
         type="button"
         value="Hashrate (TH)"
-        (click)="onSortItemHash()"/>
+        (click)="onSortItemHash()"
+      />
       <input
         class="btn-style btn-click-down efficiency"
         type="button"
         value="Efficiency (W/TH)"
-        (click)="onSortItemEfficiency()"/>
+        (click)="onSortItemEfficiency()"
+      />
       <input
         class="btn-style reset"
         type="button"
         value="Reset Filter"
-        (click)="onResetFilter()"/>
-    </div>
-    <div class="filter-search">
+        (click)="onResetFilter()"
+      />
       <input
-        #search
+        class="btn-style btn-th-w"
+        list="tHFilter"
         type="text"
-        (keydown.enter)="onEnterSearchTool($event)"
-        placeholder="Search by manufacturer or model"/>
-    </div>
-    <div class="cards-title">Best Selling</div>
+        value=""
+        placeholder="Filter Hash"
+        (keydown.enter)="onFilterHash($event)"
+      />
+      <datalist id="tHFilter">
+        <option value="30"></option>
+        <option value="60"></option>
+      </datalist>
+      <input
+        class="btn-style btn-th-w"
+        list="wFilter"
+        type="text"
+        value=""
+        placeholder="Filter watt"
+        (keydown.enter)="onFilterW($event)"
+      />
+      <datalist id="wFilter">
+        <option value="1000"></option>
+        <option value="2000"></option>
+      </datalist>
+    </form> -->
+  </div>
+  <div class="filter-search">
+    <input
+      #search
+      type="text"
+      (keydown.enter)="onEnterSearchTool($event)"
+      placeholder="Search by manufacturer or model"
+    />
+  </div>
+  <div class="cards-title">Best Selling</div>
 </div>
 <div class="wrapper-cards">
-    <div class="card" *ngFor="let item of cardItem">
-        <div class="card-inner">
-            <img class="card-imagine" src="{{ item.image }}" alt="i">
-            <h4 class="model">{{ item.model }}</h4>
-            <div class="btn-info">
-                <button>{{ item.hash }} TH</button>
-                <button>{{ item.power }} w</button>
-            </div>
-            <p class="price">{{ item.price }}</p>
-            <button class="btn-buy" (click)="onOpenModal(item)">Shop Now</button>
-        </div>
+  <div class="card" *ngFor="let item of cardItem">
+    <div class="card-inner">
+      <img class="card-imagine" src="{{ item.image }}" alt="i" />
+      <h4 class="model">{{ item.name }}</h4>
+      <div class="btn-info">
+        <button>{{ item.hash }} TH</button>
+        <button>{{ item.power }} w</button>
+      </div>
+      <p class="price">${{ item.price }}</p>
+      <div class="wrapper-btn-cart">
+        <button mat-raised-button class="btn-buy" (click)="onOpenModal(item)">
+          Shop Now
+        </button>
+        <button
+          mat-fab
+          class="btn-add-basket"
+          aria-label="Example icon button with a bookmark icon"
+          (click)="addToBasket(item)"
+        >
+          <mat-icon aria-hidden="false">add_shopping_cart</mat-icon>
+        </button>
+      </div>
     </div>
+  </div>
 </div>

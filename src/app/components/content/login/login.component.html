@@ -1,26 +1,51 @@
 <div class="top-blok marg-t">
-    <div class="left-blok"><img src="assets/login img/signin.1ce15f785885ceb35825 (1).svg" alt="teamimg"></div>
-    <div class="right-blok">
-        <form class="right-form" [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
-            <h3>Sign In</h3>
-            <label for="inputEmail" class="right-data">Email</label>
-            <input id="inputEmail" formControlName="email" type="text">
-            <!-- <span *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">*Email Id is required</span> -->
+  <div class="left-blok">
+    <img
+      src="assets/login img/signin.1ce15f785885ceb35825 (1).svg"
+      alt="teamimg"
+    />
+  </div>
+  <div class="right-blok">
+    <form class="right-form" [formGroup]="loginForm" (ngSubmit)="onAddLogin()">
+      <h3>Sign In</h3>
+      <label for="inputEmail" class="right-data">Email</label>
+      <input id="inputEmail" formControlName="email" type="text" />
+      <span
+        *ngIf="
+          loginForm.controls['email'].dirty &&
+          loginForm.hasError('required', 'email')
+        "
+        >*Email Id is required</span
+      >
+      <div
+        *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="loginForm.errors?.['required']">Name is required.</div>
+        <div *ngIf="loginForm.errors?.['minlength']">
+          Name must be at least 4 characters long.
+        </div>
+        <div *ngIf="loginForm.errors?.['forbiddenName']">Name cannot be Bob.</div>
+      </div>
 
-            <label for="inputPass" class="right-data">Password</label>
-            <input id="inputPass" formControlName="password" type="password">
-            <!-- <span *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')">*Password  is required</span> -->
-            
-            <button class="right-sign" type="submit" [disabled]="!loginForm.valid">Sign In</button>
-        </form>
-        <p class="right-old-users">Forgot Password? <a>Get Reset Link</a></p>
-        <p class="right-old-users">New to Crypto Mining Tools? <a>SIgnup here</a></p>
-        <p class="right-p">OR login using</p>
-        <button class="right-telegram">
-            <a>
-                <img src="assets/iconNav/telegram.svg" alt="l">
-                <p>Log in with Telegram</p>
-            </a>
-        </button>
-    </div>
+      <label for="inputPass" class="right-data">Password</label>
+      <input id="inputPass" formControlName="password" type="password" />
+      <!-- <span *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')">*Password  is required</span> -->
+
+      <button class="right-sign" type="submit" [disabled]="!loginForm.valid">
+        Sign In
+      </button>
+    </form>
+    <p class="right-old-users">Forgot Password? <a>Get Reset Link</a></p>
+    <p class="right-old-users">
+      New to Crypto Mining Tools? <a>SIgnup here</a>
+    </p>
+    <p class="right-p">OR login using</p>
+    <button class="right-telegram">
+      <a>
+        <img src="assets/iconNav/telegram.svg" alt="l" />
+        <p>Log in with Telegram</p>
+      </a>
+    </button>
+  </div>
 </div>

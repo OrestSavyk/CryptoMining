@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Contact } from 'src/app/models/contactData';
+import { ContactService } from 'src/app/services/contact.service';
 
 
 @Component({
@@ -9,44 +12,35 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
   public contactForm: FormGroup;
+  contactValue: Contact[] = [];
 
-  constructor(private formBuilder: FormBuilder) { }
-
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder, private contactService: ContactService) { 
     this.initContactForm()
   }
-  onGetContactValue(contactForm: FormGroup): void {
-    console.log(contactForm.value);
+
+  ngOnInit(): void {
+    this.loadContactValue();
   }
-  initContactForm(): void {
+  onGetContactValue(contact: FormGroup): void {
+    console.log(contact.value);
+    contact.reset()
+  }
+  private initContactForm(): void {
     this.contactForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(4)]],
+      name: ['', (Validators.required, Validators.minLength(3))],
       company: [''],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.minLength(10)]],
-      country: ['', [Validators.required, Validators.maxLength(20)]],
-      socialChain: [''],
+      email: ['', (Validators.required, Validators.email)],
+      phone: ['', (Validators.required, Validators.minLength(9))],
+      country: ['', (Validators.required, Validators.minLength(3))],
+      socialChain: ['', (Validators.required)],
       message: ['']
     })
   }
-
-  // initContactForm(): void {
-  //   this.contactForm = this.fb.group({
-  //     name: ['', [Validators.required, Validators.minLength(4)]],
-  //     company: ['', [Validators.required, Validators.minLength(5)]],
-  //     email: ['', [Validators.required, Validators.email]],
-  //     phone: ['', [Validators.required, Validators.maxLength(10), Validators.maxLength(13)]],
-  //     country: ['', [Validators.required, Validators.minLength(4)]],
-  //     socialChain: ['', [Validators.required, Validators.minLength(7)]]
-  //   })
-  // }
-  // sendContactForm(): void {
-  //   console.log(this.contactForm.value);
-  //   const newFormData = {id: uuid.v4(), ...this.contactForm.value}
-  //   this.contactService.populateUserDataArray(newFormData).subscribe((value: LOG_DATA) => {
-  //     this.contactPage = [...this.contactPage, value]
-  //   })
-  //   this.contactForm.reset();
-  // }
-
+  private loadContactValue(): void {
+    this.contactService.getContactValue().subscribe((value) => {
+      this.contactValue = value;
+      console.log(value);
+      
+    })
+  }
 }

@@ -138,7 +138,7 @@
 }
 @media (min-width: 1024px) {
     .header {
-        margin: 60px 15%;
+        margin: 0px 15%;
     }
     .main {
         display: grid;

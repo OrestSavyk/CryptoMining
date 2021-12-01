@@ -112,7 +112,6 @@
     .top-blok {
         display: grid;
         grid-template-columns: auto 430px;
-        padding: 0px;
     }
     .left-blok {
         display: block;

@@ -1,15 +1,25 @@
 export interface Cart {
-    id: number,
+    id: string,
     image?: string,
-    manufacturer: string,
-    model: string,
+    headname: string,
+    name: string,
     hash: number,
     power: number,
-    price: string,
+    price: number,
     availability: string,
     date: string,
     algorithm: string,
     size: string,
     weight: string
+}
+export interface BasketCart {
+    id: string,
+    position?: number,
+    image?: string,
+    headname: string,
+    name: string,
+    amount: number,
+    price: number,
+    amountPrice: number
 
 }

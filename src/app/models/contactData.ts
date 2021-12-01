@@ -1,8 +1,9 @@
-export interface CONTACT_DATA {
+export interface Contact {
     name: string,
     company: string,
     email: string,
     phone: string,
     country: string,
-    socialChain: string    
+    socialChain: string,
+    message: string    
 }

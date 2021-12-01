@@ -1,36 +1,57 @@
 <div class="header">
-    <div class="header-top">
-        <div class="hamburger-menu">
-            <input id="menu-toggle" type="checkbox" />
-            <label class="menu-btn" for="menu-toggle">
-                <span></span>
-            </label>
-            <ul class="menu-box">
-                <li *ngFor="let nav of navButton">
-                    <a class="menu-item" [routerLink]="nav.link" routerLinkActive="active">
-                        <div class="menu-item-link">
-                            <img [src]="nav.icon" alt="i">
-                            <p>{{nav.name}}</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="header-logo" routerLink=''><img src="assets/title img/logo.png" alt="l"></div>
-        <nav class="header-nav">              
+  <div class="header-top">
+    <div class="hamburger-menu">
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-btn" for="menu-toggle">
+        <span></span>
+      </label>
+      <ul class="menu-box">
+        <li *ngFor="let nav of navButton">
+          <a
+            class="menu-item"
+            [routerLink]="nav.link"
+            routerLinkActive="active"
+          >
+            <div class="menu-item-link">
+              <img [src]="nav.icon" alt="i" />
+              <p>{{ nav.name }}</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="header-logo" routerLink="">
+      <img src="assets/title img/logo.png" alt="l" />
+    </div>
+    <!-- <nav class="header-nav">              
             <div class="header-nav-top" *ngFor="let nav of navButton">
-                <a [routerLink]="nav.link">
+                <a [routerLink]="nav.link" routerLinkActive="active">
                     <div>
                         <img [src]="nav.icon" alt="i">
-                        <p>{{nav.name}}</p>
+                        <p>{{ nav.active? nav.name : nav.name}}</p>
                     </div>    
                 </a>
             </div>
-        </nav>
-        <div class="header-btn-contact">
-            <!-- <button class="header-btn-admin">Admin</button> -->
-            <button class="header-btn-contact-basket" routerLink="/shop/cart"><img src="assets/title img/shopping-cart.png"></button>
-            <button class="header-btn-contact-top" routerLink="/contact">Contact Us</button>
+        </nav> -->
+    <nav class="header-nav">
+      <div class="header-nav-top" *ngFor="let nav of navButton">
+        <div>
+          <a [routerLink]="nav.link" routerLinkActive="active">{{
+            nav.active ? nav.name : nav.name
+          }}</a>
         </div>
+      </div>
+    </nav>
+    <div class="header-btn-contact">
+      <button class="header-btn-admin" routerLink="/admin">
+        <img src="assets/iconNav/admin.png" />
+      </button>
+      <button class="header-btn-contact-basket" routerLink="/basket">
+        <img src="assets/title img/shopping-cart.png" />
+      </button>
+      <button class="header-btn-contact-top" routerLink="/contact">
+        Contact Us
+      </button>
     </div>
+  </div>
 </div>

@@ -3,6 +3,7 @@
   width: 80%;
   height: 200px;
 }
+
 .model {
   color: rgb(44, 44, 44);
   font-family: monospace;
@@ -10,9 +11,11 @@
   height: 10%;
   margin: 5% auto;
 }
+
 .btn-info {
   height: 10%;
 }
+
 .btn-info button {
   height: 34px;
   border-radius: 17px;
@@ -21,6 +24,7 @@
   background-color: whitesmoke;
   margin: auto 5px;
 }
+
 .price {
   height: 15%;
   padding: 1% auto;
@@ -29,6 +33,7 @@
   font-size: 22px;
   font-weight: 600;
 }
+
 .btn-buy {
   height: 40px;
   width: 110px;
@@ -42,31 +47,33 @@
   font-weight: 600;
   cursor: pointer;
 }
+
 .btn-buy:hover {
   transition: 1.1s;
   background-color: rgb(241, 245, 245);
   color: rgb(31, 29, 29);
 }
-@media (min-width: 765px) {
-  .price {
-    margin-right: 30px;
-  }
+
+::ng-deep .mat-dialog-content {
+  margin: auto;
+  padding: 0;
+  max-height: 100%;
+  overflow-y: hidden;
 }
+
 #modalWin {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 1;
 }
-#modalCls {
-  display: none;
-}
-.modal-window {
+
+::ng-deep .modal-window {
   position: relative;
   z-index: 2;
   width: 86%;
@@ -82,6 +89,7 @@
     Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
 }
+
 .btn-close-modal {
   position: absolute;
   right: 10px;
@@ -90,30 +98,46 @@
   opacity: 0.7;
   display: block;
 }
+
+/* .modal-window ::ng-deep .btn-close-modal {
+    position: absolute;
+    max-width: 10px;
+    max-height: 10px;
+    padding: 0px;
+    right: 10px;
+    top: 10px;
+    border: none;
+    opacity: 0.7;
+    display: block;
+  } */
 .bth-close-modal:hover {
   opacity: 1;
 }
-#modalWin .overlay {
+
+#modalWin, .overlay {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(48, 44, 44, 0.185);
-  opacity: 0.7;
+  /* opacity: 0.7; */
   z-index: 0;
 }
+
 .modal-model {
   font-size: 20px;
 }
+
 .modal-character {
   width: 100%;
 }
+
 .modal-character img {
   width: 100%;
-  /* max-width: 300px; */
   margin: 5% auto;
 }
+
 .modal-character-top {
   width: 96%;
   display: grid;
@@ -127,18 +151,27 @@
   background: rgba(229, 245, 254, 0.55);
   font-size: 14px;
 }
+
+.modal-character-top>div {
+  margin: auto 10px;
+
+}
+
 .column-name {
   font-weight: 500;
-  background: rgba(229, 245, 254, 0.616);
+  /* background: rgba(229, 245, 254, 0.616); */
 }
+
 .modal-price {
   margin: 50px auto 20px;
 }
+
 .modal-availability {
   font-weight: 500;
   display: flex;
   justify-content: center;
 }
+
 .dot {
   width: 18px;
   height: 18px;
@@ -147,6 +180,7 @@
   background: red;
   margin-left: 8px;
 }
+
 .title-top {
   width: 225px;
   height: 30px;
@@ -158,6 +192,7 @@
   padding-top: 15px;
   padding-bottom: 10px;
 }
+
 .options-avail {
   height: fit-content;
   background-color: rgba(229, 245, 254, 0.616);
@@ -165,6 +200,7 @@
   margin: auto;
   margin-bottom: 30px;
 }
+
 .sort-top {
   font-size: 14px;
   border-radius: 12px;
@@ -175,10 +211,12 @@
   margin-left: 25px;
   box-shadow: 2px 2px 4px rgba(131, 128, 128, 0.671);
 }
+
 .sort-btn {
   display: flex;
   margin: 10px auto;
 }
+
 .sort-btn button {
   border-radius: 10px;
   height: 20px;
@@ -188,86 +226,103 @@
   box-shadow: 2px 2px 4px rgba(131, 128, 128, 0.671);
   margin: auto 5px;
 }
+
 .sort-btn button:hover {
   background-color: rgb(19, 230, 19);
   transition: 0.5s;
   color: white;
 }
+
 .info-avail {
   background-color: white;
   margin: 15px auto;
   border-radius: 10px;
   padding: 20px 15px;
 }
+
 .info-avail ul {
   color: red;
   list-style: circle;
 }
+
 .info-avail li {
   margin: 15px auto;
   text-align: start;
 }
+
 .info-payment {
   background-color: white;
   margin: 15px auto;
   border-radius: 10px;
   padding: 20px 15px;
 }
+
 .info-payment ul {
   text-align: start;
   list-style: circle;
 }
+
 .info-payment li {
   margin: 15px auto;
   text-align: start;
 }
+
 .btn-add-basket {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: rgba(121, 235, 250, 0.925);
-    box-shadow: 1px 5px 8px rgba(121, 126, 125, 0.781);
-    position: fixed;
-    display: flex;
-    right: 11%;
-    bottom: 12%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(121, 235, 250, 0.925);
+  box-shadow: 1px 5px 8px rgba(121, 126, 125, 0.781);
+  position: fixed;
+  display: flex;
+  right: 11%;
+  bottom: 12%;
 }
+
 .btn-add-basket:hover {
-    transition: 0.6s;
-    box-shadow: 4px 8px 14px rgba(89, 90, 90, 0.712);
-    background-color: rgb(143 242 255);
+  transition: 0.6s;
+  box-shadow: 4px 8px 14px rgba(89, 90, 90, 0.712);
+  background-color: rgb(143 242 255);
 
 }
+
 .btn-add-basket img {
-    width: 20px;
-    height: 20px;
-    margin: auto;
+  width: 20px;
+  height: 20px;
+  margin: auto;
 }
+
 @media (min-width: 765px) {
   .modal-window {
     width: 76%;
     height: 70%;
   }
+
   .modal-model {
     font-size: 30px;
   }
+
   .btn-close-modal {
     top: 20px;
     right: 20px;
   }
+
   .modal-character img {
     width: 50%;
   }
-  .modal-character-top {
-  }
+
+  .modal-character-top {}
+
   .modal-price {
     display: flex;
     align-items: center;
   }
+
   .price {
     margin-right: 30px;
   }
 }
+
 @media (min-width: 980px) {
   .modal-character {
     display: flex;
