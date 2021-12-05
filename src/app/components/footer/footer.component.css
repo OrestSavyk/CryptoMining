@@ -1,18 +1,20 @@
-
 .footer {
     min-height: 110px;
     width: 100%;
     display: block;
     border-top: 1px solid rgba(177, 176, 176, 0.774);
 }
+
 .left-footer {
     margin-left: 10px;
 
 }
+
 .left-footer img {
     height: 75px;
 
 }
+
 .left-footer p {
     margin: 5px;
     font-weight: 300;
@@ -20,40 +22,53 @@
     font-size: 18px;
 
 }
+
 .footer-center {
     margin: 10px;
 }
+
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group-appearance-standard {
+    border: none;
+}
+
 .footer-nav-top {
-    height: 50%;
+    /* height: 50%; */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding-top: 10px;
+    /* padding-top: 10px; */
+}
+.mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
+    border-left: none;
 }
 
 .footer-navs {
     padding: 5px 8px;
-    
 }
+
 .footer-navs a {
     text-decoration: none;
     color: rgb(22, 110, 145);
     font-size: 18px;
-    
+
 }
+
 .footer-navs a:hover {
     transition: 0.9s;
     color: rgba(100, 100, 100, 0.801);
 }
+
 .right-footer {
     width: 17%;
     display: flex;
     align-items: center;
 }
+
 .right-footer-top {
     display: flex;
     margin-left: 15px;
 }
+
 .icon-footer {
     height: 25px;
     width: 25px;
@@ -61,10 +76,11 @@
     border-radius: 50%;
     margin: 5px;
 }
+
 .icon-footer img {
     width: 100%;
     mix-blend-mode: overlay;
-    
+
 }
 
 .questions {
@@ -74,29 +90,35 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 0px ;
+    border: 0px;
 }
+
 .questions img {
     width: 100%;
     border-radius: 50%;
     border: 0.5px solid gray;
-    
+
 }
+
 @media (min-width: 1024px) {
     .footer {
         display: flex;
         /* grid-template-columns: repeat(3, auto); */
     }
+
     .left-footer p {
         font-size: 16px;
     }
+
     .footer-center {
         padding-top: 15px;
     }
+
     .footer-nav-top {
         justify-content: center;
         font-size: 16px;
     }
+
     .right-footer {
         min-width: 200px;
         margin-right: 20px;

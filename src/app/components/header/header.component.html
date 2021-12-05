@@ -5,19 +5,18 @@
       <label class="menu-btn" for="menu-toggle">
         <span></span>
       </label>
-      <ul class="menu-box">
-        <li *ngFor="let nav of navButton">
-          <a
-            class="menu-item"
+      <ul class="menu-box" (click)="closeMenu($event)">
+        <mat-button-toggle-group
+          name="favoriteColor"
+          aria-label="Favorite Color"
+        >
+          <mat-button-toggle
+            class="menu-item-link"
+            *ngFor="let nav of navButton"
             [routerLink]="nav.link"
-            routerLinkActive="active"
+            ><img [src]="nav.icon" /> {{ nav.name }}</mat-button-toggle
           >
-            <div class="menu-item-link">
-              <img [src]="nav.icon" alt="i" />
-              <p>{{ nav.name }}</p>
-            </div>
-          </a>
-        </li>
+        </mat-button-toggle-group>
       </ul>
     </div>
     <div class="header-logo" routerLink="">
@@ -43,13 +42,17 @@
       </div>
     </nav>
     <div class="header-btn-contact">
-      <button class="header-btn-admin" routerLink="/admin">
+      <!-- <button mat-mini-fab class="header-btn-admin" routerLink="/admin">
         <img src="assets/iconNav/admin.png" />
-      </button>
-      <button class="header-btn-contact-basket" routerLink="/basket">
+      </button> -->
+      <button
+        mat-mini-fab
+        class="header-btn-contact-basket"
+        routerLink="/basket"
+      >
         <img src="assets/title img/shopping-cart.png" />
       </button>
-      <button class="header-btn-contact-top" routerLink="/contact">
+      <button mat-button class="header-btn-contact-top" routerLink="/contact">
         Contact Us
       </button>
     </div>

@@ -3,12 +3,15 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
+  FormGroupDirective,
+  NgForm,
   Validators,
 } from "@angular/forms";
 import * as uuid from 'uuid'
 import { Observable } from "rxjs";
 import { Login } from "src/app/models/loginData";
 import { LoginService } from "src/app/services/login.service";
+import { ErrorStateMatcher } from "@angular/material/core";
 
 @Component({
   selector: "app-login",
@@ -16,6 +19,9 @@ import { LoginService } from "src/app/services/login.service";
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
+
+  matcher = new ErrorStateMatcher();
+
   LoginArray: Login[] = [];
   public loginForm: FormGroup;
   adminIn: boolean;

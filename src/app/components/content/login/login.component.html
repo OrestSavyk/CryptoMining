@@ -8,31 +8,55 @@
   <div class="right-blok">
     <form class="right-form" [formGroup]="loginForm" (ngSubmit)="onAddLogin()">
       <h3>Sign In</h3>
-      <label for="inputEmail" class="right-data">Email</label>
-      <input id="inputEmail" formControlName="email" type="text" />
-      <span
-        *ngIf="
-          loginForm.controls['email'].dirty &&
-          loginForm.hasError('required', 'email')
-        "
-        >*Email Id is required</span
-      >
-      <div
-        *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched)"
-        class="alert alert-danger"
-      >
-        <div *ngIf="loginForm.errors?.['required']">Name is required.</div>
-        <div *ngIf="loginForm.errors?.['minlength']">
-          Name must be at least 4 characters long.
-        </div>
-        <div *ngIf="loginForm.errors?.['forbiddenName']">Name cannot be Bob.</div>
-      </div>
+      <mat-form-field>
+        <label for="inputEmail" class="right-data">Email</label>
+        <input
+          matInput
+          id="inputEmail"
+          formControlName="email"
+          type="email"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error
+          *ngIf="loginForm.hasError('email') && !loginForm.hasError('required')"
+        >
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="loginForm.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <label for="inputPass" class="right-data">Password</label>
+        <input
+          matInput
+          id="inputPass"
+          formControlName="password"
+          type="password"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error
+          *ngIf="
+            loginForm.hasError('password') && !loginForm.hasError('required')
+          "
+        >
+          Please enter a valid password
+        </mat-error>
+        <mat-error *ngIf="loginForm.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <!-- <label for="inputPass" class="right-data">Password</label>
+        <input id="inputPass" formControlName="password" type="password" /> -->
 
-      <label for="inputPass" class="right-data">Password</label>
-      <input id="inputPass" formControlName="password" type="password" />
-      <!-- <span *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')">*Password  is required</span> -->
-
-      <button class="right-sign" type="submit" [disabled]="!loginForm.valid">
+      <button
+        mat-raised-button
+        class="right-sign"
+        type="submit"
+        [disabled]="!loginForm.valid"
+      >
         Sign In
       </button>
     </form>

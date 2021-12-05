@@ -20,6 +20,8 @@ import * as uuid from "uuid";
 export class AdminComponent implements OnInit {
   public cartForm: FormGroup;
   buttonEdit: boolean;
+  minDate: Date;
+  maxDate: Date;
   selectedItem: any;
   displayedColumns: string[] = [
     "id",
@@ -45,6 +47,9 @@ export class AdminComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.devCartForm();
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(currentYear - 15, 0, 1);
+    this.maxDate = new Date(currentYear + 1, 0, 0) 
   }
   @ViewChild(MatSort) sort: MatSort;
 
@@ -85,12 +90,14 @@ export class AdminComponent implements OnInit {
       this.cardItem = [...this.cardItem, tool];
     });
     this.cartForm.reset();
+    this.loadCards();
   }
   onSaveEdit(): void {
     this.cartService
       .editTool(this.selectedItem.id, this.cartForm.value)
       .subscribe((newEditedCart: Cart) => {});
     this.cartForm.reset();
+    this.loadCards();
   }
 
   editCurrentCart(item): void {

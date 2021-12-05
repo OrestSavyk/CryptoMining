@@ -56,20 +56,29 @@
         <div class="top-radio">
           <label class="right-input-data-radio">I'm thinking about</label>
           <div class="input-setradio">
-            <mat-radio-group class="input-setradio" aria-label="Select an option">
-              <mat-radio-button class="input-radio" labelPosition="after" value="Buying"
+            <mat-radio-group
+              class="input-setradio"
+              aria-label="Select an option"
+            >
+              <mat-radio-button
+                class="input-radio"
+                labelPosition="after"
+                value="Buying"
                 >Buying</mat-radio-button
               >
-              <mat-radio-button class="input-radio" labelPosition="after" value="Selling"
+              <mat-radio-button
+                class="input-radio"
+                labelPosition="after"
+                value="Selling"
                 >Selling</mat-radio-button
               >
-              <mat-radio-button class="input-radio" labelPosition="after" value="Other"
+              <mat-radio-button
+                class="input-radio"
+                labelPosition="after"
+                value="Other"
                 >Other</mat-radio-button
               >
             </mat-radio-group>
-            <!-- <label><input class="input-radio" type="radio" name="radio" value="Buying">Buying</label>
-                        <label><input class="input-radio" type="radio" name="radio" value="Selling">Selling</label>
-                        <label><input class="input-radio" type="radio" name="radio" value="Other">Other</label> -->
           </div>
         </div>
         <label for="inputMessage" class="right-input-data"
@@ -81,7 +90,7 @@
             maxlength="500"
           ></textarea>
         </label>
-        <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+        <button mat-raised-button type="submit" [disabled]="!contactForm.valid">Submit</button>
         <p class="under-bnt-link">
           This site is protected by reCAPTCHA and the Google
           <a href="#">Privacy Policy</a> and

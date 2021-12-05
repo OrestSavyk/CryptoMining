@@ -7,15 +7,8 @@ import { Cart } from 'src/app/models/CartTool';
   styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
-  @Output()
-  dataModal: Cart;
-  // @Input()
-  // cardItem: any;
+ 
   constructor() {}
 
   ngOnInit(): void {}
-  getModal(data: any): void {
-    console.log(data);
-    this.dataModal = data;
-  }
 }

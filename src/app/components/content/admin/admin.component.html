@@ -1,12 +1,20 @@
 <div class="header marg-t">
   <div class="header-inner">
     <div style="display: flex">
-      <button class="btn-choose-cart-action" (click)="buttonEdit = true">
-        Edit Cart
-      </button>
-      <button class="btn-choose-cart-action" (click)="buttonEdit = false">
-        New Cart
-      </button>
+      <mat-button-toggle-group name="favoriteColor"
+        ><mat-button-toggle
+          class="btn-choose-cart-action"
+          (click)="buttonEdit = true"
+        >
+          Edit Cart
+        </mat-button-toggle>
+        <mat-button-toggle
+          class="btn-choose-cart-action"
+          (click)="buttonEdit = false"
+        >
+          New Cart
+        </mat-button-toggle></mat-button-toggle-group
+      >
     </div>
     <div class="top-form">
       <form
@@ -15,7 +23,108 @@
         [formGroup]="cartForm"
         (ngSubmit)="buttonEdit ? onSaveEdit() : onAddCartTool()"
       >
-        <label for="headname">Manufacturer</label>
+        <mat-form-field appearance="outline">
+          <mat-label>Manufacturer</mat-label>
+          <input
+            matInput
+            formControlName="headname"
+            placeholder="Placeholder"
+          />
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="Placeholder" />
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Imagine</mat-label>
+          <input matInput formControlName="image" placeholder="Placeholder" />
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Hash</mat-label>
+          <input
+            matInput
+            formControlName="hash"
+            type="number"
+            placeholder="TH"
+          />
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Power</mat-label>
+          <input
+            matInput
+            formControlName="power"
+            type="number"
+            placeholder="Watt"
+          />
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Algorithm</mat-label>
+          <input
+            matInput
+            formControlName="algorithm"
+            placeholder="Placeholder"
+          />
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Size</mat-label>
+          <input matInput formControlName="size" placeholder="Placeholder" />
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Weight</mat-label>
+          <input matInput formControlName="weight" placeholder="Placeholder" />
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Price</mat-label>
+          <input
+            matInput
+            formControlName="price"
+            type="number"
+            placeholder="$"
+          />
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Availability</mat-label>
+          <input
+            matInput
+            formControlName="availability"
+            type="text"
+            placeholder="Placeholder"
+          />
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input
+            matInput
+            [min]="minDate"
+            [max]="maxDate"
+            [matDatepicker]="picker"
+            type="text"
+            formControlName="date"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <!-- <label for="headname">Manufacturer</label>
         <input id="headname" type="text" formControlName="headname" />
         <label for="name">Name</label>
         <input id="name" type="text" formControlName="name" />
@@ -24,9 +133,7 @@
         <label for="hash">Hash</label>
         <input id="hash" type="number" formControlName="hash" />
         <label for="power">Power</label>
-        <input id="power" type="number" formControlName="power" />
-        <label for="date">Date</label>
-        <input id="date" type="date" formControlName="date" />
+        <input id="power" type="number" formControlName="power" /> 
         <label for="algorithm">Algorithm</label>
         <input id="algorithm" type="text" formControlName="algorithm" />
         <label for="size">Size</label>
@@ -41,15 +148,42 @@
           type="text"
           list="available"
           formControlName="availability"
-        />
+        /> -->
+        <!-- <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label></mat-label>
+          <input
+            type="text"
+            matInput
+            [formControl]="myControl"
+            [matAutocomplete]="auto"
+          />
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option
+              *ngFor="let option of filteredOptions | async"
+              [value]="option"
+            >
+              {{ option.name }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field> -->
         <datalist id="available">
           <option value="In stock"></option>
           <option value="Sold out"></option>
         </datalist>
-        <button type="submit" class="btn-cart-add" *ngIf="buttonEdit">
+        <button
+          mat-raised-button
+          type="submit"
+          class="btn-cart-add"
+          *ngIf="buttonEdit"
+        >
           Save edit
         </button>
-        <button type="submit" class="btn-cart-add" *ngIf="!buttonEdit">
+        <button
+          mat-raised-button
+          type="submit"
+          class="btn-cart-add"
+          *ngIf="!buttonEdit"
+        >
           Add
         </button>
       </form>
@@ -80,163 +214,165 @@
       </div>
     </div>
   </div> -->
-    <table
-      mat-table
-      [dataSource]="cardItem"
-      class="mat-elevation-z8"
-      matSort
-      (matSortChange)="onTableSortChange($event)"
-    >
-      <ng-container matColumnDef="id">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by id"
-        >
-          Id
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-      </ng-container>
+    <div class="wrapper-table">
+      <table
+        mat-table
+        [dataSource]="cardItem"
+        class="mat-elevation-z8"
+        matSort
+        (matSortChange)="onTableSortChange($event)"
+      >
+        <ng-container matColumnDef="id">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by id"
+          >
+            Id
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="headname">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by headname"
-        >
-          Manufacturer
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.headname }}</td>
-      </ng-container>
+        <ng-container matColumnDef="headname">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by headname"
+          >
+            Manufacturer
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.headname }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="name">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by name"
-        >
-          Name
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-      </ng-container>
+        <ng-container matColumnDef="name">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by name"
+          >
+            Name
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="hash">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by hash"
-        >
-          Hash
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.hash }}</td>
-      </ng-container>
+        <ng-container matColumnDef="hash">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by hash"
+          >
+            Hash
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.hash }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="power">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by power"
-        >
-          Power
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.power }}</td>
-      </ng-container>
+        <ng-container matColumnDef="power">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by power"
+          >
+            Power
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.power }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="date">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by date"
-        >
-          Date
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.date }}</td>
-      </ng-container>
+        <ng-container matColumnDef="date">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by date"
+          >
+            Date
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="algorithm">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by algorithm"
-        >
-          Algorithm
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.algorithm }}</td>
-      </ng-container>
+        <ng-container matColumnDef="algorithm">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by algorithm"
+          >
+            Algorithm
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.algorithm }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="size">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by size"
-        >
-          Size
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.size }}</td>
-      </ng-container>
+        <ng-container matColumnDef="size">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by size"
+          >
+            Size
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.size }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="weight">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by weight"
-        >
-          Weight
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
-      </ng-container>
+        <ng-container matColumnDef="weight">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by weight"
+          >
+            Weight
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="price">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by price"
-        >
-          Price
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.price }}</td>
-      </ng-container>
+        <ng-container matColumnDef="price">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by price"
+          >
+            Price
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.price }}</td>
+        </ng-container>
 
-      <ng-container matColumnDef="availability">
-        <th
-          mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header
-          sortActionDescription="Sort by availability"
-        >
-          Availability
-        </th>
-        <td mat-cell *matCellDef="let element">{{ element.availability }}</td>
-      </ng-container>
-      <ng-container matColumnDef="edit">
-        <th mat-header-cell *matHeaderCellDef>edit</th>
-        <td mat-cell *matCellDef="let element">
-          <button class="btn-table-edit" (click)="editCurrentCart(element)">
-            edit
-          </button>
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="delete">
-        <th mat-header-cell *matHeaderCellDef>delete</th>
-        <td mat-cell *matCellDef="let element">
-          <button class="btn-table-delete" (click)="onDeleteCard(element.id)">
-            x
-          </button>
-        </td>
-      </ng-container>
+        <ng-container matColumnDef="availability">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            sortActionDescription="Sort by availability"
+          >
+            Availability
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.availability }}</td>
+        </ng-container>
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef>edit</th>
+          <td mat-cell *matCellDef="let element">
+            <button class="btn-table-edit" (click)="editCurrentCart(element)">
+              edit
+            </button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef>delete</th>
+          <td mat-cell *matCellDef="let element">
+            <button class="btn-table-delete" (click)="onDeleteCard(element.id)">
+              x
+            </button>
+          </td>
+        </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
   </div>
 </div>

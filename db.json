@@ -1,36 +1,8 @@
 {
   "minerTools": [
     {
-      "headname": "NICKIE",
-      "name": "PB89",
-      "image": "assets/card/card4.png",
-      "hash": 3898903,
-      "power": 2201,
-      "date": null,
-      "algorithm": null,
-      "size": "150 x 225 x 390mm",
-      "weight": "10500g",
-      "price": "1,233",
-      "availability": "In stock",
-      "id": "215eb0d4-d484-4d32-9e31-12e8086290f5"
-    },
-    {
-      "headname": "Sunnny",
-      "name": "PL008",
-      "image": "assets/card/card2.png",
-      "hash": 24,
-      "power": 244,
-      "date": "2021-11-26",
-      "algorithm": "m2l",
-      "size": "16-dnkld72=-3",
-      "weight": "1790g",
-      "price": "1,389",
-      "availability": "Sold Out",
-      "id": "c25d74bd-a4fa-4633-a4e8-d2408e9269d4"
-    },
-    {
       "headname": "LDMKMC",
-      "name": "KDK",
+      "name": "ooooo",
       "image": "assets/card/card2.png",
       "hash": 256,
       "power": 1976,
@@ -38,23 +10,9 @@
       "algorithm": "SHA-256",
       "size": "27x27",
       "weight": "10500g",
-      "price": "2,199",
+      "price": "2199",
       "availability": "In stock",
       "id": "ddc8937a-17d4-425f-a446-9a295b2c532a"
-    },
-    {
-      "headname": "KimMik",
-      "name": "HR008",
-      "image": "assets/card/card2.png",
-      "hash": 1,
-      "power": 19999,
-      "date": "",
-      "algorithm": "SHA-256",
-      "size": "150 x 225 x 390mm",
-      "weight": "k28928",
-      "price": "2,999",
-      "availability": "Sold out",
-      "id": "6bee3152-ef68-4fd2-b41a-f178497de27f"
     },
     {
       "headname": "Toshib",
@@ -62,11 +20,11 @@
       "image": "assets/card/card2.png",
       "hash": 176,
       "power": 2917,
-      "date": "2021-12-01",
+      "date": "2021-11-09T22:00:00.000Z",
       "algorithm": "SHA-256",
       "size": "27x27",
       "weight": "10500g",
-      "price": "1,880 ",
+      "price": "1880 ",
       "availability": "Sold out",
       "id": "15a6a7b4-b460-4cc4-b991-b544e502b653"
     },
@@ -80,7 +38,7 @@
       "algorithm": "SHA-256",
       "size": "150 x 225 x 390mm",
       "weight": "1790g",
-      "price": "1,988 ~ 2,699",
+      "price": "1988",
       "availability": "no",
       "id": "a641b9fd-3a7a-454b-9438-fc9fddc40f14"
     },
@@ -94,23 +52,37 @@
       "algorithm": "SHA-256",
       "size": "27x27",
       "weight": "10500g",
-      "price": "2,990",
+      "price": "2990",
       "availability": "In stock",
       "id": "2111d028-0df2-4bf0-a0cc-bd33d073b9ce"
     },
     {
-      "headname": "minecraft",
-      "name": "LT72",
-      "image": "assets/card/card2.png",
-      "hash": 1763,
-      "power": 1827,
+      "headname": null,
+      "name": null,
+      "image": null,
+      "hash": null,
+      "power": null,
       "date": null,
-      "algorithm": "SHA-256",
-      "size": "150 x 225 x 390mm",
-      "weight": "1790g",
-      "price": "1,650",
-      "availability": "In stock",
+      "algorithm": null,
+      "size": null,
+      "weight": null,
+      "price": null,
+      "availability": null,
       "id": "336f93ce-2ba9-46f4-811e-f16723b870dc"
+    },
+    {
+      "headname": "GBOSCH",
+      "name": "MQ12",
+      "image": "assets/card/card2.png",
+      "hash": 118,
+      "power": 2317,
+      "date": "2021-11-30T22:00:00.000Z",
+      "algorithm": "Mine",
+      "size": "150 x 225 x 390mm",
+      "weight": "10500g",
+      "price": "1076",
+      "availability": "In stock",
+      "id": "52d8f0bd-418c-429f-a3d6-5db7766ab75c"
     }
   ],
   "userLogin": [
@@ -133,6 +105,86 @@
       "id": "df676b60-293c-47e3-9c5a-48fab17c29a6",
       "email": "admin@gmail.com",
       "password": "kjlknjlkn"
+    },
+    {
+      "id": "82b588f0-9bf8-4445-8bee-6a9d9c342c4e",
+      "email": "admin@gmail.com",
+      "password": "onjojknjklnjkl"
+    },
+    {
+      "id": "8a7abe25-4c28-4890-a8a3-641b88afe27b",
+      "email": "otup@gmail.com",
+      "password": "klqnfklfklklq"
+    },
+    {
+      "id": "cf8d5d16-c2fd-491d-b901-213f0558e80b",
+      "email": "admin@gmail.com",
+      "password": "oinfekefne"
+    },
+    {
+      "id": "66afd4a7-b6c4-46fa-b898-341e6ea083ba",
+      "email": "admin@gmail.com",
+      "password": "kjejkkejwkj"
+    },
+    {
+      "id": "a238a663-709e-46ef-b89d-5b7b1e984ec6",
+      "email": "otup@gmail.com",
+      "password": "18929dbHVGSD2881"
+    },
+    {
+      "id": "69c04639-29b9-46b7-b169-4ff46b352202",
+      "email": "otup@gmail.com",
+      "password": "klqwfnkkef"
+    },
+    {
+      "id": "811fb364-6b29-4112-874f-78559baf0ed8",
+      "email": "admin@gmail.com",
+      "password": "klwelkeklkeke"
+    },
+    {
+      "id": "dee5296a-87db-4402-ac10-00578d4d817c",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "f58627db-045f-46df-9579-f015a73121b8",
+      "email": null,
+      "password": null
+    },
+    {
+      "id": "948ff87e-1e95-48ac-9abe-1dfc2cf1088e",
+      "email": "admin@gmail.com",
+      "password": null
+    },
+    {
+      "id": "ad34ad4a-60ea-4c12-9659-61ced57041ac",
+      "email": null,
+      "password": null
+    },
+    {
+      "id": "c2de3374-4049-474f-a557-ceea29188648",
+      "email": null,
+      "password": "mmmm,"
+    },
+    {
+      "id": "baff342a-69e9-4cc9-af47-29029b6d0a61",
+      "email": "otup@gmail.com",
+      "password": "qwkl;lqqw"
+    },
+    {
+      "id": "0a4cb8d6-569d-423e-903f-7845fc5abaa9",
+      "email": "admin@gmail.com",
+      "password": "hjhjhjqwhj"
+    },
+    {
+      "id": "d2c25ead-9c41-43af-ae19-f3462b98d101",
+      "email": "otup@gmail.com",
+      "password": "klnwqklq"
+    },
+    {
+      "id": "92aa960d-e19a-486a-8664-607549e5e91c",
+      "email": "admin@gmail.com",
+      "password": "kjkjkjkllk;"
     }
   ]
 }

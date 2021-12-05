@@ -6,7 +6,7 @@ import { ModalService } from "src/app/services/modal.service";
 import { FILTER_ITEM, SORT_ITEM } from "./cart.constant";
 import { MatDialog } from "@angular/material/dialog";
 import { BasketService } from "src/app/services/basket.service";
-import { ModalBehaviorComponent } from "..//modal-behavior/modal-behavior.component";
+import { ModalBehaviorComponent } from "../modal-behavior/modal-behavior.component";
 
 @Component({
   selector: "app-cart",
@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService, public modal: MatDialog, private modalHelperService: ModalService, public basketService: BasketService) {}
 
   ngOnInit(): void {
-    this.loadSelectedItem();
+    // this.loadSelectedItem();
     this.loadCards();
   }
   
@@ -44,21 +44,27 @@ export class CartComponent implements OnInit {
       return -1;
     });
   }
+  onResetFilter(): void {
+    this.loadCards();
+  }
   onEnterSearchTool(event) {
     console.log(event.target.value);
     event.target.value = "";
   }
   onOpenModal(item: Cart): void {
     this.modalHelperService.selectedItem$.next(item)
-    const dialogRef = this.modal.open(ModalBehaviorComponent)
-    dialogRef.afterClosed().subscribe((result)=> {
+    let dialogRef = this.modal.open(ModalBehaviorComponent)
+    dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     })
   }
 
-  private loadSelectedItem(): void {    
-    this.item = this.modalHelperService.selectedItem$.getValue();
-  }
+  // private loadSelectedItem(): void {    
+  //   this.item = this.modalHelperService.selectedItem$.getValue();
+  //   console.log(this.item);
+    
+  // }
+
   addToBasket(item: Cart): void {
     const selectedItem = {
     id: item.id,
@@ -69,18 +75,14 @@ export class CartComponent implements OnInit {
     price: item.price,
     amountPrice: 0,
     };
-    const toolAlreadyExist = this.basketItem.find(item => item.id === selectedItem.id);
-    // console.log('toolAlreadyExist', toolAlreadyExist);
-    
+    const toolAlreadyExist = this.basketItem.find(item => item.id === selectedItem.id);    
     if (toolAlreadyExist) {
       toolAlreadyExist.amount++;
     } else {
       this.basketItem = [...this.basketItem, selectedItem];
-      // console.log('basketArray', this.basketItem);
     }
     localStorage.setItem('basketItems', JSON.stringify(this.basketItem));
     this.basketService.basketItemsLength$.next(this.basketItem.length);
-    
   }
 
 }
