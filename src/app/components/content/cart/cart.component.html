@@ -7,8 +7,8 @@
         <mat-option
           *ngFor="let filterItem of filterItems"
           [value]="filterItem.value"
-          >{{ filterItem.title }}</mat-option
-        >
+          >{{ filterItem.title }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="fill" class="sort-item">
@@ -22,62 +22,6 @@
       </mat-select>
     </mat-form-field>
     <button mat-raised-button (click)="onResetFilter()">Reset</button>
-    <!-- <form action="">
-      <input
-        class="btn-style location"
-        list="region"
-        type="text"
-        value=""
-        placeholder="Region"
-      />
-      <datalist id="region">
-        <option value="The Americas"></option>
-        <option value="China/ Hong Kong"></option>
-        <option value="Europe/ Asia/ Africa"></option>
-      </datalist>
-      <input
-        class="btn-style btn-click-down hashrate"
-        type="button"
-        value="Hashrate (TH)"
-        (click)="onSortItemHash()"
-      />
-      <input
-        class="btn-style btn-click-down efficiency"
-        type="button"
-        value="Efficiency (W/TH)"
-        (click)="onSortItemEfficiency()"
-      />
-      <input
-        class="btn-style reset"
-        type="button"
-        value="Reset Filter"
-        (click)="onResetFilter()"
-      />
-      <input
-        class="btn-style btn-th-w"
-        list="tHFilter"
-        type="text"
-        value=""
-        placeholder="Filter Hash"
-        (keydown.enter)="onFilterHash($event)"
-      />
-      <datalist id="tHFilter">
-        <option value="30"></option>
-        <option value="60"></option>
-      </datalist>
-      <input
-        class="btn-style btn-th-w"
-        list="wFilter"
-        type="text"
-        value=""
-        placeholder="Filter watt"
-        (keydown.enter)="onFilterW($event)"
-      />
-      <datalist id="wFilter">
-        <option value="1000"></option>
-        <option value="2000"></option>
-      </datalist>
-    </form> -->
   </div>
   <div class="filter-search">
     <input
@@ -90,7 +34,7 @@
   <div class="cards-title">Best Selling</div>
 </div>
 <div class="wrapper-cards">
-  <div class="card" *ngFor="let item of cardItem">
+  <div class="card" *ngFor="let item of cardItem | slice: startIndex:endIndex">
     <div class="card-inner">
       <img class="card-imagine" src="{{ item.image }}" alt="i" />
       <h4 class="model">{{ item.name }}</h4>
@@ -115,3 +59,11 @@
     </div>
   </div>
 </div>
+<mat-paginator
+  [length]="this.cardItem.length"
+  [pageSize]="6"
+  [pageSizeOptions]="[4, 6, 10, 25]"
+  aria-label="Select page"
+  (page)="onPageChange($event)"
+>
+</mat-paginator>

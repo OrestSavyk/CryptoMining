@@ -12,16 +12,12 @@ export class ModalBehaviorComponent implements OnInit {
   item: Cart;
   modal: Cart;
 
-  constructor(
-    private modalService: ModalService
-    ) {}
+  constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {
-    this.loadDataModal()
+    this.loadDataModal();
   }
   loadDataModal() {
-    this.item = this.modalService.selectedItem$.getValue()
-    console.log(this.item);
-    
+    this.item = this.modalService.selectedItem$.getValue();
   }
 }

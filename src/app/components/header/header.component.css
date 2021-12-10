@@ -2,7 +2,6 @@
   z-index: 100;
   width: 100%;
   min-height: 100px;
-  /* max-height: 70px; */
   background-color: rgb(0, 132, 255);
   position: fixed;
   top: 0px;
@@ -10,7 +9,7 @@
 }
 
 .active {
-  color: rgba(53, 53, 53, 0.87) ;
+  color: rgba(53, 53, 53, 0.87);
 }
 
 .header-top {
@@ -24,15 +23,18 @@
   display: grid;
   overflow: auto;
 }
-::ng-deep .mat-button-toggle-appearance-standard .mat-button-toggle-label-content  {
+
+::ng-deep .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
   display: grid;
   text-align: center;
   justify-items: center;
   margin: 10px auto;
 }
-.mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
+
+.mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
   border-left: none;
 }
+
 #menu-toggle {
   opacity: 0;
 }
@@ -136,25 +138,20 @@
   height: 25px;
 }
 
-.header-logo {
-  /* margin-left: 10px; */
-  padding: auto 5px;
-}
-
 .header-logo img {
   max-height: 75px;
   margin-left: 20px;
   cursor: pointer;
 }
 
+.btn-group {
+  display: none;
+}
+
 .mat-button-toggle-group {
   border: none;
 }
 
-/* 
-.mat-button-toggle-label-content {
-  padding: 0px;
-} */
 .mat-button-toggle-appearance-standard {
   background: none;
 }
@@ -163,8 +160,8 @@
   padding: 0px;
 }
 
-.header-nav {
-  display: none;
+::ng-deep .mat-button-toggle-button {
+  height: 100%;
 }
 
 .header-btn-contact {
@@ -185,13 +182,6 @@
   opacity: 0.7;
   margin-right: 5px;
 }
-
-/* .header-btn-admin:hover {
-  transition: 0.9s;
-  opacity: 1;
-  background-color: rgb(226, 222, 222, 1);
-  box-shadow: 0px 0px 7px rgba(70, 68, 68, 0.726);
-} */
 
 .mat-mini-fab .mat-button-wrapper {
   display: flex;
@@ -217,15 +207,17 @@
   box-shadow: 0px 0px 4px rgba(94, 92, 92, 0.726);
 }
 
-/* .header-btn-contact-basket:hover {
-  transition: 0.9s;
-  opacity: 1;
-  background-color: rgb(226, 222, 222, 1);
-  box-shadow: 0px 0px 7px rgba(70, 68, 68, 0.726);
-} */
-
 .header-btn-contact-basket img {
-  width: 20px;
+  width: 18px;
+}
+
+.basket-counter {
+  color: #1f2323;
+  position: absolute;
+  top: 0px;
+  font-weight: 500;
+  font-size: 12px;
+  right: 7px;
 }
 
 .header-btn-contact-top {
@@ -240,63 +232,18 @@
   display: flex;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .hamburger-menu {
     display: none;
   }
 
-  .header-nav {
+  .btn-group {
     display: flex;
-  }
-
-  .header-nav-top {
-    margin: auto 10px;
-  }
-
-  .header-nav-top div {
-    text-align: center;
-    min-width: 47px;
-
-  }
-
-  .header-nav-top a {
-    text-decoration: none;
-    color: rgba(29, 28, 28, 0.932);
-    font-size: 18px;
-    font-weight: 400;
-  }
-
-  .header-nav-top img {
-    width: 35px;
-    color: white;
-  }
-
-  .header-nav-top p {
-    margin-top: 0px;
-    font-weight: 500;
-    text-align: center;
-  }
-
-  .header-nav-top p:hover {
-    transition: 0.9s;
-    color: rgba(100, 100, 100, 0.801);
-  }
-
-  .header-logo img {
-    height: 75px;
   }
 
   .header-btn-contact {
     display: flex;
     margin-right: 20px;
-  }
-
-  .header-btn-admin {
-    margin-right: 15px;
-  }
-
-  .header-btn-contact-basket {
-    margin: auto 10px auto auto;
   }
 
   .header-btn-contact-top {
@@ -323,7 +270,8 @@
   }
 }
 
-.active {
-  color: rgb(226, 222, 222, 1) !important;
-
+@media (min-width: 1024px) {
+  .header-btn-contact-basket {
+    margin: auto 10px auto auto;
+  }
 }

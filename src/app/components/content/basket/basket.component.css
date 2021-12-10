@@ -3,16 +3,14 @@
 }
 
 .wrapper-table {
+  padding: 0 5px;
   overflow-x: auto;
-
 }
 
 .mat-table {
   width: 90%;
   margin: 50px auto;
-  overflow-x: scroll;
   min-width: 550px;
-
 }
 
 th.mat-header-cell, td.mat-cell, td.mat-footer-cell {

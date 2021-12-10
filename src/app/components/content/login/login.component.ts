@@ -1,62 +1,70 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  FormGroupDirective,
-  NgForm,
-  Validators,
-} from "@angular/forms";
-import * as uuid from 'uuid'
-import { Observable } from "rxjs";
-import { Login } from "src/app/models/loginData";
-import { LoginService } from "src/app/services/login.service";
-import { ErrorStateMatcher } from "@angular/material/core";
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import * as uuid from 'uuid';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { EnterUserService } from 'src/app/services/enter-user.service';
+import { Login } from 'src/app/models/oldUser';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-  matcher = new ErrorStateMatcher();
-
-  LoginArray: Login[] = [];
+  formSubmited: boolean;
+  showError;
+  loginsFromBase: Login[] = [];
   public loginForm: FormGroup;
-  adminIn: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService
+    private enterUserService: EnterUserService,
+    private authService: AuthService,
   ) {
+    this.getLoginUser();
     this.initLoginForm();
   }
-
-  ngOnInit(): void {
-    this.onLoadUser()
-  }
-  onAddLogin(): void {
-    if (this.loginForm.value.email == 'admin@gmail.com' && this.loginForm.value.password == 'admin1111') {
-      this.adminIn = true;      
-    } else {
-      const newLoginUser = {id: uuid.v4(), ...this.loginForm.value};      
-      this.loginService.addLogin(newLoginUser).subscribe((login: Login) => {
-      this.LoginArray = [...this.LoginArray, login]
-      })
-      this.loginForm.reset();
-    } 
-  }
-
+  
+  ngOnInit(): void {}
   private initLoginForm(): void {
     this.loginForm = this.formBuilder.group({
-      email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required, Validators.minLength(8)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      isRobot: [false, [Validators.requiredTrue]]
     });
   }
-  private onLoadUser(): void{
-    this.loginService.getLogins().subscribe((value) => {
-      this.LoginArray = value;
-    })
+  login(): void {
+    const user = this.loginsFromBase.find((user: Login) => {
+      return (
+        user.email === this.loginForm.value.email &&
+        user.password === this.loginForm.value.password
+      );
+    });
+    if (
+      this.loginForm.value.email == 'admin@gmail.com' &&
+      this.loginForm.value.password == 'admin1111'
+    ) {
+      alert('Hello Admin');
+      this.loginForm.reset();
+      this.authService.isAdmin$.next(true);
+    } else if (user) {
+      alert('Login Successfull');
+      this.loginForm.reset();
+      this.enterUserService.loginUserIs$.next(true)
+    } else {
+      console.log('please, sign in!');
+      this.loginForm.reset();
+      alert('user not fount!');
+    }
+  }
+  
+  private getLoginUser() {
+    this.enterUserService.getLogins().subscribe((value) => {
+      this.loginsFromBase = value;
+    }); 
+  }
+  showErrors(field: AbstractControl): boolean {
+    return field.invalid && (field.touched || this.formSubmited);
   }
 }

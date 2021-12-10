@@ -178,6 +178,9 @@
   padding-top: 0px;
   padding-bottom: 0px;
 }
+.mat-paginator {
+  margin: auto 20px 30px auto;
+}
 
 @media (min-width: 765px) {
   .btn-style {

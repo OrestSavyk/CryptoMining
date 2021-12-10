@@ -5,7 +5,7 @@
       <label class="menu-btn" for="menu-toggle">
         <span></span>
       </label>
-      <ul class="menu-box" (click)="closeMenu($event)">
+      <ul class="menu-box">
         <mat-button-toggle-group
           name="favoriteColor"
           aria-label="Favorite Color"
@@ -22,35 +22,33 @@
     <div class="header-logo" routerLink="">
       <img src="assets/title img/logo.png" alt="l" />
     </div>
-    <!-- <nav class="header-nav">              
-            <div class="header-nav-top" *ngFor="let nav of navButton">
-                <a [routerLink]="nav.link" routerLinkActive="active">
-                    <div>
-                        <img [src]="nav.icon" alt="i">
-                        <p>{{ nav.active? nav.name : nav.name}}</p>
-                    </div>    
-                </a>
-            </div>
-        </nav> -->
-    <nav class="header-nav">
-      <div class="header-nav-top" *ngFor="let nav of navButton">
-        <div>
-          <a [routerLink]="nav.link" routerLinkActive="active">{{
-            nav.active ? nav.name : nav.name
-          }}</a>
-        </div>
-      </div>
-    </nav>
+    <mat-button-toggle-group class="btn-group">
+      <mat-button-toggle routerLink="/directory">Directory</mat-button-toggle>
+      <mat-button-toggle routerLink="/shop">Shop</mat-button-toggle>
+      <button mat-button [matMenuTriggerFor]="enter">Enter</button>
+      <mat-menu #enter="matMenu">
+        <button *ngIf="!isAdmin && !isUser" mat-menu-item routerLink="/login">
+          Login
+        </button>
+        <button *ngIf="!isAdmin && !isUser" mat-menu-item routerLink="/sign">
+          Sign Up
+        </button>
+        <button *ngIf="isAdmin || isUser" mat-menu-item (click)="logOut()">
+          Log Out
+        </button>
+      </mat-menu>
+      <mat-button-toggle *ngIf="isAdmin" routerLink="/admin"
+        >Admin</mat-button-toggle
+      >
+    </mat-button-toggle-group>
     <div class="header-btn-contact">
-      <!-- <button mat-mini-fab class="header-btn-admin" routerLink="/admin">
-        <img src="assets/iconNav/admin.png" />
-      </button> -->
       <button
         mat-mini-fab
         class="header-btn-contact-basket"
         routerLink="/basket"
       >
         <img src="assets/title img/shopping-cart.png" />
+        <div class="basket-counter" *ngIf="basketItemLength > 0">{{ basketItemLength }}</div>
       </button>
       <button mat-button class="header-btn-contact-top" routerLink="/contact">
         Contact Us

@@ -5,42 +5,45 @@ import {
   Input,
   OnInit,
   ViewChild,
-} from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Cart } from "src/app/models/CartTool";
-import { CartService } from "src/app/services/cart.service";
-import { MatSort, Sort } from "@angular/material/sort";
-import { LiveAnnouncer } from "@angular/cdk/a11y";
-import * as uuid from "uuid";
+} from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Cart } from 'src/app/models/CartTool';
+import { CartService } from 'src/app/services/cart.service';
+import { MatSort, Sort } from '@angular/material/sort';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+import * as uuid from 'uuid';
+import { FORM_CARD, TABLE_CARD } from './admin.constants';
 @Component({
-  selector: "app-admin",
-  templateUrl: "./admin.component.html",
-  styleUrls: ["./admin.component.css"],
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent implements OnInit {
+  formCard = FORM_CARD;
+  tableCard = TABLE_CARD;
   public cartForm: FormGroup;
   buttonEdit: boolean;
   minDate: Date;
   maxDate: Date;
   selectedItem: any;
   displayedColumns: string[] = [
-    "id",
-    "headname",
-    "name",
-    "hash",
-    "power",
-    "date",
-    "algorithm",
-    "size",
-    "weight",
-    "price",
-    "availability",
-    "edit",
-    "delete",
+    'id',
+    'headname',
+    'name',
+    'hash',
+    'power',
+    'date',
+    'algorithm',
+    'size',
+    'weight',
+    'price',
+    'availability',
+    'edit',
+    'delete',
   ];
   @Input()
   cardItem: Cart[] = [];
-  
+
   constructor(
     private liveAnnouncer: LiveAnnouncer,
     private cartService: CartService,
@@ -49,7 +52,7 @@ export class AdminComponent implements OnInit {
     this.devCartForm();
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 15, 0, 1);
-    this.maxDate = new Date(currentYear + 1, 0, 0) 
+    this.maxDate = new Date(currentYear + 1, 0, 0);
   }
   @ViewChild(MatSort) sort: MatSort;
 
@@ -61,17 +64,17 @@ export class AdminComponent implements OnInit {
   }
   private devCartForm(): void {
     this.cartForm = this.formBuilder.group({
-      headname: ["", (Validators.required, Validators.minLength(3))],
-      name: ["", (Validators.required, Validators.minLength(3))],
-      image: [""],
-      hash: ["", (Validators.required, Validators.min(1))],
-      power: ["", (Validators.required, Validators.min(1))],
-      date: ["", Validators.required],
-      algorithm: ["", Validators.required],
-      size: ["", Validators.required],
-      weight: ["", Validators.required],
-      price: ["", (Validators.required, Validators.min(1))],
-      availability: ["", Validators.required],
+      headname: ['', (Validators.required, Validators.minLength(3))],
+      name: ['', (Validators.required, Validators.minLength(3))],
+      image: [''],
+      hash: ['', (Validators.required, Validators.min(1))],
+      power: ['', (Validators.required, Validators.min(1))],
+      date: ['', Validators.required],
+      algorithm: ['', Validators.required],
+      size: ['', Validators.required],
+      weight: ['', Validators.required],
+      price: ['', (Validators.required, Validators.min(1))],
+      availability: ['', Validators.required],
     });
   }
   private loadCards(): void {

@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   constructor() { 
     this.linkItem.find((obj: any) => {
       if (obj.id % 2){
-        console.log(obj);
         this.changeBlockDirection = true;
       }
     })

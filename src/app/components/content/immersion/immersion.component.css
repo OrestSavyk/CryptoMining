@@ -3,6 +3,7 @@
     padding-top: 5px;
     max-width: 1010px;
 }
+
 .title {
     text-align: center;
     margin: 70px auto;
@@ -10,39 +11,47 @@
     font-weight: bold;
     font-family: sans-serif;
 }
+
 .main {
     display: block;
     margin-bottom: 10%;
 
 }
+
 .choose-data {
     font-size: 18px;
     padding: 10px;
 }
+
 .radio {
     display: grid;
     width: fit-content;
     grid-template-columns: auto auto;
     user-select: none;
 }
+
 .range input {
     display: block;
     width: 100%;
 }
+
 .choose-data-important {
     color: rgb(201, 13, 13);
 }
-.data-right{
+
+.data-right {
     height: auto;
     text-align: center;
     font-size: 18px;
 }
+
 .data-right-blok {
     margin: 70px auto;
     padding: auto;
     max-width: 600px;
     height: fit-content;
 }
+
 .title-blok {
     width: 100%;
     color: white;
@@ -56,11 +65,11 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+
 .blok-inner {
     display: grid;
     overflow: scroll;
     width: 100%;
-    /* max-width: 500px; */
     grid-template-columns: repeat(6, auto);
     grid-auto-rows: 50px;
     border: 1px solid rgba(155, 152, 152, 0.829);
@@ -69,24 +78,28 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 .rate-box1 {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
 }
+
 .rate-box2 {
     grid-column-start: 3;
     grid-column-end: 5;
     padding-top: 10px;
-    
+
 }
+
 .rate-box3 {
     grid-column-start: 5;
     grid-column-end: 7;
     padding-top: 10px;
-    
+
 }
+
 .iteration-block {
     display: grid;
     overflow: scroll;
@@ -97,12 +110,14 @@
     box-sizing: border-box;
     font-weight: bold;
 }
+
 .title {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
 }
+
 .days-break-inner {
     display: grid;
     width: 100%;
@@ -118,10 +133,12 @@
     overflow-x: scroll;
     align-items: center;
 }
+
 .info-price {
     text-align: start;
     font-size: 18px;
 }
+
 .info-price a {
     text-decoration: none;
     color: rgb(44, 136, 172);
@@ -132,46 +149,38 @@
         margin: 60px 100px;
         padding-top: 10px;
     }
+
     .radio {
         width: fit-content;
     }
 }
+
 @media (min-width: 1024px) {
     .header {
         margin: 0px 15%;
     }
+
     .main {
         display: grid;
         grid-template-columns: 1fr 3fr;
     }
+
     .data-right-blok {
         margin-top: 20px;
         margin-left: 20px;
     }
+
     .blok-inner {
         overflow: auto;
     }
+
     .days-break-inner {
         overflow: auto;
     }
 }
+
 @media (min-width: 1440px) {
     .header {
         margin: 60px auto;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

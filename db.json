@@ -57,20 +57,6 @@
       "id": "2111d028-0df2-4bf0-a0cc-bd33d073b9ce"
     },
     {
-      "headname": null,
-      "name": null,
-      "image": null,
-      "hash": null,
-      "power": null,
-      "date": null,
-      "algorithm": null,
-      "size": null,
-      "weight": null,
-      "price": null,
-      "availability": null,
-      "id": "336f93ce-2ba9-46f4-811e-f16723b870dc"
-    },
-    {
       "headname": "GBOSCH",
       "name": "MQ12",
       "image": "assets/card/card2.png",
@@ -83,108 +69,267 @@
       "price": "1076",
       "availability": "In stock",
       "id": "52d8f0bd-418c-429f-a3d6-5db7766ab75c"
+    },
+    {
+      "id": "300556ac-cf4d-43c1-9425-1975252021c8",
+      "headname": "Omanwall",
+      "name": "ONYX",
+      "image": "",
+      "hash": 283,
+      "power": 4039,
+      "date": "2021-12-13T22:00:00.000Z",
+      "algorithm": "SHA-20",
+      "size": "18*19*62",
+      "weight": "8020g",
+      "price": 1090,
+      "availability": "In Stock"
+    },
+    {
+      "id": "d75b3931-c9e4-4996-9838-b5fc57417316",
+      "headname": "klwekl",
+      "name": "weklwkl",
+      "image": "assets/card/card2.png",
+      "hash": 217,
+      "power": 3927,
+      "date": "2021-11-30T22:00:00.000Z",
+      "algorithm": "SHA-256",
+      "size": "150 x 225 x 390mm",
+      "weight": "1728g",
+      "price": 2901,
+      "availability": "In stock"
+    },
+    {
+      "headname": "PoLOn",
+      "name": "OIY",
+      "image": "assets/card/card2.png",
+      "hash": 29,
+      "power": 1976,
+      "date": "2021-11-10T22:00:00.000Z",
+      "algorithm": "SHA-256",
+      "size": "27x20",
+      "weight": "9500g",
+      "price": 1459,
+      "availability": "In stock",
+      "id": "ed9ee49e-f839-4c45-a03f-eb9dfc07d33c"
+    },
+    {
+      "id": "d6ec21fb-391a-4e68-9718-3fffcaa4e7cf",
+      "headname": "Pizza",
+      "name": "oreest",
+      "image": "",
+      "hash": "178",
+      "power": "1837",
+      "date": "",
+      "algorithm": "sha3256",
+      "size": "",
+      "weight": "",
+      "price": "",
+      "availability": ""
+    },
+    {
+      "id": "e4ac219f-8822-44b3-b6de-29ffd5b58a92",
+      "headname": "qklqklf",
+      "name": "qklfn 3klq",
+      "image": "savyk",
+      "hash": "333",
+      "power": "9239",
+      "date": null,
+      "algorithm": "1klkf912",
+      "size": "10x10",
+      "weight": "1902g",
+      "price": "38973",
+      "availability": "18*19*62"
     }
   ],
-  "userLogin": [
+  "userData": [
     {
-      "id": "d618f8d6-a504-4930-93ab-3f9dd1ef4b13",
-      "email": "admin@gmail.com",
-      "password": "jkwqqjm,e"
+      "id": "2dba9135-5a7a-401d-9a87-ab8d456250b8",
+      "firstName": "mmklk",
+      "secondName": "klnkk",
+      "email": "lead_n_go@yahoo.com",
+      "password": "kjlnjkkjln"
     },
     {
-      "id": "426ee980-61de-4134-82c6-647c6bd5e771",
-      "email": "otup@gmail.com",
-      "password": "jkqwel jklmqwe"
+      "id": "94612dd8-44ad-4887-b081-8afb269024b9",
+      "firstName": "mlkklkllk",
+      "secondName": "sdl;gl;",
+      "email": "vazonok45@gmail.com",
+      "password": "oqnkkqlklq"
     },
     {
-      "id": "7449ffec-fa90-4ccc-be36-a9357e777efa",
-      "email": "otup@gmail.com",
-      "password": "klnklewv"
+      "id": "a2e3b3a9-891c-46fd-b5c1-a9b90b7dead6",
+      "firstName": "klew",
+      "secondName": "kamer",
+      "email": "orest.savyk@gmail.com",
+      "password": "1010oqkal"
     },
     {
-      "id": "df676b60-293c-47e3-9c5a-48fab17c29a6",
-      "email": "admin@gmail.com",
-      "password": "kjlknjlkn"
+      "id": "22e89650-5d95-41e2-8112-bb42c718a1a7",
+      "firstName": "jkhvhj",
+      "secondName": "jkkj",
+      "email": "lead_n_go@yahoo.com",
+      "password": "jkwejkjkw"
     },
     {
-      "id": "82b588f0-9bf8-4445-8bee-6a9d9c342c4e",
-      "email": "admin@gmail.com",
-      "password": "onjojknjklnjkl"
+      "id": "35c879ea-bf63-421d-8fee-64388614e314",
+      "firstName": "mlkklkllk",
+      "secondName": "sdl;gl;",
+      "email": "lead_n_go@yahoo.com",
+      "password": "lklklklkw"
     },
     {
-      "id": "8a7abe25-4c28-4890-a8a3-641b88afe27b",
-      "email": "otup@gmail.com",
-      "password": "klqnfklfklklq"
+      "id": "c85e2f0b-2ccd-4fa3-bfd1-a1be870d4c2a",
+      "firstName": "jkhvhj",
+      "secondName": "sdl;gl;",
+      "email": "lead_n_go@yahoo.com",
+      "password": "ewklkllkew"
     },
     {
-      "id": "cf8d5d16-c2fd-491d-b901-213f0558e80b",
-      "email": "admin@gmail.com",
-      "password": "oinfekefne"
+      "id": "6effeb9f-acdc-4f26-982f-b50e356c1a57",
+      "firstName": "jkhvhj",
+      "secondName": "jkkj",
+      "email": "vazonok45@gmail.com",
+      "password": "kwlklklwe"
     },
     {
-      "id": "66afd4a7-b6c4-46fa-b898-341e6ea083ba",
-      "email": "admin@gmail.com",
-      "password": "kjejkkejwkj"
+      "id": "95313afb-b47e-4f55-8c71-4fe2777287fb",
+      "firstName": "lkeqkl",
+      "secondName": "qmlfweq",
+      "email": "lead_n_go@yahoo.com",
+      "password": "ql;el;l;qe"
     },
     {
-      "id": "a238a663-709e-46ef-b89d-5b7b1e984ec6",
-      "email": "otup@gmail.com",
-      "password": "18929dbHVGSD2881"
+      "id": "2fb107a3-5be8-44a2-876a-1b81a75b3a1c",
+      "firstName": "lwkekl",
+      "secondName": "weklekl",
+      "email": "wkelklwe@g",
+      "password": "weklkvlwvkl"
     },
     {
-      "id": "69c04639-29b9-46b7-b169-4ff46b352202",
-      "email": "otup@gmail.com",
-      "password": "klqwfnkkef"
+      "id": "8f2c28b4-a601-4fad-bbd2-201d13a2aaed",
+      "firstName": "wmmwem,",
+      "secondName": "fmmfmf",
+      "email": "mfmfmmnf@g",
+      "password": "fmf,fm,ffm,mm"
     },
     {
-      "id": "811fb364-6b29-4112-874f-78559baf0ed8",
-      "email": "admin@gmail.com",
-      "password": "klwelkeklkeke"
+      "id": "5676c08b-f4f9-42b0-80e6-318a91e16909",
+      "firstName": "ovest lazy",
+      "secondName": "oipio",
+      "email": "wknjkv@gmail",
+      "password": "opqweklekl"
     },
     {
-      "id": "dee5296a-87db-4402-ac10-00578d4d817c",
+      "id": "9ee9375e-d38f-4eb5-aaa5-222d376b16d8",
+      "firstName": "ovest lazy",
+      "secondName": "m,,mmm",
+      "email": "wknjkv@gmail",
+      "password": "jkjkjjkjkjk"
+    },
+    {
+      "id": "fd16bf9d-fde8-4007-b027-3563819a7853",
+      "firstName": "orest@gmail.com",
+      "secondName": "ex.1 kvartira",
+      "email": "wknjkv@gmail",
+      "password": "klopopoo"
+    },
+    {
+      "id": "17ad599d-e0c3-466b-a7ae-7adbfdaf5153",
+      "firstName": "lkkl",
+      "secondName": "klkl",
+      "email": "wknjkv@gmail",
+      "password": "klklkkllkl"
+    },
+    {
+      "id": "6e87a9ea-574b-4ff8-b22c-a1a0a3bfbfa4",
+      "firstName": "oreest",
+      "secondName": "lkkle",
+      "email": "orest@gmail.com",
+      "password": ""
+    },
+    {
+      "id": "57042639-615e-4b6c-96ba-5eb8cfac7f5b",
+      "firstName": "oreest",
+      "secondName": "lkkle",
+      "email": "orest@gmail.com",
+      "password": "ep[p,eepf,efqe"
+    },
+    {
+      "id": "1eb186a2-3d21-4a58-9cf4-9b578bc8edc4",
+      "firstName": "klwlklw",
+      "secondName": "qwkeqwjk",
+      "email": "qklke@gmail.com",
+      "password": "op2wmfopf"
+    },
+    {
+      "id": "b02365ee-cfb9-4460-b145-8d050ffe89e3",
+      "firstName": "oreest",
+      "secondName": "savyk",
+      "email": "orest.savyk@gmail.com",
+      "password": "orest.savyk"
+    },
+    {
+      "id": "dd2d50de-5265-4eed-b2b8-bdc0f6b3491c",
+      "firstName": "volk",
+      "secondName": "negr",
+      "email": "koklodav@gmail.com",
+      "password": "10101010"
+    },
+    {
+      "id": "d66a6d6a-20cb-4830-b534-e8c2b07380dd",
+      "firstName": "ighor",
+      "secondName": "crowded",
+      "email": "ighor@gmail.com",
+      "password": "20022002"
+    },
+    {
+      "id": "a8522279-1efc-42e7-b553-68659aafec4f",
+      "firstName": "ura",
+      "secondName": "ura",
+      "email": "ura@gmail.com",
+      "password": "urauraura"
+    },
+    {
+      "id": "8cc09f8e-b8bb-4d6f-8636-a9209a752acc",
+      "firstName": "ghjcvghjvghj",
+      "secondName": "ibujukb",
+      "email": "iohj@gmail",
+      "password": "igyvyuilhh"
+    },
+    {
+      "id": "4280aad5-b9d9-442b-9756-1ae78cd7239f",
+      "firstName": "Alex",
+      "secondName": "Ionix",
+      "email": "alex@gmail.com",
+      "password": "alexalex"
+    },
+    {
+      "id": "1b78bb1a-57e0-4e6f-82b8-3ad1ef422c67",
+      "firstName": "iefjkefjk",
+      "secondName": "qklefkleqfklj",
+      "email": "jkd@gmail.com",
+      "password": "whjkvhjkwjkj"
+    },
+    {
+      "id": "441c46e2-e968-43ea-88c4-dac9dd42a725",
+      "firstName": "",
+      "secondName": "",
       "email": "",
       "password": ""
     },
     {
-      "id": "f58627db-045f-46df-9579-f015a73121b8",
+      "id": "1583cacd-8644-4db4-aacc-5422b0ba091a",
+      "firstName": null,
+      "secondName": null,
       "email": null,
       "password": null
     },
     {
-      "id": "948ff87e-1e95-48ac-9abe-1dfc2cf1088e",
-      "email": "admin@gmail.com",
-      "password": null
-    },
-    {
-      "id": "ad34ad4a-60ea-4c12-9659-61ced57041ac",
+      "id": "30f13265-f47b-4ed1-a2ef-9fe47da9f609",
+      "firstName": null,
+      "secondName": null,
       "email": null,
       "password": null
-    },
-    {
-      "id": "c2de3374-4049-474f-a557-ceea29188648",
-      "email": null,
-      "password": "mmmm,"
-    },
-    {
-      "id": "baff342a-69e9-4cc9-af47-29029b6d0a61",
-      "email": "otup@gmail.com",
-      "password": "qwkl;lqqw"
-    },
-    {
-      "id": "0a4cb8d6-569d-423e-903f-7845fc5abaa9",
-      "email": "admin@gmail.com",
-      "password": "hjhjhjqwhj"
-    },
-    {
-      "id": "d2c25ead-9c41-43af-ae19-f3462b98d101",
-      "email": "otup@gmail.com",
-      "password": "klnwqklq"
-    },
-    {
-      "id": "92aa960d-e19a-486a-8664-607549e5e91c",
-      "email": "admin@gmail.com",
-      "password": "kjkjkjkllk;"
     }
   ]
 }

@@ -1,31 +1,39 @@
 <div class="header marg-t">
-    <div class="inner-header">
-        <!-- <div class="carousel-wrapper">
-            <div class="carousel-top">
-                <div [class]="inner.mainClass" class="carousel" *ngFor="let inner of innerCarousel">
-                    <div class="carousel-text"><h3>{{inner.boldText}}</h3><p>{{inner.lowerText}}</p><button>{{inner.buttonName}}</button></div>
-                    <img class="carousel-photo" [src]="inner.source" [alt]="inner.alt">
-                </div>
-                <div class="carousel-btn--next"></div>
-                <div class="carousel-btn--prev"></div>
-            </div>
-        </div> -->
-        <h3 class="title">Crypto Mining Tools</h3>
-        <div class="all-about-crypto" >
-            <div class="all-about-crypto-blok" *ngFor="let item of linkItem">
-                <div class="img-computer" [class.block-order]="item.orderImg === 1"><img [src]="item.source" alt="compucter"></div>
-                <div class="link-info">
-                    <a [routerLink]="item.link">{{item.title}}</a>
-                    <p>{{item.paragraph}}</p>
-                </div>
-            </div>        
+  <div class="inner-header">
+    <h3 class="title">Crypto Mining Tools</h3>
+    <div class="all-about-crypto">
+      <div class="all-about-crypto-blok" *ngFor="let item of linkItem">
+        <div class="img-computer" [class.block-order]="item.orderImg === 1">
+          <img [src]="item.source" alt="compucter" />
         </div>
-        <div class="faq-head">FAQ</div>
-        <div class="faq">
-            <div class="faq-blok" *ngFor="let paragraph of faqParagraph">
-                <p class="faq-blok-title">{{ paragraph.title }}</p>
-                <p class="faq-blok-info">{{ paragraph.info }}</p>
-            </div>
+        <div class="link-info">
+          <a [routerLink]="item.link">{{ item.title }}</a>
+          <p>{{ item.paragraph }}</p>
         </div>
+      </div>
     </div>
+    <div class="faq-head">FAQ</div>
+    <div class="faq">
+      <!-- <div class="faq-blok" *ngFor="let paragraph of faqParagraph">
+        <p class="faq-blok-title">{{ paragraph.title }}</p>
+        <p class="faq-blok-info">{{ paragraph.info }}</p>
+      </div> -->
+      <mat-accordion class="faq-blok">
+        <mat-expansion-panel *ngFor="let paragraph of faqParagraph" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="faq-blok-title">{{
+              paragraph.title
+            }}</mat-panel-title>
+            <mat-panel-description></mat-panel-description>
+          </mat-expansion-panel-header>
+          <p class="faq-blok-info">{{ paragraph.info }}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab class="faq-blok-title" *ngFor="let paragraph of faqParagraph" [label]="paragraph.title">
+        {{ paragraph.info }}</mat-tab
+      >
+    </mat-tab-group>
+  </div>
 </div>

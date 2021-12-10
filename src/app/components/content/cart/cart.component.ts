@@ -1,17 +1,17 @@
-import { Component, Input, OnInit, Output } from "@angular/core";
-import { BasketCart, Cart } from "src/app/models/CartTool";
-import { EventEmitter } from "@angular/core";
-import { CartService } from "src/app/services/cart.service";
-import { ModalService } from "src/app/services/modal.service";
-import { FILTER_ITEM, SORT_ITEM } from "./cart.constant";
-import { MatDialog } from "@angular/material/dialog";
-import { BasketService } from "src/app/services/basket.service";
-import { ModalBehaviorComponent } from "../modal-behavior/modal-behavior.component";
+import { Component, Input, OnInit } from '@angular/core';
+import { BasketCart, Cart } from 'src/app/models/CartTool';
+import { CartService } from 'src/app/services/cart.service';
+import { ModalService } from 'src/app/services/modal.service';
+import { FILTER_ITEM, SORT_ITEM } from './cart.constant';
+import { MatDialog } from '@angular/material/dialog';
+import { BasketService } from 'src/app/services/basket.service';
+import { ModalBehaviorComponent } from '../modal-behavior/modal-behavior.component';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
-  selector: "app-cart",
-  templateUrl: "./cart.component.html",
-  styleUrls: ["./cart.component.css"],
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
   filterItems = FILTER_ITEM;
@@ -20,14 +20,19 @@ export class CartComponent implements OnInit {
   cardItem: Cart[] = [];
   basketItem: BasketCart[] = [];
   item: any;
-
-  constructor(private cartService: CartService, public modal: MatDialog, private modalHelperService: ModalService, public basketService: BasketService) {}
-
-  ngOnInit(): void {
-    // this.loadSelectedItem();
-    this.loadCards();
-  }
-  
+  startIndex: number;
+  endIndex: number;
+  constructor(
+    private cartService: CartService,
+    public modal: MatDialog,
+    private modalHelperService: ModalService,
+    public basketService: BasketService
+    ) {}
+    
+    ngOnInit(): void {
+      this.loadCards();
+    }
+    
   private loadCards(): void {
     this.cartService.getTool().subscribe((value: Cart[]) => {
       this.cardItem = value;
@@ -49,33 +54,28 @@ export class CartComponent implements OnInit {
   }
   onEnterSearchTool(event) {
     console.log(event.target.value);
-    event.target.value = "";
+    event.target.value = '';
   }
   onOpenModal(item: Cart): void {
-    this.modalHelperService.selectedItem$.next(item)
-    let dialogRef = this.modal.open(ModalBehaviorComponent)
-    dialogRef.afterClosed().subscribe(result => {
+    this.modalHelperService.selectedItem$.next(item);
+    let dialogRef = this.modal.open(ModalBehaviorComponent);
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
-    })
+    });
   }
-
-  // private loadSelectedItem(): void {    
-  //   this.item = this.modalHelperService.selectedItem$.getValue();
-  //   console.log(this.item);
-    
-  // }
-
   addToBasket(item: Cart): void {
     const selectedItem = {
-    id: item.id,
-    image: item.image,
-    headname: item.headname,
-    name: item.name,
-    amount: 1,
-    price: item.price,
-    amountPrice: 0,
+      id: item.id,
+      image: item.image,
+      headname: item.headname,
+      name: item.name,
+      amount: 1,
+      price: item.price,
+      amountPrice: 0,
     };
-    const toolAlreadyExist = this.basketItem.find(item => item.id === selectedItem.id);    
+    const toolAlreadyExist = this.basketItem.find(
+      (item) => item.id === selectedItem.id
+    );
     if (toolAlreadyExist) {
       toolAlreadyExist.amount++;
     } else {
@@ -84,5 +84,8 @@ export class CartComponent implements OnInit {
     localStorage.setItem('basketItems', JSON.stringify(this.basketItem));
     this.basketService.basketItemsLength$.next(this.basketItem.length);
   }
-
+  onPageChange(event: PageEvent) {
+    this.startIndex = event.pageIndex * event.pageSize;
+    this.endIndex = this.startIndex + event.pageSize;
+  }
 }

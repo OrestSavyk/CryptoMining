@@ -1,0 +1,105 @@
+<div class="marg-t">
+  <div class="header">
+    <form class="form-top" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+      <h3 class="title">Sign Up</h3>
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput formControlName="firstName" />
+        <!-- <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error
+          *ngIf="
+            signUpForm.hasError('firstName') && !signUpForm.hasError('required')
+          "
+        >
+          Please enter a valid First Name
+        </mat-error>
+        <mat-error *ngIf="signUpForm.hasError('required')">
+          First Name is <strong>required</strong>
+        </mat-error> -->
+      </mat-form-field>
+      <div class="wrapper-error">
+        <app-input-errors
+          [showErrors]="showErrors(signUpForm.controls.firstName)"
+        ></app-input-errors>
+      </div>
+      <mat-form-field>
+        <mat-label>Second Name</mat-label>
+        <input type="text" matInput formControlName="secondName" />
+        <!-- <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error
+          *ngIf="
+          signUpForm.hasError('secondName') &&
+            !signUpForm.hasError('required')
+          "
+        >
+          Please enter a valid Second Name
+        </mat-error>
+        <mat-error *ngIf="signUpForm.hasError('required')">
+          Second Name is <strong>required</strong>
+        </mat-error> -->
+      </mat-form-field>
+      <div class="wrapper-error">
+        <app-input-errors
+          [showErrors]="showErrors(signUpForm.controls.secondName)"
+        ></app-input-errors>
+      </div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          placeholder="Ex. pat@example.com"
+        />
+        <!-- <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error
+          *ngIf="
+          signUpForm.hasError('email') && !signUpForm.hasError('required')
+          "
+        >
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="signUpForm.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error> -->
+      </mat-form-field>
+      <div class="wrapper-error">
+        <app-input-errors [showErrors]="showErrors(signUpForm.controls.email)"></app-input-errors>
+      </div>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          type="password"
+          placeholder="The password has at least 8 values"
+        />
+        <!-- <mat-hint>Errors appear instantly!</mat-hint>
+            <mat-error
+          *ngIf="
+          signUpForm.hasError('password') && !signUpForm.hasError('required')
+          "
+        >
+          Please enter a valid password
+        </mat-error>
+        <mat-error *ngIf="signUpForm.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error> -->
+      </mat-form-field>
+      <div class="wrapper-error">
+        <app-input-errors
+          [showErrors]="showErrors(signUpForm.controls.password)"
+        ></app-input-errors>
+      </div>
+
+      <button
+        mat-raised-button
+        class="btn-sign"
+        type="submit"
+        [disabled]="!signUpForm.valid"
+      >
+        Sign Up
+      </button>
+    </form>
+  </div>
+</div>

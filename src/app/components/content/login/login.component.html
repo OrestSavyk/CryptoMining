@@ -6,26 +6,16 @@
     />
   </div>
   <div class="right-blok">
-    <form class="right-form" [formGroup]="loginForm" (ngSubmit)="onAddLogin()">
-      <h3>Sign In</h3>
+    <form class="right-form" [formGroup]="loginForm" (ngSubmit)="login()">
+      <h3>Login</h3>
       <mat-form-field>
         <label for="inputEmail" class="right-data">Email</label>
-        <input
-          matInput
-          id="inputEmail"
-          formControlName="email"
-          type="email"
-          [errorStateMatcher]="matcher"
-        />
-        <mat-hint>Errors appear instantly!</mat-hint>
-        <mat-error
-          *ngIf="loginForm.hasError('email') && !loginForm.hasError('required')"
-        >
-          Please enter a valid email address
-        </mat-error>
-        <mat-error *ngIf="loginForm.hasError('required')">
-          Email is <strong>required</strong>
-        </mat-error>
+        <input matInput id="inputEmail" formControlName="email" type="email" />
+        <div>
+          <app-input-errors
+            [showErrors]="showErrors(loginForm.controls.email)"
+          ></app-input-errors>
+        </div>
       </mat-form-field>
       <mat-form-field>
         <label for="inputPass" class="right-data">Password</label>
@@ -34,35 +24,31 @@
           id="inputPass"
           formControlName="password"
           type="password"
-          [errorStateMatcher]="matcher"
         />
-        <mat-hint>Errors appear instantly!</mat-hint>
-        <mat-error
-          *ngIf="
-            loginForm.hasError('password') && !loginForm.hasError('required')
-          "
-        >
-          Please enter a valid password
-        </mat-error>
-        <mat-error *ngIf="loginForm.hasError('required')">
-          Password is <strong>required</strong>
-        </mat-error>
+        <div>
+          <app-input-errors
+            [showErrors]="showErrors(loginForm.controls.password)"
+          ></app-input-errors>
+        </div>
       </mat-form-field>
-      <!-- <label for="inputPass" class="right-data">Password</label>
-        <input id="inputPass" formControlName="password" type="password" /> -->
-
+      <mat-slide-toggle formControlName="isRobot">I`m not a robot!</mat-slide-toggle>
+      <div class="toggle-isRobot">
+        <app-input-errors
+          [showErrors]="showErrors(loginForm.controls.isRobot)"
+        ></app-input-errors>
+      </div>
       <button
         mat-raised-button
         class="right-sign"
         type="submit"
         [disabled]="!loginForm.valid"
       >
-        Sign In
+        Login
       </button>
     </form>
     <p class="right-old-users">Forgot Password? <a>Get Reset Link</a></p>
     <p class="right-old-users">
-      New to Crypto Mining Tools? <a>SIgnup here</a>
+      New to Crypto Mining Tools? <a routerLink="/sign">SIgnup here</a>
     </p>
     <p class="right-p">OR login using</p>
     <button class="right-telegram">

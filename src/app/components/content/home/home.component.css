@@ -1,110 +1,31 @@
-.header {
-    /* padding: 60px 15px; */
-}
 .inner-header {
     margin: auto 5% 50px;
     padding-top: 30px;
 }
-.carousel-wrapper {
-    overflow: hidden;
-    width: 90%;
-}
-.carousel-top {
-    transform-style: preserve-3d;
-}
-.carousel {
-    opacity: 0;
-    position: absolute;
-    top:0;
-    width: 100%;
-    margin: auto;
-    padding: 1rem 4rem;
-    z-index: 100;
-    transition: transform .5s, opacity .5s, z-index .5s;
-}
-.carousel-text {
-    height: 50%;
-}
-.carousel-photo {
-    height: 50%;
-}
-.carousel.initial,
-.carousel.active {
-  opacity: 1;
-  position: relative;
-  z-index: 900;
-}
-
-.carousel-top.prev,
-.carousel-top.next {
-  z-index: 800;
-}
-.carousel-top.prev {
-  transform: translateX(-100%); 
-}
-.carousel-top.next {
-  transform: translateX(100%); 
-}
-.carousel-btn--next,
-.carousel-btn--prev {
-  position: absolute;
-  top:50%;
-  width: 3rem;
-  height: 3rem;
-  background-color: #FFF;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  cursor: pointer; 
-  z-index: 1001; /* Sit on top of everything */
-  border: 1px solid black;
-}
-.carousel-btn--prev {
-  left:0;
-}
-.carousel-btn--next {
-  right:0;
-}
-.carousel-btn--prev::after,
-.carousel-btn--next::after {
-  content: " ";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 50%;
-  left: 54%;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  transform: translate(-50%, -50%) rotate(135deg);
-}
-.carousel-btn--next::after {
-  left: 47%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-
-
 
 .title {
     text-align: center;
     font-family: sans-serif;
     font-size: 35px;
     margin: auto 25px;
-
 }
+
 .all-about-crypto {
     width: 100%;
-    margin: auto ;
+    margin: auto;
 }
+
 .all-about-crypto-blok {
-    /* width: 100%; */
     display: grid;
-    margin: 30px auto;
+    margin: 40px auto;
 }
+
 .link-info {
     width: 80%;
-    margin: auto;
+    margin: 20px auto;
     align-self: center;
 }
+
 .link-info a {
     text-decoration: none;
     text-align: center;
@@ -113,22 +34,25 @@
     font-weight: 600;
     font-family: sans-serif;
 }
+
 .link-info p {
     font-family: sans-serif;
     color: gray;
     font-weight: 500;
 }
+
 .img-computer {
     width: 80%;
     margin: auto;
 }
+
 .img-computer img {
     width: 100%;
-    /* max-width: 380px; */
     height: 100%;
     margin: auto;
 
 }
+
 .faq-head {
     text-align: center;
     font-size: 35px;
@@ -137,16 +61,12 @@
     margin-top: 5%;
 
 }
+
 .faq {
-    /* width: 270px; */
-    /* margin: auto; */
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
-    /* grid-column-gap: 3%; 
-    grid-row-gap: 2%; */
 }
+
 .faq-blok {
-    /* margin: 15px auto; */
     margin: 25px auto;
     width: 80%;
 }
@@ -156,47 +76,54 @@
     font-family: sans-serif;
     margin: 2% auto;
 }
-.faq-blok-info {
-}
+
 .faq-blok p {
     font-family: sans-serif;
 
 }
-@media (min-width: 430px) {
 
+.mat-expansion-panel .mat-expansion-panel-header:hover {
+    height: fit-content;
 }
+
+.mat-accordion .mat-expansion-panel:first-of-type {
+    height: auto;
+}
+
+.mat-expansion-panel-header {
+    height: auto;
+}
+
+::ng-deep .mat-tab-body-content {
+    margin: 20px 60px;
+    height: auto !important;
+    overflow: auto;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    padding-top: 10px !important;
+}
+
 @media (min-width: 768px) {
-    .all-about-crypto {
-        /* margin: auto 5%; */
-    }
+
     .faq {
         grid-template-columns: repeat(2, 50%);
-        /* grid-column-gap: 4%;  */
         margin: 15px;
     }
 }
+
 @media (min-width: 1024px) {
     .all-about-crypto-blok {
         grid-template-columns: repeat(2, 50%);
     }
+
     .block-order {
         order: 1;
-    }    
+    }
+
     .img-computer img {
         max-width: 435px;
         width: 100%;
         height: auto;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

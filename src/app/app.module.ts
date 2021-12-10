@@ -39,8 +39,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { InputErrorStateMatcherExampleComponent } from './components/content/comparison/input-error-state-matcher-example/input-error-state-matcher-example.component';
 import {
-  MatPaginatorIntl,
-  MatPaginatorModule,
+  MatPaginatorModule
 } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -50,12 +49,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { ModalBehaviorComponent } from './components/content/modal-behavior/modal-behavior.component';
 import { ErrorStateMatcherComponent } from './components/content/error-state-matcher/error-state-matcher.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { SignUpComponent } from './components/content/sign-up/sign-up.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { InputErrorsComponent } from './components/content/input-errors/input-errors.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'sign', component: SignUpComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'immersion', component: ImmersionComponent },
   { path: 'shop', component: ShopComponent },
@@ -82,6 +85,8 @@ const appRoutes: Routes = [
     InputErrorStateMatcherExampleComponent,
     ModalBehaviorComponent,
     ErrorStateMatcherComponent,
+    SignUpComponent,
+    InputErrorsComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,10 +120,10 @@ const appRoutes: Routes = [
     MatRadioModule,
     MatStepperModule,
     MatIconModule,
-    MatMenuModule
-    // MatPaginatorIntl
+    MatMenuModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -4,6 +4,9 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class BasketService {
-  basketItemsLength$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+export class AuthService {
+
+  isAdmin$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
+  constructor() { }
 }

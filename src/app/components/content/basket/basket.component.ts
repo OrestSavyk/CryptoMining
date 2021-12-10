@@ -1,10 +1,5 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { BasketCart, Cart } from 'src/app/models/CartTool';
-import { ThemePalette } from '@angular/material/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { numbers } from '@material/dialog';
+import { Component, OnInit } from '@angular/core';
+import { BasketCart } from 'src/app/models/CartTool';
 
 @Component({
   selector: 'app-basket',
@@ -25,7 +20,6 @@ export class BasketComponent implements OnInit {
   cardItem: BasketCart[] = [];
   totalAmount: number = 0;
   newItem;
-
   constructor() {}
 
   ngOnInit(): void {
@@ -43,7 +37,7 @@ export class BasketComponent implements OnInit {
   updateTotalPrice() {
     if (this.cardItem) {
       this.totalAmount = this.cardItem.reduce(function (acc, value) {
-        return acc + (value.amount * value.price);
+        return acc + value.amount * value.price;
       }, 0);
     }
   }
