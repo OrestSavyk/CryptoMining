@@ -48,10 +48,12 @@ export class LoginComponent implements OnInit {
       alert('Hello Admin');
       this.loginForm.reset();
       this.authService.isAdmin$.next(true);
+      localStorage.setItem('isAdmin', JSON.stringify(true));
     } else if (user) {
       alert('Login Successfull');
       this.loginForm.reset();
-      this.enterUserService.loginUserIs$.next(true)
+      this.enterUserService.loginUserIs$.next(true);
+      localStorage.setItem('isUser', JSON.stringify(true));
     } else {
       console.log('please, sign in!');
       this.loginForm.reset();

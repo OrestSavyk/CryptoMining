@@ -33,35 +33,42 @@
   </div>
   <div class="cards-title">Best Selling</div>
 </div>
-<div class="wrapper-cards">
-  <div class="card" *ngFor="let item of cardItem | slice: startIndex:endIndex">
-    <div class="card-inner">
-      <img class="card-imagine" src="{{ item.image }}" alt="i" />
-      <h4 class="model">{{ item.name }}</h4>
-      <div class="btn-info">
-        <button>{{ item.hash }} TH</button>
-        <button>{{ item.power }} w</button>
-      </div>
-      <p class="price">${{ item.price }}</p>
-      <div class="wrapper-btn-cart">
-        <button mat-raised-button class="btn-buy" (click)="onOpenModal(item)">
-          Shop Now
-        </button>
-        <button
-          mat-fab
-          class="btn-add-basket"
-          aria-label="Example icon button with a bookmark icon"
-          (click)="addToBasket(item)"
-        >
-          <mat-icon aria-hidden="false">add_shopping_cart</mat-icon>
-        </button>
+<div class="top-cards">
+  <div class="wrapper-cards">
+    <div
+      class="card"
+      *ngFor="let item of cardItem | slice: startIndex:endIndex"
+    >
+      <div class="card-inner">
+        <div class="wrapper-imagine">
+          <img class="card-imagine" src="{{ item.image }}" alt="i" />
+        </div>
+        <h4 class="model">{{ item.name }}</h4>
+        <div class="btn-info">
+          <button>{{ item.hash }} TH</button>
+          <button>{{ item.power }} w</button>
+        </div>
+        <p class="price">${{ item.price }}</p>
+        <div class="wrapper-btn-cart">
+          <button mat-raised-button class="btn-buy" (click)="onOpenModal(item)">
+            Shop Now
+          </button>
+          <button
+            mat-fab
+            class="btn-add-basket"
+            aria-label="Example icon button with a bookmark icon"
+            (click)="addToBasket(item)"
+          >
+            <mat-icon aria-hidden="false">add_shopping_cart</mat-icon>
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <mat-paginator
-  [length]="this.cardItem.length"
-  [pageSize]="6"
+  [length]="cardItem.length"
+  [pageSize]="endIndex"
   [pageSizeOptions]="[4, 6, 10, 25]"
   aria-label="Select page"
   (page)="onPageChange($event)"

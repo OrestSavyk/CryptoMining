@@ -77,23 +77,27 @@
   font-family: sans-serif;
   margin-bottom: 40px;
 }
-
-.wrapper-cards {
-  display: grid;
-  grid-gap: 30px;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+.top-cards {
+  display: flex;
+  justify-content: center;
   margin: auto 15px 90px;
+}
+.wrapper-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+  /* margin: auto 15px 90px; */
 }
 
 .card {
-  width: 280px;
   text-align: center;
+  width: 280px;
+  height: 420px;
+  margin: 30px auto;
   color: whitesmoke;
   box-shadow: 0px 0px 3px 3px rgba(190, 186, 186, 0.589);
-  height: 420px;
   border-radius: 10px;
-  margin: 10px auto;
   font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
@@ -104,22 +108,36 @@
   box-shadow: 0px 0px 6px 6px rgba(190, 186, 186, 0.747);
 }
 
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-imagine {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+}
+
 .card-imagine {
-  width: 80%;
-  height: 185px;
-  margin-top: 15px;
+  width: 90%;
+  margin: 15px auto auto;
 }
 
 .model {
   color: rgb(44, 44, 44);
   font-family: monospace;
   font-size: 20px;
-  height: 10%;
-  margin: 5% auto;
+  margin: 15px auto;
 }
 
 .btn-info {
-  height: 10%;
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px auto;
 }
 
 .btn-info button {
@@ -128,22 +146,21 @@
   border: none;
   color: rgb(48, 48, 49);
   background-color: whitesmoke;
-  margin: auto 5px;
 }
 
 .price {
-  height: 15%;
-  padding: 1% auto;
   color: rgb(53, 187, 240);
-  margin: 5% auto;
   font-size: 22px;
   font-weight: 600;
+  margin: 7px auto;
 }
 
 .wrapper-btn-cart {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin: 10px auto;
 }
 
 .btn-buy {
@@ -172,17 +189,25 @@
   width: 40px;
   border-radius: 50%;
 }
+
 .wrapper-btn-cart ::ng-deep .mat-fab .mat-button-wrapper {
   display: block;
   margin: auto;
   padding-top: 0px;
   padding-bottom: 0px;
 }
+
 .mat-paginator {
   margin: auto 20px 30px auto;
 }
 
 @media (min-width: 765px) {
+  .top-cards {
+    margin: auto 30px 90px;
+  }
+  .card {
+    margin: 30px 20px;
+  }
   .btn-style {
     width: fit-content;
   }

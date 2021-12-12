@@ -21,7 +21,7 @@ export class CartComponent implements OnInit {
   basketItem: BasketCart[] = [];
   item: any;
   startIndex: number;
-  endIndex: number;
+  endIndex = 6;
   constructor(
     private cartService: CartService,
     public modal: MatDialog,
@@ -85,6 +85,8 @@ export class CartComponent implements OnInit {
     this.basketService.basketItemsLength$.next(this.basketItem.length);
   }
   onPageChange(event: PageEvent) {
+    console.log(event);
+    
     this.startIndex = event.pageIndex * event.pageSize;
     this.endIndex = this.startIndex + event.pageSize;
   }
