@@ -2,7 +2,7 @@
   <div class="header-top">
     <div class="hamburger-menu">
       <input id="menu-toggle" type="checkbox" />
-      <label class="menu-btn" for="menu-toggle">
+      <label class="menu-btn" for="menu-toggle" (click)="onCloseMenu()">
         <span></span>
       </label>
       <ul class="menu-box">
@@ -16,6 +16,21 @@
             [routerLink]="nav.link"
             ><img [src]="nav.icon" /> {{ nav.name }}</mat-button-toggle
           >
+          <mat-button-toggle
+            class="menu-item-link"
+            *ngIf="!isAdmin && !isUser"
+            routerLink="/login"
+            ><img src="assets/iconNav/login.png" />Log In</mat-button-toggle
+          >
+          <mat-button-toggle
+            class="menu-item-link"
+            *ngIf="isAdmin"
+            routerLink="/admin"
+            ><img src="assets/iconNav/admin.png" />Admin</mat-button-toggle
+          >
+          <mat-button-toggle *ngIf="isAdmin || isUser" (click)="logOut()"
+            >Log Out</mat-button-toggle
+          >
         </mat-button-toggle-group>
       </ul>
     </div>
@@ -25,8 +40,8 @@
     <mat-button-toggle-group class="btn-group">
       <mat-button-toggle routerLink="/directory">Directory</mat-button-toggle>
       <mat-button-toggle routerLink="/shop">Shop</mat-button-toggle>
-      <button mat-button [matMenuTriggerFor]="enter">Enter</button>
-      <mat-menu #enter="matMenu">
+      <button mat-button [matMenuTriggerFor]="account">Account</button>
+      <mat-menu #account="matMenu">
         <button *ngIf="!isAdmin && !isUser" mat-menu-item routerLink="/login">
           Login
         </button>
@@ -48,7 +63,9 @@
         routerLink="/basket"
       >
         <img src="assets/title img/shopping-cart.png" />
-        <div class="basket-counter" *ngIf="basketItemLength > 0">{{ basketItemLength }}</div>
+        <div class="basket-counter" *ngIf="basketItemLength > 0">
+          {{ basketItemLength }}
+        </div>
       </button>
       <button mat-button class="header-btn-contact-top" routerLink="/contact">
         Contact Us

@@ -1,7 +1,5 @@
 import {
   Component,
-  EventEmitter,
-  AfterViewInit,
   Input,
   OnInit,
   ViewChild,
@@ -50,17 +48,14 @@ export class AdminComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.devCartForm();
-    const currentYear = new Date().getFullYear();
-    this.minDate = new Date(currentYear - 15, 0, 1);
-    this.maxDate = new Date(currentYear + 1, 0, 0);
+    const currentYear = new Date().getDate();
+    // this.minDate = new Date(currentYear - 15, 0, 1);
+    // this.maxDate = new Date(currentYear + 1, 0, 0);
   }
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit(): void {
     this.loadCards();
-  }
-  ngAfterViewInit(): void {
-    // this.dataSource.sort = this.sort;
   }
   private devCartForm(): void {
     this.cartForm = this.formBuilder.group({

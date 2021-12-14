@@ -68,8 +68,8 @@
 </div>
 <mat-paginator
   [length]="cardItem.length"
-  [pageSize]="endIndex"
-  [pageSizeOptions]="[4, 6, 10, 25]"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
   aria-label="Select page"
   (page)="onPageChange($event)"
 >

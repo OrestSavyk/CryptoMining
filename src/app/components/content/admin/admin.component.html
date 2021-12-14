@@ -32,91 +32,11 @@
           />
           <mat-hint>Hint</mat-hint>
         </mat-form-field>
-
-        <!-- <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
-          <input matInput formControlName="name" placeholder="Placeholder" />
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Imagine</mat-label>
-          <input matInput formControlName="image" placeholder="Placeholder" />
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Hash</mat-label>
-          <input
-            matInput
-            formControlName="hash"
-            type="number"
-            placeholder="TH"
-          />
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Power</mat-label>
-          <input
-            matInput
-            formControlName="power"
-            type="number"
-            placeholder="Watt"
-          />
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Algorithm</mat-label>
-          <input
-            matInput
-            formControlName="algorithm"
-            placeholder="Placeholder"
-          />
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Size</mat-label>
-          <input matInput formControlName="size" placeholder="Placeholder" />
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Weight</mat-label>
-          <input matInput formControlName="weight" placeholder="Placeholder" />
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>Price</mat-label>
-          <input
-            matInput
-            formControlName="price"
-            type="number"
-            placeholder="$"
-          />
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>Availability</mat-label>
-          <input
-            matInput
-            formControlName="availability"
-            type="text"
-            placeholder="Placeholder"
-          />
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field> -->
-
         <mat-form-field>
           <mat-label>Choose a date</mat-label>
           <input
             matInput
-            [min]="minDate"
-            [max]="maxDate"
             [matDatepicker]="picker"
-            type="text"
             formControlName="date"
           />
           <mat-datepicker-toggle

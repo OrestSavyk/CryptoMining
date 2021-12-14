@@ -20,19 +20,21 @@ export class CartComponent implements OnInit {
   cardItem: Cart[] = [];
   basketItem: BasketCart[] = [];
   item: any;
-  startIndex: number;
-  endIndex = 6;
+  pageSizeOptions = [4, 6, 10, 25];
+  pageSize:number = 6;
+  startIndex:number = 0;
+  endIndex:number = 6; 
   constructor(
     private cartService: CartService,
     public modal: MatDialog,
     private modalHelperService: ModalService,
     public basketService: BasketService
-    ) {}
-    
-    ngOnInit(): void {
-      this.loadCards();
-    }
-    
+  ) {}
+
+  ngOnInit(): void {
+    this.loadCards();
+  }
+
   private loadCards(): void {
     this.cartService.getTool().subscribe((value: Cart[]) => {
       this.cardItem = value;
@@ -86,8 +88,8 @@ export class CartComponent implements OnInit {
   }
   onPageChange(event: PageEvent) {
     console.log(event);
-    
     this.startIndex = event.pageIndex * event.pageSize;
     this.endIndex = this.startIndex + event.pageSize;
+    return event
   }
 }

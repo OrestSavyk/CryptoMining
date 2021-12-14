@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { BasketService } from 'src/app/services/basket.service';
 import { EnterUserService } from 'src/app/services/enter-user.service';
@@ -14,10 +14,12 @@ export class HeaderComponent implements OnInit {
   isUser: boolean;
   isAdmin: boolean;
   basketItemLength: number;
+  
   constructor(
     private enterUserService: EnterUserService,
     private basketService: BasketService,
     private authService: AuthService,
+    public element: ElementRef
   ) {
   }
 
@@ -35,5 +37,11 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.authService.isAdmin$.next(false);
     this.enterUserService.loginUserIs$.next(false);
+    localStorage.removeItem('isAdmin');
+    localStorage.removeItem('isUser');
+  }
+  onCloseMenu(): void {
+    console.log('');
+    
   }
 }

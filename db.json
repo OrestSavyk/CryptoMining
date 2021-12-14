@@ -6,7 +6,7 @@
       "image": "assets/card/card2.png",
       "hash": 256,
       "power": 1976,
-      "date": "2021-11-25",
+      "date": "2018-11-16T22:00:00.000Z",
       "algorithm": "SHA-256",
       "size": "27x27",
       "weight": "10500g",
@@ -62,7 +62,7 @@
       "image": "assets/card/card2.png",
       "hash": 118,
       "power": 2317,
-      "date": "2021-11-30T22:00:00.000Z",
+      "date": "2021-12-13T22:00:00.000Z",
       "algorithm": "Mine",
       "size": "150 x 225 x 390mm",
       "weight": "10500g",
@@ -113,18 +113,18 @@
       "id": "ed9ee49e-f839-4c45-a03f-eb9dfc07d33c"
     },
     {
-      "id": "d6ec21fb-391a-4e68-9718-3fffcaa4e7cf",
       "headname": "Pizza",
       "name": "oreest",
       "image": "",
       "hash": "178",
       "power": "1837",
-      "date": "",
+      "date": "2021-11-30T22:00:00.000Z",
       "algorithm": "sha3256",
-      "size": "",
-      "weight": "",
-      "price": "",
-      "availability": ""
+      "size": "jkljkl",
+      "weight": "klkl",
+      "price": "2873",
+      "availability": "In stock",
+      "id": "d6ec21fb-391a-4e68-9718-3fffcaa4e7cf"
     },
     {
       "id": "e4ac219f-8822-44b3-b6de-29ffd5b58a92",

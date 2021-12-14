@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as uuid from 'uuid';
-import { ErrorStateMatcher } from '@angular/material/core';
 import { EnterUserService } from 'src/app/services/enter-user.service';
 import { Login } from 'src/app/models/oldUser';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private enterUserService: EnterUserService,
     private authService: AuthService,
+    private router: Router
   ) {
     this.getLoginUser();
     this.initLoginForm();
@@ -49,11 +50,13 @@ export class LoginComponent implements OnInit {
       this.loginForm.reset();
       this.authService.isAdmin$.next(true);
       localStorage.setItem('isAdmin', JSON.stringify(true));
+      this.router.navigate(['admin']);
     } else if (user) {
       alert('Login Successfull');
       this.loginForm.reset();
       this.enterUserService.loginUserIs$.next(true);
       localStorage.setItem('isUser', JSON.stringify(true));
+      this.router.navigate(['home']);
     } else {
       console.log('please, sign in!');
       this.loginForm.reset();
