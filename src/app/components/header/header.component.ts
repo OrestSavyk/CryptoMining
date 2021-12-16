@@ -14,34 +14,35 @@ export class HeaderComponent implements OnInit {
   isUser: boolean;
   isAdmin: boolean;
   basketItemLength: number;
-  
+  isBurgerMenu: boolean = false;
+
   constructor(
     private enterUserService: EnterUserService,
     private basketService: BasketService,
     private authService: AuthService,
     public element: ElementRef
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.authService.isAdmin$.subscribe((isAdmin) => {
       this.isAdmin = isAdmin;
-    })
-    this.enterUserService.loginUserIs$.subscribe((isUser) => {
+    });
+    this.isAdmin = JSON.parse(localStorage.getItem('isAdmin'));
+    this.enterUserService.isLoginUser$.subscribe((isUser) => {
       this.isUser = isUser;
-    })
+    });
+    this.isUser = JSON.parse(localStorage.getItem('isUser'));
     this.basketService.basketItemsLength$.subscribe((length) => {
       this.basketItemLength = length;
-    })
+    });
   }
   logOut() {
     this.authService.isAdmin$.next(false);
-    this.enterUserService.loginUserIs$.next(false);
+    this.enterUserService.isLoginUser$.next(false);
     localStorage.removeItem('isAdmin');
     localStorage.removeItem('isUser');
   }
   onCloseMenu(): void {
-    console.log('');
-    
+    this.isBurgerMenu = !this.isBurgerMenu;
   }
 }
