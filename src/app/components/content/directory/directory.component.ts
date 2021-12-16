@@ -8,7 +8,7 @@ import { CHOOSE_TYPE } from './directory.constant';
 export class DirectoryComponent implements OnInit {
   choseType = CHOOSE_TYPE;
   constructor() { }
-
+  
   ngOnInit(): void {
   }
 
