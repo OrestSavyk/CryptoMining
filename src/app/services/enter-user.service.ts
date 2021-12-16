@@ -8,10 +8,9 @@ import { Login } from '../models/oldUser';
   providedIn: 'root',
 })
 export class EnterUserService {
-  loginUserIs$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  isLoginUser$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) {}
   getLogins(): Observable<Login[]> {
     return this.httpClient.get<Login[]>(`http://localhost:3000/userData`);
   }

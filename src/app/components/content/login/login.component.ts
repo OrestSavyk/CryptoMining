@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import * as uuid from 'uuid';
 import { EnterUserService } from 'src/app/services/enter-user.service';
 import { Login } from 'src/app/models/oldUser';
@@ -26,13 +31,13 @@ export class LoginComponent implements OnInit {
     this.getLoginUser();
     this.initLoginForm();
   }
-  
+
   ngOnInit(): void {}
   private initLoginForm(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      isRobot: [false, [Validators.requiredTrue]]
+      isRobot: [false, [Validators.requiredTrue]],
     });
   }
   login(): void {
@@ -54,7 +59,7 @@ export class LoginComponent implements OnInit {
     } else if (user) {
       alert('Login Successfull');
       this.loginForm.reset();
-      this.enterUserService.loginUserIs$.next(true);
+      this.enterUserService.isLoginUser$.next(true);
       localStorage.setItem('isUser', JSON.stringify(true));
       this.router.navigate(['home']);
     } else {
@@ -63,11 +68,11 @@ export class LoginComponent implements OnInit {
       alert('user not fount!');
     }
   }
-  
+
   private getLoginUser() {
     this.enterUserService.getLogins().subscribe((value) => {
       this.loginsFromBase = value;
-    }); 
+    });
   }
   showErrors(field: AbstractControl): boolean {
     return field.invalid && (field.touched || this.formSubmited);
