@@ -11,8 +11,10 @@
 }
 
 .filter-btn {
-  display: block;
-  text-align: -webkit-center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-style {
@@ -203,6 +205,9 @@
   }
   .btn-style {
     width: fit-content;
+  }
+  .filter-btn {
+    flex-direction: row;
   }
 }
 

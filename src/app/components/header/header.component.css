@@ -105,7 +105,7 @@
 }
 
 .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
-  padding: 0px;
+  padding: 10px;
 }
 
 ::ng-deep .mat-button-toggle-button {

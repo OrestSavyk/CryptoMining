@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { BasketService } from 'src/app/services/basket.service';
 import { EnterUserService } from 'src/app/services/enter-user.service';
