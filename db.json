@@ -1,7 +1,7 @@
 {
   "minerTools": [
     {
-      "headname": "LDMKMC",
+      "headname": "LDMK",
       "name": "ooooo",
       "image": "assets/card/card2.png",
       "hash": 256,
@@ -344,6 +344,34 @@
       "secondName": null,
       "email": null,
       "password": null
+    },
+    {
+      "id": "e62bd7af-1f6e-4ec5-8d6e-c3e39c674dc7",
+      "firstName": "uu",
+      "secondName": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "69ed8616-08f7-4085-878a-267de136f063",
+      "firstName": "",
+      "secondName": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "69b80c7a-8f73-46d4-9487-91b221d5906c",
+      "firstName": "",
+      "secondName": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "329006b2-8f9d-4d37-97c8-28353a83449c",
+      "firstName": "",
+      "secondName": "",
+      "email": "",
+      "password": ""
     }
   ]
 }

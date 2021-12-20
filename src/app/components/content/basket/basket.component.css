@@ -48,7 +48,7 @@ td.mat-footer-cell:last-of-type {
   cursor: pointer;
   border-radius: 4px;
   position: relative;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .btn-table-delete:hover {
