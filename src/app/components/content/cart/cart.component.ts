@@ -21,9 +21,9 @@ export class CartComponent implements OnInit {
   basketItem: BasketCart[] = [];
   item: any;
   pageSizeOptions = [4, 6, 10, 25];
-  pageSize:number = 6;
-  startIndex:number = 0;
-  endIndex:number = 6; 
+  pageSize: number = 6;
+  startIndex: number = 0;
+  endIndex: number = 6;
   constructor(
     private cartService: CartService,
     public modal: MatDialog,
@@ -54,9 +54,18 @@ export class CartComponent implements OnInit {
   onResetFilter(): void {
     this.loadCards();
   }
-  onEnterSearchTool(event) {
-    console.log(event.target.value);
-    event.target.value = '';
+  onEnterSearchTool(event): void {
+    if (!event.target.value) {
+      return;
+    }
+    const inputValue = event.target.value.split('');
+    console.log(event.target.value.split(''));
+    this.cardItem = this.cardItem.filter((value) => {
+      value.headname.toLowerCase() &&
+        value.name.toLowerCase() == event.target.value.toLowerCase();
+    });
+
+    // event.target.value = '';
   }
   onOpenModal(item: Cart): void {
     this.modalHelperService.selectedItem$.next(item);
@@ -90,6 +99,6 @@ export class CartComponent implements OnInit {
     console.log(event);
     this.startIndex = event.pageIndex * event.pageSize;
     this.endIndex = this.startIndex + event.pageSize;
-    return event
+    return event;
   }
 }
