@@ -23,14 +23,23 @@
     </mat-form-field>
     <button mat-raised-button (click)="onResetFilter()">Reset</button>
   </div>
-  <div class="filter-search">
+  <div class="wrapper-searcher">
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Search by manufacturer or model</mat-label>
+      <input matInput type="text" (keydown)="onEnterSearchTool($event)">
+      <button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <!-- <div class="filter-search">
     <input
       #search
       type="text"
       (keydown.enter)="onEnterSearchTool($event)"
       placeholder="Search by manufacturer or model"
     />
-  </div>
+  </div> -->
   <div class="cards-title">Best Selling</div>
 </div>
 <div class="top-cards">
