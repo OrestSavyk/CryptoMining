@@ -38,9 +38,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { InputErrorStateMatcherExampleComponent } from './components/content/comparison/input-error-state-matcher-example/input-error-state-matcher-example.component';
-import {
-  MatPaginatorModule
-} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
@@ -52,6 +50,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SignUpComponent } from './components/content/sign-up/sign-up.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { InputErrorsComponent } from './components/content/input-errors/input-errors.component';
+import { ToastrModule } from 'ngx-toastr';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -92,6 +91,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
+    ToastrModule.forRoot(),
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
@@ -121,9 +121,9 @@ const appRoutes: Routes = [
     MatStepperModule,
     MatIconModule,
     MatMenuModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
