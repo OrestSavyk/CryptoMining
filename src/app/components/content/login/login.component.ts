@@ -5,7 +5,6 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import * as uuid from 'uuid';
 import { EnterUserService } from 'src/app/services/enter-user.service';
 import { Login } from 'src/app/models/oldUser';
 import { AuthService } from 'src/app/services/auth.service';

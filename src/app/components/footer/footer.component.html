@@ -22,11 +22,10 @@
   <div class="right-footer">
     <div class="right-footer-top">
       <div *ngFor="let icon of iconFoot" class="icon-footer">
-        <a href="#" target="_blank">
+        <a [href]="icon.link" target="_blank">
           <img [src]="icon.image" alt="l" />
         </a>
       </div>
     </div>
   </div>
 </div>
-<!-- <div class="questions"><a href="#"><img src="assets/title img/image.crisp.chat_" alt="c"></a></div> -->
