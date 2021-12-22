@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { BasketService } from 'src/app/services/basket.service';
 import { ModalBehaviorComponent } from '../modal-behavior/modal-behavior.component';
 import { PageEvent } from '@angular/material/paginator';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cart',
@@ -28,7 +29,8 @@ export class CartComponent implements OnInit {
     private cartService: CartService,
     public modal: MatDialog,
     private modalHelperService: ModalService,
-    public basketService: BasketService
+    public basketService: BasketService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -92,8 +94,9 @@ export class CartComponent implements OnInit {
     } else {
       this.basketItem = [...this.basketItem, selectedItem];
     }
-    localStorage.setItem('basketItems', JSON.stringify(this.basketItem));
+    this.toastr.success(`${item.headname} ${item.name} added to basket`);
     this.basketService.basketItemsLength$.next(this.basketItem.length);
+    localStorage.setItem('basketItems', JSON.stringify(this.basketItem));
   }
   onPageChange(event: PageEvent) {
     console.log(event);
