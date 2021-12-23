@@ -54,17 +54,37 @@ export class CartComponent implements OnInit {
   onResetFilter(): void {
     this.loadCards();
   }
-  onEnterSearchTool(event): void {
-    if (!event.target.value) {
-      return;
-    }
+  onEnterSearchTool(event: any): void {
+    let eventt = event.target.value;
     const inputValue = event.target.value.split('');
-    console.log(event.target.value.split(''));
-    this.cardItem = this.cardItem.filter((value) => {
-      value.headname.toLowerCase() &&
-        value.name.toLowerCase() == event.target.value.toLowerCase();
-    });
 
+    // inputValue.forEach((inputName) => {
+    //   console.log(inputName);
+    //   this.cardItem = this.cardItem.map((cards) => {
+    //     if (!eventt) {
+    //       return cards;
+    //     } else {
+    //       let filteredCards = [];
+    //       filteredCards = cards.headname.split('');
+    //       cards.headname.split('').filter((card) => {
+    //         card === eventt;
+    //       });
+    //     }
+    //     // this.cardItem.forEach(
+    //     //   (value) =>
+    //     //     ( filteredCards = value.name.filter(
+    //     //       (card) => card.name === eventt
+    //     //     ))
+    //     // );
+    //   });
+    //   return this.cardItem;
+    // });
+
+    // this.cardItem = this.cardItem.filter((value) => {
+    //   value.headname.toLowerCase() &&
+    //   value.name.toLowerCase() == event.target.value.toLowerCase();
+    // });
+    // console.log(event.target.value.split(''));
     // event.target.value = '';
   }
   onOpenModal(item: Cart): void {
