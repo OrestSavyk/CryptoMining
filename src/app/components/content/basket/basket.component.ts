@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { BasketCart } from 'src/app/models/CartTool';
+import { BasketService } from 'src/app/services/basket.service';
 
 @Component({
   selector: 'app-basket',
@@ -20,18 +22,26 @@ export class BasketComponent implements OnInit {
   cardItem: BasketCart[] = [];
   totalAmount: number = 0;
   newItem;
-  constructor() {}
+  constructor(
+    private toastr: ToastrService,
+    private basketService: BasketService
+  ) {}
 
   ngOnInit(): void {
     this.loadCartItems();
     this.updateTotalPrice();
+    this.basketService.basketItemsLength$.next(this.cardItem.length);
   }
 
   loadCartItems(): void {
-    this.cardItem = JSON.parse(localStorage.getItem('basketItems'));
-    let i = 1;
-    for (const item of this.cardItem) {
-      item.position = i++;
+    if (JSON.parse(localStorage.getItem('basketItems'))) {
+      this.cardItem = JSON.parse(localStorage.getItem('basketItems'));
+      let i = 1;
+      for (const item of this.cardItem) {
+        item.position = i++;
+      }
+    } else {
+      this.cardItem = [];
     }
   }
   updateTotalPrice() {
@@ -39,6 +49,8 @@ export class BasketComponent implements OnInit {
       this.totalAmount = this.cardItem.reduce(function (acc, value) {
         return acc + value.amount * value.price;
       }, 0);
+    } else {
+      this.totalAmount = 0;
     }
   }
   addOnePieces(item: BasketCart): void {
@@ -69,7 +81,15 @@ export class BasketComponent implements OnInit {
     basketArray.splice(index, 1);
     localStorage.setItem('basketItems', JSON.stringify(basketArray));
     this.cardItem = basketArray;
+    this.basketService.basketItemsLength$.next(this.cardItem.length);
     this.loadCartItems();
     this.updateTotalPrice();
+  }
+  onOrderItem() {
+    this.toastr.success(`Your order has been successfully accepted !`);
+    localStorage.removeItem('basketItems');
+    this.loadCartItems();
+    this.updateTotalPrice();
+    this.basketService.basketItemsLength$.next(0);
   }
 }

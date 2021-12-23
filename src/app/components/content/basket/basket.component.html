@@ -57,6 +57,11 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
     </div>
-    <h2 class="total-price">Total price: ${{ totalAmount }}</h2>
+    <div class="wrapper-total-price">
+      <h2 class="total-price">Total price: ${{ totalAmount }}</h2>
+    </div>
+    <div class="wrapper-btn-order">
+      <button mat-raised-button class="btn-order" (click)="onOrderItem()" [disabled]="!cardItem.length">Order</button>
+    </div>
   </div>
 </div>
