@@ -49,7 +49,7 @@ body {
   left: 12px;
 }
 .toast-top-right {
-  top: 120px;
+  top: 110px !important;
   right: 12px;
 }
 .toast-bottom-right {
@@ -209,5 +209,11 @@ button.toast-close-button {
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+} */
