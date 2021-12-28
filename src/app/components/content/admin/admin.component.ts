@@ -1,9 +1,4 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cart } from 'src/app/models/CartTool';
 import { CartService } from 'src/app/services/cart.service';
@@ -49,8 +44,6 @@ export class AdminComponent implements OnInit {
   ) {
     this.devCartForm();
     const currentYear = new Date().getDate();
-    // this.minDate = new Date(currentYear - 15, 0, 1);
-    // this.maxDate = new Date(currentYear + 1, 0, 0);
   }
   @ViewChild(MatSort) sort: MatSort;
 

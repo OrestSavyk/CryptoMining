@@ -1,5 +1,7 @@
-::ng-deep #cdk-overlay-0 {
+::ng-deep .cdk-overlay-pane {
+  min-width: 85%;
   max-width: 90% !important;
+  height: 100% !important;
 }
 ::ng-deep .mat-dialog-container {
   padding: 10px 0;
@@ -8,10 +10,7 @@
 }
 
 .price {
-  height: 15%;
-  padding: 1% auto;
   color: rgb(53, 187, 240);
-  margin: 5% auto;
   font-size: 22px;
   font-weight: 600;
 }
@@ -71,10 +70,15 @@
 .modal-character {
   width: 100%;
 }
-
+.wrapper-image {
+  display: flex;
+  width: 100%;
+  min-height: 148px;
+  margin: auto;
+}
 .modal-character img {
   width: 100%;
-  margin: auto;
+  height: 100%;
 }
 
 .modal-character-top {
@@ -101,131 +105,51 @@
 }
 
 .modal-price {
-  margin: 50px auto 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin: 40px auto 30px;
 }
 
 .modal-availability {
   font-weight: 500;
-  display: flex;
-  justify-content: center;
+}
+.wrapper-link {
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+.wrapper-link a {
+  font-weight: 600;
+  color: rgb(53, 187, 240);
 }
 
-.dot {
-  width: 18px;
-  height: 18px;
-  border: 0px;
-  border-radius: 50%;
-  background: red;
-  margin-left: 8px;
+@media (min-width: 425px) {
+  .price {
+    margin-right: 30px;
+  }
+  .modal-price {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .wrapper-link {
+    padding-left: 20px;
+  }
 }
-
-.title-top {
-  width: 210px;
-  height: 30px;
-  margin: auto;
-  background-color: rgba(229, 245, 254, 0.616);
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border: none;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  text-align: center;
-}
-
-.options-avail {
-  height: fit-content;
-  background-color: rgba(229, 245, 254, 0.616);
-  padding: 5%;
-  margin: auto;
-  margin-bottom: 30px;
-}
-
-.sort-top {
-  font-size: 14px;
-  border-radius: 12px;
-  height: 14 px;
-  width: fit-content;
-  padding: 5px 10px;
-  background-color: white;
-  margin-left: 25px;
-  box-shadow: 2px 2px 4px rgba(131, 128, 128, 0.671);
-}
-
-.sort-btn {
-  display: flex;
-  margin: 10px auto;
-}
-
-.sort-btn button {
-  border-radius: 10px;
-  height: 20px;
-  min-width: 55px;
-  border: none;
-  background-color: white;
-  box-shadow: 2px 2px 4px rgba(131, 128, 128, 0.671);
-  margin: auto 5px;
-}
-
-.sort-btn button:hover {
-  background-color: rgb(19, 230, 19);
-  transition: 0.5s;
-  color: white;
-}
-
-.info-avail {
-  background-color: white;
-  margin: 15px auto;
-  border-radius: 10px;
-  padding: 20px 15px;
-}
-
-.info-avail ul {
-  color: red;
-  list-style: circle;
-}
-
-.info-avail li {
-  margin: 15px auto;
-  text-align: start;
-}
-
-.info-payment {
-  background-color: white;
-  margin: 15px auto;
-  border-radius: 10px;
-  padding: 20px 15px;
-}
-
-.info-payment ul {
-  text-align: start;
-  list-style: circle;
-}
-
-.info-payment li {
-  margin: 15px auto;
-  text-align: start;
-}
-
 @media (min-width: 765px) {
   .modal-model {
     font-size: 30px;
   }
 
   .modal-character img {
-    width: 50%;
-  }
-
-  .modal-price {
-    display: flex;
-    align-items: center;
-  }
-
-  .price {
-    margin-right: 30px;
+    width: 100%;
   }
 }
 
-@media (min-width: 980px) {
+@media (min-width: 1024px) {
+  .cdk-overlay-pane {
+    min-width: auto !important;
+  }
   .modal-character {
     display: flex;
   }

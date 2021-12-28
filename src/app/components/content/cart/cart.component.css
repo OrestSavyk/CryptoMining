@@ -79,7 +79,7 @@
   outline: none;
 } */
 
-.cards-title {
+.main-title {
   font-size: 36px;
   font-weight: 700;
   font-family: sans-serif;
@@ -212,7 +212,7 @@
 }
 @media (min-width: 765px) {
   .top-cards {
-    margin: auto 30px 90px;
+    margin: auto 50px 90px;
   }
   .btn-style {
     width: fit-content;

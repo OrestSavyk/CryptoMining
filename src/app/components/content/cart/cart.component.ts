@@ -66,7 +66,6 @@ export class CartComponent implements OnInit {
       value.headname.toLowerCase() &&
         value.name.toLowerCase() == event.target.value.toLowerCase();
     });
-
     // event.target.value = '';
   }
   onOpenModal(item: Cart): void {
@@ -99,7 +98,6 @@ export class CartComponent implements OnInit {
     localStorage.setItem('basketItems', JSON.stringify(this.basketItem));
   }
   onPageChange(event: PageEvent) {
-    console.log(event);
     this.startIndex = event.pageIndex * event.pageSize;
     this.endIndex = this.startIndex + event.pageSize;
     return event;
