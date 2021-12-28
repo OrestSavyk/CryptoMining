@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cart } from 'src/app/models/CartTool';
 import { ModalService } from 'src/app/services/modal.service';
 
@@ -10,14 +11,17 @@ import { ModalService } from 'src/app/services/modal.service';
 export class ModalBehaviorComponent implements OnInit {
   @Input()
   item: Cart;
-  modal: Cart;
 
-  constructor(private modalService: ModalService) {}
+  constructor(private modalService: ModalService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadDataModal();
+    console.log(this.item.id);
   }
   loadDataModal() {
     this.item = this.modalService.selectedItem$.getValue();
+  }
+  redirectTo(id: any) {
+    this.router.navigateByUrl(`/shop/${id}`);
   }
 }

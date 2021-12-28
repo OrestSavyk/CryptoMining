@@ -2,10 +2,12 @@
   <div class="header-top">
     <div class="hamburger-menu">
       <div class="wrapper-menu-icon" (click)="onCloseMenu()">
-        <img src="assets/home img/burger.png">
+        <img src="assets/home img/burger.png" />
       </div>
       <ul *ngIf="isBurgerMenu" class="menu-box">
-        <button class="btn-close-menu" (click)="onCloseMenu()"><img src="assets/home img/cross.png"></button>
+        <button class="btn-close-menu" (click)="onCloseMenu()">
+          <img src="assets/home img/cross.png" />
+        </button>
         <mat-button-toggle-group
           name="favoriteColor"
           (click)="onCloseMenu()"

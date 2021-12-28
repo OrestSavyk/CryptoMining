@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cart } from 'src/app/models/CartTool';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-shop',
@@ -7,8 +8,12 @@ import { Cart } from 'src/app/models/CartTool';
   styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
- 
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor(private cartService: CartService) {}
+  carts: Cart[] = [];
+  ngOnInit(): void {
+    this.loadCarts();
+  }
+  private loadCarts() {
+    this.cartService.getTool().subscribe((value) => (this.carts = value));
+  }
 }

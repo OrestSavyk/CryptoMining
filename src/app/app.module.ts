@@ -15,14 +15,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ImmersionComponent } from './components/content/immersion/immersion.component';
 import { ComparisonComponent } from './components/content/comparison/comparison.component';
-import { ShopComponent } from './components/content/shop/shop.component';
 import { DirectoryComponent } from './components/content/directory/directory.component';
 import { LoginComponent } from './components/content/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/content/home/home.component';
 import { ContactComponent } from './components/content/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CartComponent } from './components/content/cart/cart.component';
 import { AdminComponent } from './components/content/admin/admin.component';
 import { BasketComponent } from './components/content/basket/basket.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -44,27 +42,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatIconModule } from '@angular/material/icon';
-import { ModalBehaviorComponent } from './components/content/modal-behavior/modal-behavior.component';
 import { ErrorStateMatcherComponent } from './components/content/error-state-matcher/error-state-matcher.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { SignUpComponent } from './components/content/sign-up/sign-up.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { InputErrorsComponent } from './components/content/input-errors/input-errors.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CartComponent } from './components/content/cart/cart.component';
+import { ShopComponent } from './components/content/shop/shop.component';
+import { CartInfoComponent } from './components/content/cart-info/cart-info.component';
+import { ModalBehaviorComponent } from './components/content/modal-behavior/modal-behavior.component';
 
-const appRoutes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'sign', component: SignUpComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'immersion', component: ImmersionComponent },
-  { path: 'shop', component: ShopComponent },
-  { path: 'basket', component: BasketComponent },
-  { path: 'directory', component: DirectoryComponent },
-  { path: 'comp', component: ComparisonComponent },
-];
+const appRoutes: Routes = [];
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,20 +61,21 @@ const appRoutes: Routes = [
     FooterComponent,
     ImmersionComponent,
     ComparisonComponent,
-    ShopComponent,
     DirectoryComponent,
     LoginComponent,
     HomeComponent,
     ContactComponent,
-    CartComponent,
     AdminComponent,
     BasketComponent,
     DialogDataExampleDialogComponent,
     InputErrorStateMatcherExampleComponent,
-    ModalBehaviorComponent,
     ErrorStateMatcherComponent,
     SignUpComponent,
     InputErrorsComponent,
+    CartComponent,
+    ShopComponent,
+    CartInfoComponent,
+    ModalBehaviorComponent,
   ],
   imports: [
     BrowserModule,

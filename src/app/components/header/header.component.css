@@ -107,7 +107,13 @@
 .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
   padding: 10px;
 }
-
+.mat-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-flat-button {
+  padding: 0 12px;
+  border-radius: 0px;
+}
 ::ng-deep .mat-button-toggle-button {
   height: 100%;
 }
