@@ -1,130 +1,150 @@
 .inner-header {
-    margin: 30px 5% 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 30px 5% 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 35px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 35px;
 }
 
 .all-about-crypto {
-    width: 100%;
-    margin: auto;
+  width: 100%;
+  margin: auto;
 }
 
 .all-about-crypto-blok {
-    display: grid;
-    margin: 40px auto;
+  display: grid;
+  margin: 40px auto;
 }
 
 .link-info {
-    width: 80%;
-    margin: 20px auto;
-    align-self: center;
+  width: 80%;
+  margin: 20px auto;
+  align-self: center;
 }
 
 .link-info a {
-    text-decoration: none;
-    text-align: center;
-    color: rgb(37, 124, 182);
-    font-size: 30px;
-    font-weight: 600;
-    font-family: sans-serif;
+  text-decoration: none;
+  text-align: center;
+  color: rgb(37, 124, 182);
+  font-size: 30px;
+  font-weight: 600;
+  font-family: sans-serif;
 }
 
 .link-info p {
-    font-family: sans-serif;
-    color: gray;
-    font-weight: 500;
-    margin: 20px auto;
-
+  font-family: sans-serif;
+  color: gray;
+  font-weight: 500;
+  margin: 20px auto;
 }
 
 .img-computer {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
 .img-computer img {
-    width: 100%;
-    height: 100%;
-    margin: auto;
-
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
 .faq-head {
-    text-align: center;
-    font-size: 35px;
-    font-family: sans-serif;
-    margin: 30px auto;
+  text-align: center;
+  font-size: 35px;
+  font-family: sans-serif;
+  margin: 30px auto;
 }
 
 .faq {
-    display: grid;
+  display: grid;
 }
 
 .faq-blok {
-    margin: 25px auto;
-    width: 80%;
+  margin: 25px auto;
+  width: 80%;
 }
 
 .faq-blok-title {
-    color: gray;
-    font-family: sans-serif;
-    margin: 2% auto;
+  color: gray;
+  font-family: sans-serif;
+  margin: 2% auto;
 }
 
 .faq-blok p {
-    font-family: sans-serif;
-
+  font-family: sans-serif;
 }
 
 .mat-expansion-panel .mat-expansion-panel-header:hover {
-    height: fit-content;
+  height: fit-content;
 }
 
 .mat-accordion .mat-expansion-panel:first-of-type {
-    height: auto;
+  height: auto;
 }
 
 .mat-expansion-panel-header {
-    height: auto;
+  height: auto;
 }
 
 ::ng-deep .mat-tab-body-content {
-    margin: 20px 60px;
-    height: auto !important;
-    overflow: auto;
+  margin: 20px 60px;
+  height: auto !important;
+  overflow: auto;
 }
 
 ::ng-deep .mat-expansion-panel-body {
-    padding-top: 10px !important;
+  padding-top: 10px !important;
+}
+::ng-deep .mat-tab-header {
+  min-height: 120px;
+}
+::ng-deep .mat-tab-header .mat-tab-labels {
+  justify-content: center;
+  height: 100%;
+  min-width: 100%;
+}
+::ng-deep .mat-tab-label .mat-tab-label-content {
+  display: flex !important;
+  white-space: normal !important;
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+}
+::ng-deep .mat-tab-label {
+  height: 120px !important;
 }
 
+@media (max-width: 599px) {
+  ::ng-deep .mat-tab-label {
+    margin: auto !important;
+    min-width: 220px !important;
+  }
+}
 @media (min-width: 768px) {
-
-    .faq {
-        grid-template-columns: repeat(2, 50%);
-        margin: 15px;
-    }
+  .faq {
+    grid-template-columns: repeat(2, 50%);
+    margin: 15px;
+  }
 }
 
 @media (min-width: 1024px) {
-    .all-about-crypto-blok {
-        grid-template-columns: repeat(2, 50%);
-    }
+  .all-about-crypto-blok {
+    grid-template-columns: repeat(2, 50%);
+  }
 
-    .block-order {
-        order: 1;
-    }
+  .block-order {
+    order: 1;
+  }
 
-    .img-computer img {
-        max-width: 435px;
-        width: 100%;
-        height: auto;
-    }
+  .img-computer img {
+    max-width: 435px;
+    width: 100%;
+    height: auto;
+  }
 }
