@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
   cardItem: Cart[] = [];
   basketItem: BasketCart[] = [];
   item: any;
+  searchValue: any;
   pageSizeOptions = [4, 6, 10, 25];
   pageSize: number = 6;
   startIndex: number = 0;
@@ -56,18 +57,23 @@ export class CartComponent implements OnInit {
   onResetFilter(): void {
     this.loadCards();
   }
-  onEnterSearchTool(event: any): void {
-    let eventt = event.target.value;
-    if (eventt == '') {
-      return;
+  onEnterSearchTool(): void {
+    // this.searchValue = event.target.value;
+    if (this.searchValue == '') {
+      // return;
+      this.ngOnInit();
     } else {
       this.cardItem = this.cardItem.filter((res) => {
         return (
-          res.name.toLowerCase().match(eventt.toLowerCase()) ||
-          res.headname.toLowerCase().match(eventt.toLowerCase())
+          res.name.toLowerCase().match(this.searchValue.toLowerCase()) ||
+          res.headname.toLowerCase().match(this.searchValue.toLowerCase())
         );
       });
     }
+  }
+  clearSearcher() {
+    this.searchValue = '';
+    this.ngOnInit();
   }
   onOpenModal(item: Cart): void {
     this.modalHelperService.selectedItem$.next(item);
