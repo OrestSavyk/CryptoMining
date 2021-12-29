@@ -117,7 +117,9 @@
 ::ng-deep .mat-button-toggle-button {
   height: 100%;
 }
-
+.mat-button-toggle-checked {
+  background-color: #1e76b5a1;
+}
 .header-btn-contact {
   margin-top: 20px;
   margin-bottom: auto;

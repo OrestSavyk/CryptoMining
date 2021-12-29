@@ -40,10 +40,20 @@
     <div class="header-logo" routerLink="">
       <img src="assets/title img/logo.png" alt="l" />
     </div>
-    <mat-button-toggle-group class="btn-group">
-      <mat-button-toggle routerLink="/directory">Directory</mat-button-toggle>
-      <mat-button-toggle routerLink="/shop">Shop</mat-button-toggle>
-      <button mat-button [matMenuTriggerFor]="account">Account</button>
+    <mat-button-toggle-group
+      class="btn-group"
+      name="favoriteColor"
+      aria-label="Favorite Color"
+    >
+      <mat-button-toggle value="directory" routerLink="/directory"
+        >Directory</mat-button-toggle
+      >
+      <mat-button-toggle value="shop" routerLink="/shop"
+        >Shop</mat-button-toggle
+      >
+      <mat-button-toggle [matMenuTriggerFor]="account"
+        >Account</mat-button-toggle
+      >
       <mat-menu #account="matMenu">
         <button *ngIf="!isAdmin && !isUser" mat-menu-item routerLink="/login">
           Login
