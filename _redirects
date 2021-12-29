@@ -1,0 +1,6 @@
+###
+# Redirect 404 to index.html (200)
+# This ensures that routing can be done by the web app in the browser
+# instead of the server.
+###
+/*    /index.html   200
