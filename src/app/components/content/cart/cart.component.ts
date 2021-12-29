@@ -56,24 +56,23 @@ export class CartComponent implements OnInit {
   onResetFilter(): void {
     this.loadCards();
   }
-  onEnterSearchTool(event): void {
-    if (!event.target.value) {
+  onEnterSearchTool(event: any): void {
+    let eventt = event.target.value;
+    if (eventt == '') {
       return;
+    } else {
+      this.cardItem = this.cardItem.filter((res) => {
+        return (
+          res.name.toLowerCase().match(eventt.toLowerCase()) ||
+          res.headname.toLowerCase().match(eventt.toLowerCase())
+        );
+      });
     }
-    const inputValue = event.target.value.split('');
-    console.log(event.target.value.split(''));
-    this.cardItem = this.cardItem.filter((value) => {
-      value.headname.toLowerCase() &&
-        value.name.toLowerCase() == event.target.value.toLowerCase();
-    });
-    // event.target.value = '';
   }
   onOpenModal(item: Cart): void {
     this.modalHelperService.selectedItem$.next(item);
     let dialogRef = this.modal.open(ModalBehaviorComponent);
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
   addToBasket(item: Cart): void {
     const selectedItem = {
