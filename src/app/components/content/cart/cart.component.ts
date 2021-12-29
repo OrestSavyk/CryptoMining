@@ -56,43 +56,21 @@ export class CartComponent implements OnInit {
   }
   onEnterSearchTool(event: any): void {
     let eventt = event.target.value;
-    const inputValue = event.target.value.split('');
-
-    // inputValue.forEach((inputName) => {
-    //   console.log(inputName);
-    //   this.cardItem = this.cardItem.map((cards) => {
-    //     if (!eventt) {
-    //       return cards;
-    //     } else {
-    //       let filteredCards = [];
-    //       filteredCards = cards.headname.split('');
-    //       cards.headname.split('').filter((card) => {
-    //         card === eventt;
-    //       });
-    //     }
-    //     // this.cardItem.forEach(
-    //     //   (value) =>
-    //     //     ( filteredCards = value.name.filter(
-    //     //       (card) => card.name === eventt
-    //     //     ))
-    //     // );
-    //   });
-    //   return this.cardItem;
-    // });
-
-    // this.cardItem = this.cardItem.filter((value) => {
-    //   value.headname.toLowerCase() &&
-    //   value.name.toLowerCase() == event.target.value.toLowerCase();
-    // });
-    // console.log(event.target.value.split(''));
-    // event.target.value = '';
+    if (eventt == '') {
+      return;
+    } else {
+      this.cardItem = this.cardItem.filter((res) => {
+        return (
+          res.name.toLowerCase().match(eventt.toLowerCase()) ||
+          res.headname.toLowerCase().match(eventt.toLowerCase())
+        );
+      });
+    }
   }
   onOpenModal(item: Cart): void {
     this.modalHelperService.selectedItem$.next(item);
     let dialogRef = this.modal.open(ModalBehaviorComponent);
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
   addToBasket(item: Cart): void {
     const selectedItem = {
