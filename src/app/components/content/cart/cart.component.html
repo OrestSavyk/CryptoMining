@@ -26,8 +26,20 @@
   <div class="wrapper-searcher">
     <mat-form-field class="example-form-field" appearance="fill">
       <mat-label>Search by manufacturer or model</mat-label>
-      <input matInput type="text" (keydown)="onEnterSearchTool($event)" />
-      <button matSuffix mat-icon-button aria-label="Clear">
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="searchValue"
+        (ngModelChange)="onEnterSearchTool()"
+        placeholder="Enter Manufacturer or Model to search"
+      />
+      <button
+        *ngIf="searchValue"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="clearSearcher()"
+      >
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
