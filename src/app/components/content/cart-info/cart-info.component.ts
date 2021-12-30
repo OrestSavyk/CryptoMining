@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from 'src/app/models/CartTool';
-import { CartService } from 'src/app/services/cart.service';
 import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class CartInfoComponent implements OnInit {
   item: Cart;
-  constructor(private modalService: ModalService, private cart: CartService) {}
+  constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {
     this.loadDataModal();

@@ -4,10 +4,12 @@
       <div class="wrapper-menu-icon" (click)="onCloseMenu()">
         <img src="assets/home img/burger.png" />
       </div>
-      <ul *ngIf="isBurgerMenu" class="menu-box">
-        <button class="btn-close-menu" (click)="onCloseMenu()">
-          <img src="assets/home img/cross.png" />
-        </button>
+      <div *ngIf="isBurgerMenu" class="menu-box">
+        <div class="wrapper-btn-close">
+          <button class="btn-close-menu" (click)="onCloseMenu()">
+            <img src="assets/home img/cross.png" />
+          </button>
+        </div>
         <mat-button-toggle-group
           name="favoriteColor"
           (click)="onCloseMenu()"
@@ -35,7 +37,7 @@
             >Log Out</mat-button-toggle
           >
         </mat-button-toggle-group>
-      </ul>
+      </div>
     </div>
     <div class="header-logo" routerLink="">
       <img src="assets/title img/logo.png" alt="l" />

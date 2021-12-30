@@ -15,7 +15,7 @@
 .header-top {
   display: flex;
   justify-content: space-between;
-  margin: auto 16px;
+  margin: auto 22px;
   margin-top: 10px;
 }
 .hamburger-menu {
@@ -64,14 +64,15 @@
   background-color: #eceff1;
   box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 }
-.btn-close-menu {
-  width: 100%;
-  height: 35px;
-  border: none;
+.wrapper-btn-close {
   display: flex;
   justify-content: flex-end;
-  padding: 0 20px;
   margin-bottom: 40px;
+}
+.btn-close-menu {
+  border: none;
+  padding: 5px;
+  margin-right: 10px;
 }
 .btn-close-menu img {
   width: 25px;
@@ -85,10 +86,8 @@
 .menu-item-link img {
   height: 25px;
 }
-
 .header-logo img {
   max-height: 75px;
-  margin-left: 20px;
   cursor: pointer;
 }
 
@@ -192,16 +191,12 @@
   .hamburger-menu {
     display: none;
   }
-
   .btn-group {
     display: flex;
   }
-
   .header-btn-contact {
     display: flex;
-    margin-right: 20px;
   }
-
   .header-btn-contact-top {
     display: block;
     width: 120px;
@@ -218,7 +213,6 @@
     align-items: center;
     margin-left: 20px;
   }
-
   .header-btn-contact-top:hover {
     transition: 0.9s;
     background-color: rgb(226, 222, 222, 1);

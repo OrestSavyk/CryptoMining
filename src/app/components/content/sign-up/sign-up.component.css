@@ -1,45 +1,44 @@
 .header {
-    display: flex;
-    justify-content: center;
-    margin: 80px auto;
+  display: flex;
+  justify-content: center;
+  margin: 80px auto;
 }
 
 .form-top {
-    display: grid;
-    justify-items: center;
-    min-width: 250px;
+  display: grid;
+  justify-items: center;
+  min-width: 250px;
 }
 
 .mat-form-field {
-    margin-top: 20px;
-    width: 100%;
+  margin-top: 20px;
+  width: 100%;
 }
 .wrapper-error {
-    width: 100%;
-
+  width: 100%;
 }
 .title {
-    font-size: 30px;
-    font-weight: bolder;
-    color: rgb(22, 149, 223);
-    font-family: sans-serif;
-    margin-bottom: 40px;
+  font-size: 30px;
+  font-weight: bolder;
+  color: rgb(22, 149, 223);
+  font-family: sans-serif;
+  margin-bottom: 40px;
 }
 
 .btn-sign {
-    margin: 20px auto;
-    height: 40px;
-    border: 0px;
-    width: 90px;
-    border-radius: 40px;
-    background-color: rgb(37, 124, 182);
-    color: white;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
+  margin: 20px auto;
+  height: 40px;
+  border: 0px;
+  width: 90px;
+  border-radius: 40px;
+  background-color: rgb(37, 124, 182);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
 }
 @media (min-width: 1010px) {
-    .form-top {
-        min-width: 400px;
-    }   
+  .form-top {
+    min-width: 400px;
+  }
 }

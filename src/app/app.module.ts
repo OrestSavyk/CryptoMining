@@ -14,7 +14,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ImmersionComponent } from './components/content/immersion/immersion.component';
-import { ComparisonComponent } from './components/content/comparison/comparison.component';
 import { DirectoryComponent } from './components/content/directory/directory.component';
 import { LoginComponent } from './components/content/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -29,20 +28,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { DialogDataExampleDialogComponent } from './components/content/comparison/dialog-data-example-dialog/dialog-data-example-dialog.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { InputErrorStateMatcherExampleComponent } from './components/content/comparison/input-error-state-matcher-example/input-error-state-matcher-example.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatIconModule } from '@angular/material/icon';
-import { ErrorStateMatcherComponent } from './components/content/error-state-matcher/error-state-matcher.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { SignUpComponent } from './components/content/sign-up/sign-up.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -60,16 +56,12 @@ const appRoutes: Routes = [];
     HeaderComponent,
     FooterComponent,
     ImmersionComponent,
-    ComparisonComponent,
     DirectoryComponent,
     LoginComponent,
     HomeComponent,
     ContactComponent,
     AdminComponent,
     BasketComponent,
-    DialogDataExampleDialogComponent,
-    InputErrorStateMatcherExampleComponent,
-    ErrorStateMatcherComponent,
     SignUpComponent,
     InputErrorsComponent,
     CartComponent,
