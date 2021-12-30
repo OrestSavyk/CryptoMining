@@ -8,6 +8,5 @@ export const NAV_BUTTON = [
     name: 'Directory',
     link: '/directory',
     icon: 'assets/iconNav/directory.png',
-  }
-
+  },
 ];

@@ -31,7 +31,11 @@
       </mat-accordion>
     </div>
     <mat-tab-group mat-align-tabs="center">
-      <mat-tab class="faq-blok-title" *ngFor="let paragraph of faqParagraph" [label]="paragraph.title">
+      <mat-tab
+        class="faq-blok-title"
+        *ngFor="let paragraph of faqParagraph"
+        [label]="paragraph.title"
+      >
         {{ paragraph.info }}</mat-tab
       >
     </mat-tab-group>

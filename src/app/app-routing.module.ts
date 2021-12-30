@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './components/content/admin/admin.component';
 import { BasketComponent } from './components/content/basket/basket.component';
 import { CartInfoComponent } from './components/content/cart-info/cart-info.component';
-import { ComparisonComponent } from './components/content/comparison/comparison.component';
 import { ContactComponent } from './components/content/contact/contact.component';
 import { DirectoryComponent } from './components/content/directory/directory.component';
 import { HomeComponent } from './components/content/home/home.component';
@@ -22,7 +21,6 @@ const routes: Routes = [
   { path: 'immersion', component: ImmersionComponent },
   { path: 'basket', component: BasketComponent },
   { path: 'directory', component: DirectoryComponent },
-  { path: 'comp', component: ComparisonComponent },
   { path: 'shop/:id', component: CartInfoComponent },
   { path: 'shop', component: ShopComponent },
 ];

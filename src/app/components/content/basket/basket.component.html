@@ -61,7 +61,14 @@
       <h2 class="total-price">Total price: ${{ totalAmount }}</h2>
     </div>
     <div class="wrapper-btn-order">
-      <button mat-raised-button class="btn-order" (click)="onOrderItem()" [disabled]="!cardItem.length">Order</button>
+      <button
+        mat-raised-button
+        class="btn-order"
+        (click)="onOrderItem()"
+        [disabled]="!cardItem.length"
+      >
+        Order
+      </button>
     </div>
   </div>
 </div>

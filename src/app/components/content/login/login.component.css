@@ -5,6 +5,9 @@
 
 .left-blok img {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .right-blok {
@@ -13,10 +16,13 @@
 }
 
 .right-form {
-  display: grid;
+  display: flex;
   justify-content: center;
-  padding-bottom: 5px;
+  margin-bottom: 40px;
+  margin: auto;
+  flex-direction: column;
   width: 100%;
+  max-width: 370px;
 }
 
 .mat-raised-button.mat-button-disabled:not([class*="mat-elevation-z"]) {
@@ -25,6 +31,7 @@
 
 ::ng-deep .mat-form-field {
   min-width: 250px;
+  margin: auto;
 }
 
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
@@ -127,7 +134,7 @@
 }
 
 .mat-slide-toggle {
-  margin: 15px 0 0px;
+  margin: 15px 0 0px 40px;
 }
 
 ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
@@ -148,16 +155,20 @@
 
 @media (min-width: 760px) {
   .top-blok {
-    display: grid;
-    grid-template-columns: auto 430px;
+    display: flex;
+    flex-direction: row;
   }
 
   .left-blok {
-    display: block;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    width: 50%;
   }
 
   .right-blok {
+    width: 50%;
     margin: auto;
     margin-bottom: 20px;
   }
@@ -169,17 +180,19 @@
 
 @media (min-width: 1024px) {
   .top-blok {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
   }
 
   .right-blok {
-    width: 100%;
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
   }
 
   .right-form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 
