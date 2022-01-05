@@ -37,9 +37,11 @@ export class CartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    if (JSON.parse(localStorage.getItem('basketItems'))) {
+      this.basketItem = JSON.parse(localStorage.getItem('basketItems'));
+    }
     this.loadCards();
   }
-
   private loadCards(): void {
     this.cartService.getTool().subscribe((value: Cart[]) => {
       this.cardItem = value;
@@ -105,7 +107,6 @@ export class CartComponent implements OnInit {
     this.toastr.success(`${item.headname} ${item.name} added to basket`);
     this.basketService.basketItemsLength$.next(this.basketItem.length);
     localStorage.setItem('basketItems', JSON.stringify(this.basketItem));
-    console.log('this.basketItem: ', this.basketItem);
   }
 
   onPageChange(event: PageEvent) {

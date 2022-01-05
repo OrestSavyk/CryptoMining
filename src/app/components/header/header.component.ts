@@ -56,10 +56,13 @@ export class HeaderComponent implements OnInit {
   }
   basketLength() {
     this.basketService.basketItemsLength$.subscribe((length) => {
-      console.log('length: ', length);
       this.basketItemLength = length;
     });
-    const basketItem = JSON.parse(localStorage.getItem('basketItems'));
-    this.basketItemLength = basketItem.length;
+    if (JSON.parse(localStorage.getItem('basketItems'))) {
+      const basketItem = JSON.parse(localStorage.getItem('basketItems'));
+      this.basketItemLength = basketItem.length;
+    } else {
+      this.basketItemLength = 0;
+    }
   }
 }
