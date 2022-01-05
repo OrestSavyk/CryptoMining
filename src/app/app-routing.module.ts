@@ -10,6 +10,7 @@ import { ImmersionComponent } from './components/content/immersion/immersion.com
 import { LoginComponent } from './components/content/login/login.component';
 import { ShopComponent } from './components/content/shop/shop.component';
 import { SignUpComponent } from './components/content/sign-up/sign-up.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,6 +24,8 @@ const routes: Routes = [
   { path: 'directory', component: DirectoryComponent },
   { path: 'shop/:id', component: CartInfoComponent },
   { path: 'shop', component: ShopComponent },
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
 
 @NgModule({
