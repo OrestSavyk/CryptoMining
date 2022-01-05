@@ -9,7 +9,9 @@ body {
   min-height: 490px;
   width: 100%;
 }
-
+a {
+  cursor: pointer;
+}
 html,
 body {
   height: 100%;

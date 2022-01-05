@@ -46,7 +46,7 @@ export class BasketComponent implements OnInit {
   }
   updateTotalPrice() {
     if (this.cardItem) {
-      this.totalAmount = this.cardItem.reduce(function (acc, value) {
+      this.totalAmount = this.cardItem.reduce((acc, value) => {
         return acc + value.amount * value.price;
       }, 0);
     } else {

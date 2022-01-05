@@ -82,6 +82,7 @@ export class CartComponent implements OnInit {
     let dialogRef = this.modal.open(ModalBehaviorComponent);
     dialogRef.afterClosed().subscribe((result) => {});
   }
+
   addToBasket(item: Cart): void {
     const selectedItem = {
       id: item.id,
@@ -104,6 +105,7 @@ export class CartComponent implements OnInit {
     this.basketService.basketItemsLength$.next(this.basketItem.length);
     localStorage.setItem('basketItems', JSON.stringify(this.basketItem));
   }
+
   onPageChange(event: PageEvent) {
     this.startIndex = event.pageIndex * event.pageSize;
     this.endIndex = this.startIndex + event.pageSize;

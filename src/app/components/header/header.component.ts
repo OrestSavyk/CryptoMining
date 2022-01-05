@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { BasketService } from 'src/app/services/basket.service';
 import { EnterUserService } from 'src/app/services/enter-user.service';
@@ -20,21 +21,26 @@ export class HeaderComponent implements OnInit {
     private enterUserService: EnterUserService,
     private basketService: BasketService,
     private authService: AuthService,
-    public element: ElementRef
+    public element: ElementRef,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.basketLength();
+    this.admin();
+    this.user();
+  }
+  admin() {
     this.authService.isAdmin$.subscribe((isAdmin) => {
       this.isAdmin = isAdmin;
     });
     this.isAdmin = JSON.parse(localStorage.getItem('isAdmin'));
+  }
+  user() {
     this.enterUserService.isLoginUser$.subscribe((isUser) => {
       this.isUser = isUser;
     });
     this.isUser = JSON.parse(localStorage.getItem('isUser'));
-    this.basketService.basketItemsLength$.subscribe((length) => {
-      this.basketItemLength = length;
-    });
   }
   logOut() {
     this.authService.isAdmin$.next(false);
@@ -44,5 +50,16 @@ export class HeaderComponent implements OnInit {
   }
   onCloseMenu(): void {
     this.isBurgerMenu = !this.isBurgerMenu;
+  }
+  routeToBasket() {
+    this.router.navigate(['/basket']);
+  }
+  basketLength() {
+    this.basketService.basketItemsLength$.subscribe((length) => {
+      console.log('length: ', length);
+      this.basketItemLength = length;
+    });
+    const basketItem = JSON.parse(localStorage.getItem('basketItems'));
+    this.basketItemLength = basketItem.length;
   }
 }

@@ -43,6 +43,7 @@
   width: 100%;
   justify-content: flex-end;
   margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 .btn-close-modal {
@@ -54,13 +55,19 @@
   opacity: 1;
 }
 
-::ng-deep .mat-button,
+.wrapper-btn-close > ::ng-deep .mat-button,
 .mat-icon-button,
 .mat-stroked-button,
 .mat-flat-button {
-  padding: 0px;
+  padding: 5px;
   min-width: 24px;
   line-height: 36px;
+  width: 30px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px !important;
 }
 
 .modal-model {
@@ -115,9 +122,12 @@
 .modal-availability {
   font-weight: 500;
 }
-.wrapper-link {
+.wrapper-link > ::ng-deep .mat-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-flat-button .wrapper-link {
   margin-bottom: 20px;
-  padding-left: 10px;
+  padding: 5px;
 }
 .wrapper-link a {
   font-weight: 600;

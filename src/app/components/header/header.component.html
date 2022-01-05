@@ -78,7 +78,11 @@
         routerLink="/basket"
       >
         <img src="assets/title img/shopping-cart.png" />
-        <div class="basket-counter" *ngIf="basketItemLength > 0">
+        <div
+          class="basket-counter"
+          *ngIf="basketItemLength > 0"
+          (click)="routeToBasket()"
+        >
           {{ basketItemLength }}
         </div>
       </button>
