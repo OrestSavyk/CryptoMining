@@ -26,13 +26,11 @@ export class BasketComponent implements OnInit {
     private toastr: ToastrService,
     private basketService: BasketService
   ) {}
-
   ngOnInit(): void {
     this.loadCartItems();
     this.updateTotalPrice();
     this.basketService.basketItemsLength$.next(this.cardItem.length);
   }
-
   loadCartItems(): void {
     if (JSON.parse(localStorage.getItem('basketItems'))) {
       this.cardItem = JSON.parse(localStorage.getItem('basketItems'));
@@ -46,7 +44,7 @@ export class BasketComponent implements OnInit {
   }
   updateTotalPrice() {
     if (this.cardItem) {
-      this.totalAmount = this.cardItem.reduce(function (acc, value) {
+      this.totalAmount = this.cardItem.reduce((acc, value) => {
         return acc + value.amount * value.price;
       }, 0);
     } else {
@@ -58,7 +56,6 @@ export class BasketComponent implements OnInit {
     this.cardItem = [...this.cardItem];
     this.updateTotalPrice();
   }
-
   minusOnePieces(item: BasketCart): void {
     if (item.amount > 1) {
       item.amount--;
@@ -66,7 +63,6 @@ export class BasketComponent implements OnInit {
     }
     this.updateTotalPrice();
   }
-
   onDeleteOneItem(item: BasketCart) {
     let basketArray = localStorage.getItem('basketItems')
       ? JSON.parse(localStorage.getItem('basketItems'))

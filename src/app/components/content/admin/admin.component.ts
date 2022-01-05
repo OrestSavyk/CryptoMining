@@ -14,8 +14,8 @@ import { FORM_CARD, TABLE_CARD } from './admin.constants';
 export class AdminComponent implements OnInit {
   formCard = FORM_CARD;
   tableCard = TABLE_CARD;
+  isNewCart: boolean = true;
   public cartForm: FormGroup;
-  buttonEdit: boolean;
   minDate: Date;
   maxDate: Date;
   selectedItem: any;
@@ -93,7 +93,7 @@ export class AdminComponent implements OnInit {
 
   editCurrentCart(item): void {
     this.selectedItem = item;
-    this.buttonEdit = true;
+    this.isNewCart = false;
     this.cartForm.patchValue(this.selectedItem);
   }
   onTableSortChange(event: Sort): void {

@@ -1,23 +1,9 @@
 {
   "minerTools": [
     {
-      "headname": "LDMK",
-      "name": "ooooo",
-      "image": "assets/card/card2.png",
-      "hash": 256,
-      "power": 1976,
-      "date": "2018-11-16T22:00:00.000Z",
-      "algorithm": "SHA-256",
-      "size": "27x27",
-      "weight": "10500g",
-      "price": "2199",
-      "availability": "In stock",
-      "id": "ddc8937a-17d4-425f-a446-9a295b2c532a"
-    },
-    {
       "headname": "Toshib",
       "name": "MMM",
-      "image": "assets/card/card2.png",
+      "image": "assets/card/card4.png",
       "hash": 176,
       "power": 2917,
       "date": "2021-11-09T22:00:00.000Z",
@@ -31,7 +17,7 @@
     {
       "headname": "LILnIB",
       "name": "AOMMM",
-      "image": "assets/card/card4.png",
+      "image": "assets/card/card2.png",
       "hash": 99,
       "power": 990,
       "date": "2021-11-12",
@@ -45,7 +31,7 @@
     {
       "headname": "MicroBit",
       "name": "MT22",
-      "image": "assets/card/card2.png",
+      "image": "assets/card/card4.png",
       "hash": 827,
       "power": 3880,
       "date": "2021-11-04",
@@ -59,8 +45,8 @@
     {
       "headname": "GBOSCH",
       "name": "MQ12",
-      "image": "assets/card/card2.png",
-      "hash": 118,
+      "image": "assets/card/card3.png",
+      "hash": "33",
       "power": 2317,
       "date": "2021-12-13T22:00:00.000Z",
       "algorithm": "Mine",
@@ -71,10 +57,9 @@
       "id": "52d8f0bd-418c-429f-a3d6-5db7766ab75c"
     },
     {
-      "id": "300556ac-cf4d-43c1-9425-1975252021c8",
       "headname": "Omanwall",
       "name": "ONYX",
-      "image": "",
+      "image": "assets/card/card2.png",
       "hash": 283,
       "power": 4039,
       "date": "2021-12-13T22:00:00.000Z",
@@ -82,13 +67,13 @@
       "size": "18*19*62",
       "weight": "8020g",
       "price": 1090,
-      "availability": "In Stock"
+      "availability": "In Stock",
+      "id": "300556ac-cf4d-43c1-9425-1975252021c8"
     },
     {
-      "id": "d75b3931-c9e4-4996-9838-b5fc57417316",
       "headname": "klwekl",
       "name": "weklwkl",
-      "image": "assets/card/card2.png",
+      "image": "assets/card/card3.png",
       "hash": 217,
       "power": 3927,
       "date": "2021-11-30T22:00:00.000Z",
@@ -96,7 +81,8 @@
       "size": "150 x 225 x 390mm",
       "weight": "1728g",
       "price": 2901,
-      "availability": "In stock"
+      "availability": "In stock",
+      "id": "d75b3931-c9e4-4996-9838-b5fc57417316"
     },
     {
       "headname": "PoLOn",
@@ -115,7 +101,7 @@
     {
       "headname": "Pizza",
       "name": "black",
-      "image": "",
+      "image": "assets/card/card4.png",
       "hash": "178",
       "power": "1837",
       "date": "2021-11-30T22:00:00.000Z",
@@ -127,10 +113,9 @@
       "id": "d6ec21fb-391a-4e68-9718-3fffcaa4e7cf"
     },
     {
-      "id": "e4ac219f-8822-44b3-b6de-29ffd5b58a92",
       "headname": "qklqklf",
       "name": "qklfn 3klq",
-      "image": "savyk",
+      "image": "assets/card/card3.png",
       "hash": "333",
       "power": "9239",
       "date": null,
@@ -138,13 +123,13 @@
       "size": "10x10",
       "weight": "1902g",
       "price": "38973",
-      "availability": "18*19*62"
+      "availability": "18*19*62",
+      "id": "e4ac219f-8822-44b3-b6de-29ffd5b58a92"
     },
     {
-      "id": "8213c2f7-1da9-4cad-9367-e57362d2d651",
       "headname": "Pioneer",
       "name": "PlQBV",
-      "image": "",
+      "image": "assets/card/card4.png",
       "hash": "178",
       "power": "2901",
       "date": "2021-12-20T22:00:00.000Z",
@@ -152,7 +137,50 @@
       "size": "10x16",
       "weight": "1900g",
       "price": "2801",
-      "availability": "Not"
+      "availability": "Not",
+      "id": "8213c2f7-1da9-4cad-9367-e57362d2d651"
+    },
+    {
+      "headname": "Adolf",
+      "name": "Hitler",
+      "image": "assets/card/card2.png",
+      "hash": "99",
+      "power": "99",
+      "date": "2022-01-15T22:00:00.000Z",
+      "algorithm": "mm",
+      "size": "27x27",
+      "weight": "109b",
+      "price": "0000",
+      "availability": "yws",
+      "id": "b17e7f4e-d537-424d-ac86-b0a6a55e8687"
+    },
+    {
+      "headname": "Samsung",
+      "name": "Galaxy",
+      "image": "assets/card/card4.png",
+      "hash": "26",
+      "power": "198",
+      "date": "2021-11-09T22:00:00.000Z",
+      "algorithm": "SHA-256",
+      "size": "27x27",
+      "weight": "10500g",
+      "price": "1382",
+      "availability": "Sold out",
+      "id": "710fe8c4-03f3-4da5-86be-9cb34c8ddb5a"
+    },
+    {
+      "id": "37d11a11-cff7-460b-8f91-b0366080ac46",
+      "headname": "Motorola",
+      "name": "ZX45",
+      "image": "assets/card/card3.png",
+      "hash": "45",
+      "power": "450",
+      "date": "2022-02-16T22:00:00.000Z",
+      "algorithm": "SHA-256",
+      "size": "27x27",
+      "weight": "10500g",
+      "price": "2568",
+      "availability": "In stock"
     }
   ],
   "userData": [

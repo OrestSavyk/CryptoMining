@@ -5,7 +5,7 @@
       <mat-label class="sort-item-label">Filter</mat-label>
       <mat-select
         [(ngModel)]="filterItemValue"
-        (selectionChange)="onFilterHash($event)"
+        (selectionChange)="onFilterHash()"
       >
         <mat-option
           *ngFor="let filterItem of filterItems"
@@ -16,10 +16,7 @@
     </mat-form-field>
     <mat-form-field appearance="fill" class="sort-item">
       <mat-label>Sort</mat-label>
-      <mat-select
-        [(ngModel)]="sortItemValue"
-        (selectionChange)="onSortItem($event)"
-      >
+      <mat-select [(ngModel)]="sortItemValue" (selectionChange)="onSortItem()">
         <mat-option
           *ngFor="let sortItem of sortItems"
           [value]="sortItem.value"
@@ -62,6 +59,7 @@
         <div class="wrapper-imagine">
           <img class="card-imagine" src="{{ item.image }}" alt="i" />
         </div>
+        <h4 class="brend">{{ item.headname }}</h4>
         <h4 class="model">{{ item.name }}</h4>
         <div class="btn-info">
           <button>{{ item.hash }} TH</button>

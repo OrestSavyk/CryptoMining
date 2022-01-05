@@ -48,6 +48,7 @@ import { CartComponent } from './components/content/cart/cart.component';
 import { ShopComponent } from './components/content/shop/shop.component';
 import { CartInfoComponent } from './components/content/cart-info/cart-info.component';
 import { ModalBehaviorComponent } from './components/content/modal-behavior/modal-behavior.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const appRoutes: Routes = [];
 @NgModule({
@@ -68,6 +69,7 @@ const appRoutes: Routes = [];
     ShopComponent,
     CartInfoComponent,
     ModalBehaviorComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

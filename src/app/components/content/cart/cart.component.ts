@@ -24,10 +24,10 @@ export class CartComponent implements OnInit {
   filterItemValue: any;
   sortItemValue: any;
   searchValue: any;
-  pageSizeOptions = [4, 6, 10, 25];
-  pageSize: number = 6;
+  pageSizeOptions = [4, 6, 8, 10, 25];
+  pageSize: number = 8;
   startIndex: number = 0;
-  endIndex: number = 6;
+  endIndex: number = 8;
   constructor(
     private cartService: CartService,
     public modal: MatDialog,
@@ -37,23 +37,26 @@ export class CartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    if (JSON.parse(localStorage.getItem('basketItems'))) {
+      this.basketItem = JSON.parse(localStorage.getItem('basketItems'));
+    }
     this.loadCards();
   }
-
   private loadCards(): void {
     this.cartService.getTool().subscribe((value: Cart[]) => {
       this.cardItem = value;
     });
   }
-  onFilterHash(event): void {
-    this.cardItem = this.cardItem.filter((value) => value.hash > event.value);
+  onFilterHash(): void {
+    this.cardItem = this.cardItem.filter(
+      (value) => value.hash > this.filterItemValue
+    );
   }
-  onSortItem(event): void {
+  onSortItem(): void {
     this.cardItem.sort((a, b) => {
-      if (a[event.value] > b[event.value]) {
-        return 1;
-      }
-      return -1;
+      let first = a[this.sortItemValue],
+        second = b[this.sortItemValue];
+      return first - second;
     });
   }
   onResetFilter(): void {
@@ -82,6 +85,7 @@ export class CartComponent implements OnInit {
     let dialogRef = this.modal.open(ModalBehaviorComponent);
     dialogRef.afterClosed().subscribe((result) => {});
   }
+
   addToBasket(item: Cart): void {
     const selectedItem = {
       id: item.id,
@@ -104,6 +108,7 @@ export class CartComponent implements OnInit {
     this.basketService.basketItemsLength$.next(this.basketItem.length);
     localStorage.setItem('basketItems', JSON.stringify(this.basketItem));
   }
+
   onPageChange(event: PageEvent) {
     this.startIndex = event.pageIndex * event.pageSize;
     this.endIndex = this.startIndex + event.pageSize;
