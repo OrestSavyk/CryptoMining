@@ -21,4 +21,8 @@ export const FILTER_ITEM = [
     title: 'Hash more than 50 TH',
     value: 50,
   },
+  {
+    title: 'Hash more than 200 TH',
+    value: 200,
+  },
 ];

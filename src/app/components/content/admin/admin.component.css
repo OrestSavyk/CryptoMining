@@ -12,6 +12,9 @@
   flex-direction: column;
   margin-top: 20px;
 }
+.mat-slide-toggle {
+  max-width: fit-content;
+}
 ::ng-deep
   .mat-button-toggle-appearance-standard
   .mat-button-toggle-label-content {
@@ -53,11 +56,14 @@
 }
 
 .admin-form {
+  width: 100%;
   display: grid;
   align-items: center;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
+.mat-form-field {
+  width: 100%;
+}
 .btn-cart-add {
   margin: 30px auto;
   width: 60%;
