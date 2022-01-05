@@ -10,6 +10,7 @@
 .header-wrapper {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 ::ng-deep
   .mat-button-toggle-appearance-standard
