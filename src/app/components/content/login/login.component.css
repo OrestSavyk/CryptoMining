@@ -93,14 +93,14 @@
 }
 
 .right-old-users a {
-  color: rgb(56, 150, 187);
+  color: rgb(3 155 229);
   cursor: pointer;
 }
 
 .right-p {
   display: flex;
   justify-content: center;
-  color: rgb(56, 150, 187);
+  color: rgb(3 155 229);
   font-family: sans-serif;
   font-size: 15px;
   margin: 20px auto;
@@ -111,7 +111,7 @@
   width: 225px;
   padding: 0px;
   border: 0px;
-  background-color: rgb(0 155 216);
+  background-color: rgb(3 155 229);
   cursor: pointer;
 }
 
@@ -123,7 +123,7 @@
 .right-telegram img {
   height: 35px;
   width: 35px;
-  background-color: rgb(0 155 216);
+  background-color: rgb(3 155 229);
 }
 
 .right-telegram p {

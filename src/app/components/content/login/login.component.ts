@@ -62,9 +62,9 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('isUser', JSON.stringify(true));
       this.router.navigate(['home']);
     } else {
-      console.log('please, sign in!');
+      console.log('Please, sign in!');
       this.loginForm.reset();
-      alert('user not fount!');
+      alert('User not found!');
     }
   }
 
