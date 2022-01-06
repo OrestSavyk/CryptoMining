@@ -35,7 +35,7 @@
   display: grid;
   text-align: center;
   justify-items: center;
-  margin: 10px auto;
+  margin: auto;
 }
 
 .mat-button-toggle-group-appearance-standard
@@ -73,6 +73,7 @@
   border: none;
   padding: 5px;
   margin-right: 10px;
+  background: none;
 }
 .btn-close-menu img {
   width: 25px;
@@ -103,8 +104,10 @@
   background: none;
 }
 
-.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
-  padding: 10px;
+::ng-deep
+  .mat-button-toggle-appearance-standard
+  .mat-button-toggle-label-content {
+  padding: 12px !important;
 }
 .mat-button,
 .mat-icon-button,

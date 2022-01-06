@@ -60,6 +60,7 @@
 .right-footer {
   display: flex;
   align-items: center;
+  margin: 0 10px 30px 10px;
 }
 
 .right-footer-top {

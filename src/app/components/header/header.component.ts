@@ -47,6 +47,7 @@ export class HeaderComponent implements OnInit {
     this.enterUserService.isLoginUser$.next(false);
     localStorage.removeItem('isAdmin');
     localStorage.removeItem('isUser');
+    this.router.navigate(['/home']);
   }
   onCloseMenu(): void {
     this.isBurgerMenu = !this.isBurgerMenu;
