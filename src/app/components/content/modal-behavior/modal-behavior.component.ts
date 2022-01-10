@@ -6,7 +6,7 @@ import { ModalService } from 'src/app/services/modal.service';
 @Component({
   selector: 'app-modal-behavior',
   templateUrl: './modal-behavior.component.html',
-  styleUrls: ['./modal-behavior.component.css'],
+  styleUrls: ['./modal-behavior.component.scss'],
 })
 export class ModalBehaviorComponent implements OnInit {
   @Input()

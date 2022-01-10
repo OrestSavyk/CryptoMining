@@ -8,7 +8,7 @@ import { NAV_BUTTON } from './header.constants';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   navButton = NAV_BUTTON;

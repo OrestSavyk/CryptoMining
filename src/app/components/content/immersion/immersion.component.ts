@@ -4,7 +4,7 @@ import { PROFIT_VALUE, RATE_VALUE } from './immersion.constant';
 @Component({
   selector: 'app-immersion',
   templateUrl: './immersion.component.html',
-  styleUrls: ['./immersion.component.css'],
+  styleUrls: ['./immersion.component.scss'],
 })
 export class ImmersionComponent implements OnInit {
   rateValue = RATE_VALUE;

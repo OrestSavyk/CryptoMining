@@ -3,7 +3,7 @@ import { NAV_FOOT_BTN, ICON_FOOTER } from './footer.constants';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
   navFootBtn: any[] = NAV_FOOT_BTN;

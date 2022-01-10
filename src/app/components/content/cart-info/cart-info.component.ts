@@ -5,7 +5,7 @@ import { ModalService } from 'src/app/services/modal.service';
 @Component({
   selector: 'app-cart-info',
   templateUrl: './cart-info.component.html',
-  styleUrls: ['./cart-info.component.css'],
+  styleUrls: ['./cart-info.component.scss'],
 })
 export class CartInfoComponent implements OnInit {
   item: Cart;
