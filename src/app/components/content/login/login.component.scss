@@ -1,3 +1,6 @@
+.top-blok {
+  height: 685px;
+}
 .left-blok {
   display: none;
   overflow: hidden;
@@ -11,14 +14,14 @@
 }
 
 .right-blok {
-  margin: auto 15px 60px;
+  height: 100%;
+  padding: 50px 0;
   text-align: center;
 }
 
 .right-form {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
   margin: auto;
   flex-direction: column;
   width: 100%;
@@ -43,7 +46,7 @@
   font-weight: bolder;
   color: rgb(22, 149, 223);
   font-family: sans-serif;
-  margin: 40px auto 20px;
+  margin: auto;
 }
 
 .right-form input {
@@ -150,7 +153,7 @@
 }
 .toggle-isRobot {
   text-align: start;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 @media (min-width: 760px) {
@@ -163,13 +166,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100%;
     width: 50%;
   }
 
   .right-blok {
     width: 50%;
-    margin: auto;
+    height: 100%;
     margin-bottom: 20px;
   }
 
@@ -181,13 +183,6 @@
 @media (min-width: 1024px) {
   .top-blok {
     display: flex;
-  }
-
-  .right-blok {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    align-items: center;
   }
 
   .right-form {

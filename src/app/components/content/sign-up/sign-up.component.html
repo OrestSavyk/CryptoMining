@@ -9,6 +9,7 @@
       <div class="wrapper-error">
         <app-input-errors
           [showErrors]="showErrors(signUpForm.controls.firstName)"
+          [error]="getErrorText('firstName')"
         ></app-input-errors>
       </div>
       <mat-form-field>
@@ -18,20 +19,26 @@
       <div class="wrapper-error">
         <app-input-errors
           [showErrors]="showErrors(signUpForm.controls.secondName)"
+          [error]="getErrorText('secondName')"
         ></app-input-errors>
       </div>
       <mat-form-field>
         <mat-label>Email</mat-label>
         <input
           matInput
-          formControlName="email"
           type="email"
+          formControlName="email"
           placeholder="Ex. pat@example.com"
         />
       </mat-form-field>
       <div class="wrapper-error">
         <app-input-errors
-          [showErrors]="showErrors(signUpForm.controls.email)"
+          [showErrors]="
+            signUpForm.controls.email.touched
+              ? isValidEmail(signUpForm.controls.email)
+              : false
+          "
+          [error]="getErrorText('email')"
         ></app-input-errors>
       </div>
       <mat-form-field>
@@ -46,9 +53,9 @@
       <div class="wrapper-error">
         <app-input-errors
           [showErrors]="showErrors(signUpForm.controls.password)"
+          [error]="getErrorText('password')"
         ></app-input-errors>
       </div>
-
       <button
         mat-raised-button
         class="btn-sign"
