@@ -1,6 +1,6 @@
 <div class="marg-t">
   <div class="header">
-    <form class="form-top" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+    <form class="form-top" [formGroup]="signUpForm">
       <h3 class="title">Sign Up</h3>
       <mat-form-field>
         <mat-label>First Name</mat-label>
@@ -61,6 +61,7 @@
         class="btn-sign"
         type="submit"
         [disabled]="!signUpForm.valid"
+        (click)="signUp()"
       >
         Sign Up
       </button>
