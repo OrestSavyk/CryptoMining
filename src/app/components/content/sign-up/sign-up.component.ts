@@ -3,6 +3,7 @@ import {
   AbstractControl,
   FormBuilder,
   FormGroup,
+  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -53,5 +54,14 @@ export class SignUpComponent implements OnInit {
   }
   showErrors(field: AbstractControl) {
     return field.invalid && (field.touched || this.formSubmited);
+  }
+
+  getErrorText(field: string): ValidationErrors {
+    return this.signUpForm.get(field).errors;
+  }
+
+  isValidEmail(email: any) {
+    const regex = /^[\w\+\.\-]+\@(([\w\-])+\.)+[a-z\-]+$/;
+    return regex.test(email.value) ? false : true;
   }
 }

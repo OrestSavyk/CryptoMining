@@ -1,30 +1,39 @@
 export const NAV_FOOT_BTN = [
   {
     name: 'Home',
+    link: '/home',
   },
   {
     name: 'Calculator',
+    link: '/calculator',
   },
   {
     name: 'Immersion',
+    link: '/immersion',
   },
   {
     name: 'Compare',
+    link: '/compare',
   },
   {
     name: 'Shop',
+    link: '/shop',
   },
   {
     name: 'Directory',
+    link: '/directory',
   },
   {
     name: 'Contact Us',
+    link: '/contact',
   },
   {
     name: 'Privacy Policy',
+    link: '/privacy-policy',
   },
   {
     name: 'Terms of Usage',
+    link: '/terms-of-usage',
   },
 ];
 export const ICON_FOOTER = [

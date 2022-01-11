@@ -13,6 +13,7 @@
         *ngFor="let navfoot of navFootBtn"
         class="footer-navs"
         value="navfoot.name"
+        (click)="link(navfoot.link)"
         >{{ navfoot.name }}</mat-button-toggle
       >
     </mat-button-toggle-group>
