@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ValidationErrors } from '@angular/forms';
-import { FieldErrors } from './error-maping.const';
+import { FieldErrors } from './error-mapping.const';
 
 @Component({
   selector: 'app-input-errors',

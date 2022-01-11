@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { SignUp } from 'src/app/models/newUser';
 import { EnterUserService } from 'src/app/services/enter-user.service';
+import { FormValidationService } from 'src/app/services/form-validation.service';
 import * as uuid from 'uuid';
 
 @Component({
@@ -23,6 +24,7 @@ export class SignUpComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private enterUserService: EnterUserService,
+    private formValidationService: FormValidationService,
     private router: Router
   ) {}
 
@@ -34,7 +36,7 @@ export class SignUpComponent implements OnInit {
     this.signUpForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       secondName: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, this.formValidationService.isValidEmail]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
@@ -61,10 +63,5 @@ export class SignUpComponent implements OnInit {
 
   getError(field: string): ValidationErrors {
     return this.signUpForm.get(field).errors;
-  }
-
-  isValidEmail(email: any) {
-    const regex = /^[\w\+\.\-]+\@(([\w\-])+\.)+[a-z\-]+$/;
-    return regex.test(email.value) ? false : true;
   }
 }
