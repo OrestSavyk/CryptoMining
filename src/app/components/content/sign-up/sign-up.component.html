@@ -8,8 +8,9 @@
       </mat-form-field>
       <div class="wrapper-error">
         <app-input-errors
-          [showErrors]="showErrors(signUpForm.controls.firstName)"
-          [error]="getErrorText('firstName')"
+          [showErrors]="showErrors('firstName')"
+          [fieldErrors]="getError('firstName')"
+          [errorMappingKey]="'firstName'"
         ></app-input-errors>
       </div>
       <mat-form-field>
@@ -18,8 +19,9 @@
       </mat-form-field>
       <div class="wrapper-error">
         <app-input-errors
-          [showErrors]="showErrors(signUpForm.controls.secondName)"
-          [error]="getErrorText('secondName')"
+          [showErrors]="showErrors('secondName')"
+          [fieldErrors]="getError('secondName')"
+          [errorMappingKey]="'secondName'"
         ></app-input-errors>
       </div>
       <mat-form-field>
@@ -33,12 +35,9 @@
       </mat-form-field>
       <div class="wrapper-error">
         <app-input-errors
-          [showErrors]="
-            signUpForm.controls.email.touched
-              ? isValidEmail(signUpForm.controls.email)
-              : false
-          "
-          [error]="getErrorText('email')"
+          [showErrors]="showErrors('email')"
+          [fieldErrors]="getError('email')"
+          [errorMappingKey]="'email'"
         ></app-input-errors>
       </div>
       <mat-form-field>
@@ -52,8 +51,9 @@
       </mat-form-field>
       <div class="wrapper-error">
         <app-input-errors
-          [showErrors]="showErrors(signUpForm.controls.password)"
-          [error]="getErrorText('password')"
+          [showErrors]="showErrors('password')"
+          [fieldErrors]="getError('password')"
+          [errorMappingKey]="'password'"
         ></app-input-errors>
       </div>
       <button

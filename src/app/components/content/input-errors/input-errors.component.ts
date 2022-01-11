@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ValidationErrors } from '@angular/forms';
 import { FieldErrors } from './error-maping.const';
 
 @Component({
@@ -8,14 +9,14 @@ import { FieldErrors } from './error-maping.const';
 })
 export class InputErrorsComponent implements OnChanges {
   @Input() showErrors: boolean;
-  @Input() error: any;
-  @Input() errorMapingKey: string;
+  @Input() fieldErrors: ValidationErrors;
+  @Input() errorMappingKey: string;
 
   errorText: string;
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.error) {
-      this.defineErrorMsg(this.error);
+    if (changes.fieldErrors) {
+      this.defineErrorMsg(this.fieldErrors);
     }
   }
 
@@ -24,6 +25,8 @@ export class InputErrorsComponent implements OnChanges {
       return;
     }
     const fieldErr = Object.keys(err)[0];
-    this.errorText = FieldErrors[fieldErr];
+    this.errorText = this.errorMappingKey
+      ? FieldErrors[this.errorMappingKey][fieldErr]
+      : FieldErrors[fieldErr];
   }
 }
