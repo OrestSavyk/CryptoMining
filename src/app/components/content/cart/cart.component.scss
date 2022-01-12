@@ -1,11 +1,11 @@
+@import "/src/assets/styles/style";
 .main {
   margin: 40px 20px 60px;
 }
 
 .filter {
-  text-align: center;
   font-family: sans-serif;
-  margin-top: 30px auto 20px;
+  margin-bottom: 20px;
   font-size: 25px;
   font-weight: 700;
 }
@@ -17,48 +17,8 @@
   justify-content: center;
 }
 
-.btn-style {
-  height: 36px;
-  width: fit-content;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: sans-serif;
-  border: none;
-  border-radius: 18px;
-  box-sizing: border-box;
-  background-color: white;
-  box-shadow: 2px 2px 2px rgba(190, 176, 176, 0.705);
-  margin: 10px 10px;
-  padding: 8px 16px;
-  outline: none;
-}
-
-.btn-style:hover {
-  transition: 1s;
-  box-shadow: 2px 2px 6px rgba(129, 125, 125, 0.795);
-}
-
-.btn-click-down:hover {
-  transition: 1s;
-  background-color: rgba(127, 212, 238, 0.774);
-}
-
-.location {
-  min-width: 115px;
-  width: 115px;
-  min-width: 115px;
-  display: block;
-  padding: 0px 16px;
-  outline: none;
-}
-
-.btn-th-w {
-  max-width: 150px;
-}
-
 .mat-form-field {
   display: flex;
-  position: relative;
   justify-content: center;
   margin: 20px auto;
 }
@@ -75,8 +35,8 @@
 .wrapper-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  column-gap: 30px;
-  row-gap: 50px;
+  grid-column-gap: 30px;
+  grid-row-gap: 50px;
 }
 
 .card {
@@ -84,7 +44,7 @@
   width: 280px;
   height: 435px;
   margin: auto;
-  color: whitesmoke;
+  color: $clr-whiteSmoke;
   box-shadow: 0px 0px 3px 3px rgba(190, 186, 186, 0.589);
   border-radius: 10px;
   font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -114,19 +74,14 @@
 
 .card-imagine {
   width: 90%;
-  margin: 15px auto auto;
-}
-.brend {
-  color: rgb(44, 44, 44);
-  font-family: "Gill Sans", sans-serif;
-  font-size: 23px;
-  margin: 16px auto 5px;
+  margin: auto;
 }
 .model {
   color: rgb(44, 44, 44);
   font-family: "Gill Sans", sans-serif;
-  font-size: 20px;
-  margin: 5px auto 16px;
+  font-size: 23px;
+  margin: 10px auto 14px;
+  height: 20px;
 }
 
 .btn-info {
@@ -141,11 +96,11 @@
   border-radius: 17px;
   border: none;
   color: rgb(48, 48, 49);
-  background-color: whitesmoke;
+  background-color: $clr-whiteSmoke;
 }
 
 .price {
-  color: rgb(53, 187, 240);
+  color: $clr-blue-1;
   font-size: 22px;
   font-weight: 600;
   margin: 7px auto;
@@ -154,7 +109,6 @@
 .wrapper-btn-cart {
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
   margin: 10px auto auto;
 }
@@ -163,24 +117,20 @@
   height: 40px;
   width: 110px;
   border-radius: 20px;
-  border: none;
-  padding: 3% auto;
-  color: white;
-  background-color: rgb(56, 161, 231);
+  color: $clr-white-1;
+  background-color: $clr-blue-1;
   font-family: sans-serif;
   font-size: 15px;
   font-weight: 600;
-  cursor: pointer;
-}
-
-.btn-buy:hover {
-  transition: 1.1s;
-  background-color: rgb(241, 245, 245);
-  color: rgb(31, 29, 29);
+  &:hover {
+    transition: 1.1s;
+    background-color: $clr-whiteSmoke;
+    color: rgb(31, 29, 29);
+  }
 }
 
 .btn-add-basket {
-  background-color: rgb(56, 161, 231);
+  background-color: $clr-blue-1;
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -205,20 +155,17 @@
   .top-cards {
     margin: auto 50px 90px;
   }
-  .btn-style {
-    width: fit-content;
-  }
+
   .filter-btn {
     flex-direction: row;
   }
 }
-
-@media (min-width: 980px) {
-  .location {
-    display: inline;
-  }
+.filter-btn ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 10px 10px 0 0;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: sans-serif;
 }
-
 .sort-item {
   border-radius: 10px 10px 0 0 !important;
   font-weight: 400;
@@ -229,11 +176,4 @@
 
 .sort-item-label {
   border-radius: 10px 10px 0 0 !important;
-}
-
-.filter-btn ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-  border-radius: 10px 10px 0 0;
-  font-weight: 400;
-  font-size: 16px;
-  font-family: sans-serif;
 }
