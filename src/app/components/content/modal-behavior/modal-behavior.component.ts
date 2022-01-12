@@ -16,7 +16,6 @@ export class ModalBehaviorComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadDataModal();
-    console.log(this.item.id);
   }
   loadDataModal() {
     this.item = this.modalService.selectedItem$.getValue();
