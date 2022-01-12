@@ -10,6 +10,7 @@ import { EnterUserService } from 'src/app/services/enter-user.service';
 import { Login } from 'src/app/models/oldUser';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { FormValidationService } from 'src/app/services/form-validation.service';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private enterUserService: EnterUserService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private formValidationService: FormValidationService
   ) {
     this.getLoginUser();
     this.initLoginForm();
@@ -36,7 +38,10 @@ export class LoginComponent implements OnInit {
   private initLoginForm(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      password: [
+        '',
+        [Validators.required, this.formValidationService.isValidEmail],
+      ],
       isRobot: [false, [Validators.requiredTrue]],
     });
   }
