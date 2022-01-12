@@ -14,7 +14,7 @@
         <div>
           <app-input-errors
             [showErrors]="showErrors(loginForm.controls.email)"
-            [error]="loginForm.controls.email.errors"
+            [fieldErrors]="loginForm.controls.email.errors"
           ></app-input-errors>
         </div>
       </mat-form-field>
@@ -29,7 +29,7 @@
         <div>
           <app-input-errors
             [showErrors]="showErrors(loginForm.controls.password)"
-            [error]="loginForm.controls.password.errors"
+            [fieldErrors]="loginForm.controls.password.errors"
           ></app-input-errors>
         </div>
       </mat-form-field>
@@ -39,7 +39,7 @@
       <div class="toggle-isRobot">
         <app-input-errors
           [showErrors]="showErrors(loginForm.controls.isRobot)"
-          [error]="loginForm.controls.isRobot.errors"
+          [fieldErrors]="loginForm.controls.isRobot.errors"
         ></app-input-errors>
       </div>
       <button
