@@ -3,6 +3,7 @@ import {
   AbstractControl,
   FormBuilder,
   FormGroup,
+  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { EnterUserService } from 'src/app/services/enter-user.service';
@@ -39,6 +40,11 @@ export class LoginComponent implements OnInit {
       isRobot: [false, [Validators.requiredTrue]],
     });
   }
+  private getLoginUser() {
+    this.enterUserService.getLogins().subscribe((value) => {
+      this.loginsFromBase = value;
+    });
+  }
   login(): void {
     const user = this.loginsFromBase.find((user: Login) => {
       return (
@@ -68,12 +74,11 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  private getLoginUser() {
-    this.enterUserService.getLogins().subscribe((value) => {
-      this.loginsFromBase = value;
-    });
+  showErrors(fieldName: string): boolean {
+    const field = this.loginForm.get(fieldName);
+    return field.touched && field.invalid;
   }
-  showErrors(field: AbstractControl): boolean {
-    return field.invalid && (field.touched || this.formSubmited);
+  getError(field: string): ValidationErrors {
+    return this.loginForm.get(field).errors;
   }
 }
