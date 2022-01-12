@@ -20,7 +20,7 @@ export class InputErrorsComponent implements OnChanges {
     }
   }
 
-  private defineErrorMsg(err): void {
+  private defineErrorMsg(err: ValidationErrors): void {
     if (!err) {
       return;
     }
