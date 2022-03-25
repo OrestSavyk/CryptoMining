@@ -5,62 +5,74 @@
       alt="teamimg"
     />
   </div>
-  <div class="right-blok">
-    <form class="right-form" [formGroup]="loginForm" (ngSubmit)="login()">
-      <h3>Login</h3>
-      <mat-form-field>
-        <label for="inputEmail" class="right-data">Email</label>
-        <input matInput id="inputEmail" formControlName="email" type="email" />
-        <div>
-          <app-input-errors
-            [showErrors]="showErrors(loginForm.controls.email)"
-            [fieldErrors]="loginForm.controls.email.errors"
-          ></app-input-errors>
+  <div class="top-login">
+    <div class="wrapper-login">
+      <form class="right-form" [formGroup]="loginForm" (ngSubmit)="login()">
+        <h3>Login</h3>
+        <mat-form-field>
+          <label for="inputEmail" class="right-data">Email</label>
+          <input
+            matInput
+            id="inputEmail"
+            formControlName="email"
+            type="email"
+          />
+          <div>
+            <app-input-errors
+              [showErrors]="showErrors('email')"
+              [fieldErrors]="getError('email')"
+              [errorMappingKey]="'email'"
+            ></app-input-errors>
+          </div>
+        </mat-form-field>
+        <mat-form-field>
+          <label for="inputPass" class="right-data">Password</label>
+          <input
+            matInput
+            id="inputPass"
+            formControlName="password"
+            type="password"
+          />
+          <div>
+            <app-input-errors
+              [showErrors]="showErrors('password')"
+              [fieldErrors]="getError('password')"
+              [errorMappingKey]="'password'"
+            ></app-input-errors>
+          </div>
+        </mat-form-field>
+        <div class="wrapper-isRobot">
+          <mat-slide-toggle formControlName="isRobot"
+            >I`m not a robot!
+          </mat-slide-toggle>
+          <div class="toggle-isRobot">
+            <app-input-errors
+              [showErrors]="showErrors('isRobot')"
+              [fieldErrors]="getError('isRobot')"
+              [errorMappingKey]="'isRobot'"
+            ></app-input-errors>
+          </div>
         </div>
-      </mat-form-field>
-      <mat-form-field>
-        <label for="inputPass" class="right-data">Password</label>
-        <input
-          matInput
-          id="inputPass"
-          formControlName="password"
-          type="password"
-        />
-        <div>
-          <app-input-errors
-            [showErrors]="showErrors(loginForm.controls.password)"
-            [fieldErrors]="loginForm.controls.password.errors"
-          ></app-input-errors>
-        </div>
-      </mat-form-field>
-      <mat-slide-toggle formControlName="isRobot"
-        >I`m not a robot!</mat-slide-toggle
-      >
-      <div class="toggle-isRobot">
-        <app-input-errors
-          [showErrors]="showErrors(loginForm.controls.isRobot)"
-          [fieldErrors]="loginForm.controls.isRobot.errors"
-        ></app-input-errors>
-      </div>
-      <button
-        mat-raised-button
-        class="right-sign"
-        type="submit"
-        [disabled]="!loginForm.valid"
-      >
-        Login
+        <button
+          mat-raised-button
+          class="right-sign"
+          type="submit"
+          [disabled]="!loginForm.valid"
+        >
+          Login
+        </button>
+      </form>
+      <p class="right-old-users">Forgot Password? <a>Get Reset Link</a></p>
+      <p class="right-old-users">
+        New to Crypto Mining Tools? <a routerLink="/sign">SignUp here</a>
+      </p>
+      <p class="right-p">OR login using</p>
+      <button class="right-telegram">
+        <a>
+          <img src="assets/iconNav/telegram.svg" alt="l" />
+          <p>Log in with Telegram</p>
+        </a>
       </button>
-    </form>
-    <p class="right-old-users">Forgot Password? <a>Get Reset Link</a></p>
-    <p class="right-old-users">
-      New to Crypto Mining Tools? <a routerLink="/sign">SignUp here</a>
-    </p>
-    <p class="right-p">OR login using</p>
-    <button class="right-telegram">
-      <a>
-        <img src="assets/iconNav/telegram.svg" alt="l" />
-        <p>Log in with Telegram</p>
-      </a>
-    </button>
+    </div>
   </div>
 </div>
