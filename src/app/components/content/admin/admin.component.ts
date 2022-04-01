@@ -52,16 +52,16 @@ export class AdminComponent implements OnInit {
   }
   private devCartForm(): void {
     this.cartForm = this.formBuilder.group({
-      headname: ['', (Validators.required, Validators.minLength(3))],
-      name: ['', (Validators.required, Validators.minLength(3))],
+      headname: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       image: [''],
-      hash: ['', (Validators.required, Validators.min(1))],
-      power: ['', (Validators.required, Validators.min(1))],
+      hash: ['', [Validators.required, Validators.min(1)]],
+      power: ['', [Validators.required, Validators.min(1)]],
       date: ['', Validators.required],
       algorithm: ['', Validators.required],
       size: ['', Validators.required],
       weight: ['', Validators.required],
-      price: ['', (Validators.required, Validators.min(1))],
+      price: ['', [Validators.required, Validators.min(1)]],
       availability: ['', Validators.required],
     });
   }

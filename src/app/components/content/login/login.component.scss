@@ -13,10 +13,10 @@
   object-position: center;
 }
 
-.right-blok {
+.top-login {
   height: 100%;
-  padding: 50px 0;
   text-align: center;
+  padding-top: 40px;
 }
 
 .right-form {
@@ -135,9 +135,12 @@
   margin: auto;
   font-size: 16px;
 }
-
+.wrapper-isRobot {
+  min-width: 250px;
+  margin: auto;
+}
 .mat-slide-toggle {
-  margin: 15px 0 0px 40px;
+  display: flex;
 }
 
 ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
@@ -164,18 +167,21 @@
 
   .left-blok {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     width: 50%;
   }
 
-  .right-blok {
+  .top-login {
     width: 50%;
     height: 100%;
-    margin-bottom: 20px;
+    padding-top: 60px;
   }
 
   .mat-form-field {
+    width: 300px;
+  }
+  .wrapper-isRobot {
     width: 300px;
   }
 }
@@ -188,7 +194,7 @@
   .right-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
   }
 
   .right-form input {
