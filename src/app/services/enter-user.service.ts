@@ -8,16 +8,14 @@ import { Login } from '../models/oldUser';
   providedIn: 'root',
 })
 export class EnterUserService {
+  url = 'https://crypto-miningbest.herokuapp.com/userData';
   isLoginUser$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private httpClient: HttpClient) {}
   getLogins(): Observable<Login[]> {
-    return this.httpClient.get<Login[]>(`http://localhost:3000/userData`);
+    return this.httpClient.get<Login[]>(this.url);
   }
   addNewUser(newUser: SignUp): Observable<SignUp> {
-    return this.httpClient.post<SignUp>(
-      `http://localhost:3000/userData`,
-      newUser
-    );
+    return this.httpClient.post<SignUp>(this.url, newUser);
   }
 }
