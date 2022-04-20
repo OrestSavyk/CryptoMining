@@ -7,16 +7,15 @@ import { Contact } from '../models/contactData';
   providedIn: 'root',
 })
 export class ContactService {
+  url = 'https://crypto-miningbest.herokuapp.com/contactData';
   constructor(private httpClient: HttpClient) {}
 
   getContactValue(): Observable<Contact[]> {
-    return this.httpClient.get<Contact[]>(`http://localhost:3000/contactData`);
+    return this.httpClient.get<Contact[]>(this.url);
   }
 
   addContactValue(contactValue: Contact): Observable<Contact> {
-    return this.httpClient.post<Contact>(
-      `http://localhost:3000/contactData`,
-      contactValue
-    );
+
+    return this.httpClient.post<Contact>(this.url, contactValue);
   }
 }
