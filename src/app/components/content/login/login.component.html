@@ -5,10 +5,12 @@
       alt="teamimg"
     />
   </div>
+
   <div class="top-login">
     <div class="wrapper-login">
       <form class="right-form" [formGroup]="loginForm" (ngSubmit)="login()">
         <h3>Login</h3>
+
         <mat-form-field>
           <label for="inputEmail" class="right-data">Email</label>
           <input
@@ -25,6 +27,7 @@
             ></app-input-errors>
           </div>
         </mat-form-field>
+
         <mat-form-field>
           <label for="inputPass" class="right-data">Password</label>
           <input
@@ -41,6 +44,7 @@
             ></app-input-errors>
           </div>
         </mat-form-field>
+
         <div class="wrapper-isRobot">
           <mat-slide-toggle formControlName="isRobot"
             >I`m not a robot!
@@ -53,6 +57,7 @@
             ></app-input-errors>
           </div>
         </div>
+
         <button
           mat-raised-button
           class="right-sign"
@@ -62,6 +67,7 @@
           Login
         </button>
       </form>
+
       <p class="right-old-users">Forgot Password? <a>Get Reset Link</a></p>
       <p class="right-old-users">
         New to Crypto Mining Tools? <a routerLink="/sign">SignUp here</a>

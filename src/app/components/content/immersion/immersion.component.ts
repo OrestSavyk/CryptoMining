@@ -8,7 +8,9 @@ import { PROFIT_VALUE, RATE_VALUE } from './immersion.constant';
 })
 export class ImmersionComponent implements OnInit {
   rateValue = RATE_VALUE;
+
   profitValue = PROFIT_VALUE;
+
   constructor() {}
 
   ngOnInit(): void {}

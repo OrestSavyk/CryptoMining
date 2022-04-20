@@ -4,6 +4,7 @@ export const NAV_BUTTON = [
     link: '/shop',
     icon: 'assets/iconNav/shop.png',
   },
+
   {
     name: 'Directory',
     link: '/directory',

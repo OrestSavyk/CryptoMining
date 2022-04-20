@@ -5,37 +5,45 @@
   background-color: rgb(226, 221, 221);
   margin-bottom: 20px;
 }
+
 .header {
   background-color: white;
   border-radius: 7px;
   margin: 15px;
   padding: 15px;
 }
+
 .header-title {
   text-align: center;
   font-size: 20px;
   font-family: sans-serif;
   font-weight: 600;
 }
+
 .hosting-type {
   display: grid;
   margin: 30px auto;
 }
+
 .choose-type {
   margin: 20px auto;
 }
+
 .choose-type a {
   text-decoration: none;
 }
+
 .choose-type-nav {
   text-align: -webkit-center;
 }
+
 .choose-type-nav img {
   max-width: 170px;
   height: auto;
   margin: auto;
   align-items: center;
 }
+
 .choose-type-nav p {
   text-align: center;
   color: black;
@@ -44,19 +52,23 @@
   font-weight: 600;
   margin: 15px 10px;
 }
+
 @media (min-width: 768px) {
   .header {
     max-width: 840px;
     padding: 30px;
     margin: 50px 30px;
   }
+
   .hosting-type {
     grid-template-columns: repeat(3, 1fr);
     max-width: 810px;
   }
+
   .choose-type {
     margin: 20px;
   }
+
   .choose-type-nav {
     padding: auto 15px;
   }

@@ -17,10 +17,12 @@ import * as uuid from 'uuid';
   styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent implements OnInit {
-  @Input()
-  formSubmited: boolean;
+  @Input() formSubmited: boolean;
+
   userDataArr: SignUp[] = [];
+
   public signUpForm: FormGroup;
+
   constructor(
     private formBuilder: FormBuilder,
     private enterUserService: EnterUserService,
@@ -31,25 +33,36 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
     this.initSignUpForm();
   }
-  
+
   private initSignUpForm(): void {
     this.signUpForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
+
       secondName: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, this.formValidationService.isValidEmail]],
+
+      email: [
+        '',
+        [Validators.required, this.formValidationService.isValidEmail],
+      ],
+
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
   signUp(): void {
     const newUser = { id: uuid.v4(), ...this.signUpForm.value };
+
     this.enterUserService.addNewUser(newUser).subscribe(
       (sign: SignUp) => {
         alert('Sign In Successfull');
+
         this.userDataArr = [...this.userDataArr, sign];
+
         this.router.navigate(['login']);
+
         this.signUpForm.reset();
       },
+
       (err) => {
         alert('Something went wrong!');
       }
@@ -58,6 +71,7 @@ export class SignUpComponent implements OnInit {
 
   showErrors(fieldName: string): boolean {
     const field = this.signUpForm.get(fieldName);
+
     return field.touched && field.invalid;
   }
 

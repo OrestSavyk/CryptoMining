@@ -3,6 +3,7 @@
   max-width: 90% !important;
   height: 100% !important;
 }
+
 ::ng-deep .mat-dialog-container {
   padding: 10px 0;
   margin: 30px auto;
@@ -77,12 +78,14 @@
 .modal-character {
   width: 100%;
 }
+
 .wrapper-image {
   display: flex;
   width: 100%;
   min-height: 148px;
   margin: auto;
 }
+
 .modal-character img {
   width: 100%;
   height: 100%;
@@ -122,6 +125,7 @@
 .modal-availability {
   font-weight: 500;
 }
+
 .wrapper-link > ::ng-deep .mat-button,
 .mat-icon-button,
 .mat-stroked-button,
@@ -129,6 +133,7 @@
   margin-bottom: 20px;
   padding: 5px;
 }
+
 .wrapper-link a {
   font-weight: 600;
   color: rgb(53, 187, 240);
@@ -138,10 +143,12 @@
   .price {
     margin-right: 30px;
   }
+
   .modal-price {
     flex-direction: row;
     justify-content: flex-end;
   }
+
   .wrapper-link {
     padding-left: 20px;
   }
@@ -160,6 +167,7 @@
   .cdk-overlay-pane {
     min-width: auto !important;
   }
+
   .modal-character {
     display: flex;
   }

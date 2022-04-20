@@ -14,6 +14,7 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
+
     <mat-form-field appearance="fill" class="sort-item">
       <mat-label>Sort</mat-label>
       <mat-select [(ngModel)]="sortItemValue" (selectionChange)="onSortItem()">
@@ -24,8 +25,10 @@
         >
       </mat-select>
     </mat-form-field>
+
     <button mat-raised-button (click)="onResetFilter()">Reset</button>
   </div>
+
   <div class="wrapper-searcher">
     <mat-form-field class="example-form-field" appearance="fill">
       <mat-label>Search by manufacturer or model</mat-label>
@@ -49,6 +52,7 @@
   </div>
   <div class="main-title">Best Selling</div>
 </div>
+
 <div class="top-cards">
   <div class="wrapper-cards">
     <div
@@ -59,13 +63,18 @@
         <div class="wrapper-imagine">
           <img class="card-imagine" src="{{ item.image }}" alt="i" />
         </div>
+
         <div class="model">{{ item.headname }}</div>
+
         <div class="model">{{ item.name }}</div>
+
         <div class="btn-info">
           <button>{{ item.hash }} TH</button>
           <button>{{ item.power }} w</button>
         </div>
+
         <p class="price">${{ item.price }}</p>
+
         <div class="wrapper-btn-cart">
           <button mat-raised-button class="btn-buy" (click)="onOpenModal(item)">
             Shop Now
@@ -83,6 +92,7 @@
     </div>
   </div>
 </div>
+
 <mat-paginator
   [length]="cardItem.length"
   [pageSize]="pageSize"

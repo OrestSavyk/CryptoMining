@@ -13,12 +13,19 @@ import { FORM_CARD, TABLE_CARD } from './admin.constants';
 })
 export class AdminComponent implements OnInit {
   formCard = FORM_CARD;
+
   tableCard = TABLE_CARD;
+
   isNewCart: boolean = true;
+
   public cartForm: FormGroup;
+
   minDate: Date;
+
   maxDate: Date;
+
   selectedItem: any;
+
   displayedColumns: string[] = [
     'id',
     'headname',
@@ -34,8 +41,8 @@ export class AdminComponent implements OnInit {
     'edit',
     'delete',
   ];
-  @Input()
-  cardItem: Cart[] = [];
+
+  @Input() cardItem: Cart[] = [];
 
   constructor(
     private liveAnnouncer: LiveAnnouncer,
@@ -43,59 +50,85 @@ export class AdminComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.devCartForm();
+
     const currentYear = new Date().getDate();
   }
+
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit(): void {
     this.loadCards();
   }
+
   private devCartForm(): void {
     this.cartForm = this.formBuilder.group({
       headname: ['', [Validators.required, Validators.minLength(3)]],
+
       name: ['', [Validators.required, Validators.minLength(3)]],
+
       image: [''],
+
       hash: ['', [Validators.required, Validators.min(1)]],
+
       power: ['', [Validators.required, Validators.min(1)]],
+
       date: ['', Validators.required],
+
       algorithm: ['', Validators.required],
+
       size: ['', Validators.required],
+
       weight: ['', Validators.required],
+
       price: ['', [Validators.required, Validators.min(1)]],
+
       availability: ['', Validators.required],
     });
   }
+
   private loadCards(): void {
     this.cartService.getTool().subscribe((value) => {
       this.cardItem = value;
     });
   }
+
   onDeleteCard(id): void {
     this.cartService.removeTool(id).subscribe(() => {
       this.cardItem = this.cardItem.filter((cart) => cart.id !== id);
     });
   }
+
   onAddCartTool(): void {
     const newCartTool = { id: uuid.v4(), ...this.cartForm.value };
+
     this.cartService.addTool(newCartTool).subscribe((tool: Cart) => {
       this.cardItem = [...this.cardItem, tool];
     });
+
     this.cartForm.reset();
+
     this.loadCards();
   }
+
   onSaveEdit(): void {
     this.cartService
       .editTool(this.selectedItem.id, this.cartForm.value)
-      .subscribe((newEditedCart: Cart) => {});
+
+      .subscribe((newEditedCart: Cart) => {
+        this.loadCards();
+      });
+
     this.cartForm.reset();
-    this.loadCards();
   }
 
   editCurrentCart(item): void {
     this.selectedItem = item;
+
     this.isNewCart = false;
+
     this.cartForm.patchValue(this.selectedItem);
   }
+
   onTableSortChange(event: Sort): void {
     if (event.direction) {
       this.liveAnnouncer.announce(`Sorted ${event.direction} ending`);

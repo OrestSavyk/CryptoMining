@@ -8,18 +8,22 @@ import { Cart } from '../models/CartTool';
 })
 export class CartService {
   constructor(private httpClient: HttpClient) {}
+
   getTool(): Observable<Cart[]> {
     return this.httpClient.get<Cart[]>(`http://localhost:3000/minerTools`);
   }
+
   removeTool(id): Observable<{}> {
     return this.httpClient.delete(`http://localhost:3000/minerTools/${id}`);
   }
+
   addTool(newTool: Cart): Observable<Cart> {
     return this.httpClient.post<Cart>(
       `http://localhost:3000/minerTools`,
       newTool
     );
   }
+
   editTool(id: string, editedCart: Cart): Observable<Cart> {
     return this.httpClient.put<Cart>(
       `http://localhost:3000/minerTools/${id}`,

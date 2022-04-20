@@ -2,9 +2,11 @@
   <div class="wrapper-btn-close">
     <button mat-button mat-dialog-close class="btn-close-modal">X</button>
   </div>
+
   <h4 class="modal-model" mat-dialog-title>
     {{ item.headname }} {{ item.name }} {{ item.hash }} TH
   </h4>
+
   <div class="modal-character">
     <div class="wrapper-image">
       <img src="{{ item.image }}" alt="i" />
@@ -30,10 +32,12 @@
       <div>{{ item.weight }}</div>
     </div>
   </div>
+
   <div class="modal-price">
     <div class="price">Price: ${{ item.price }}</div>
     <div class="modal-availability">Availability: {{ item.availability }}</div>
   </div>
+
   <div class="wrapper-link">
     <button mat-button mat-dialog-close (click)="redirectTo(item.id)">
       More info

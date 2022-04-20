@@ -8,11 +8,14 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./shop.component.scss'],
 })
 export class ShopComponent implements OnInit {
-  constructor(private cartService: CartService) {}
   carts: Cart[] = [];
+
+  constructor(private cartService: CartService) {}
+
   ngOnInit(): void {
     this.loadCarts();
   }
+
   private loadCarts() {
     this.cartService.getTool().subscribe((value) => (this.carts = value));
   }

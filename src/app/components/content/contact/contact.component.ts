@@ -9,6 +9,7 @@ import { Contact } from 'src/app/models/contactData';
 })
 export class ContactComponent implements OnInit {
   public contactForm: FormGroup;
+
   contactValue: Contact[] = [];
 
   constructor(private formBuilder: FormBuilder) {
@@ -16,18 +17,25 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
   onGetContactValue(contact: FormGroup): void {
-    console.log(contact);
     this.initContactForm();
   }
+
   private initContactForm(): void {
     this.contactForm = this.formBuilder.group({
       name: ['', (Validators.required, Validators.minLength(3))],
+
       company: [''],
+
       email: ['', (Validators.required, Validators.email)],
+
       phone: ['', (Validators.required, Validators.minLength(9))],
+
       country: ['', (Validators.required, Validators.minLength(3))],
+
       socialChain: ['', Validators.required],
+
       message: [''],
     });
   }

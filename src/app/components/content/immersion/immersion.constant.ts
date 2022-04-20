@@ -6,6 +6,7 @@ export const RATE_VALUE = [
     immersionHash: 14.18,
     immersionWatt: 93.33,
   },
+
   {
     name: 'Bitmain Antminer S17',
     airHash: 56.0,
@@ -13,6 +14,7 @@ export const RATE_VALUE = [
     immersionHash: 58.8,
     immersionWatt: 42.86,
   },
+
   {
     name: 'Bitmain Antminer S19 Pro',
     airHash: 110.0,
@@ -30,6 +32,7 @@ export const PROFIT_VALUE = [
     immersionMon: '-$15.84',
     immersionYear: '-$189.60',
   },
+
   {
     name: 'Bitmain Antminer S17',
     airMon: '$270.89',
@@ -37,6 +40,7 @@ export const PROFIT_VALUE = [
     immersionMon: '$279.93',
     immersionYear: '$3,350.03',
   },
+
   {
     name: 'Bitmain Antminer S19 Pro',
     airMon: '$637.99',

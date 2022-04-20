@@ -2,10 +2,12 @@
   <div class="header">
     <form class="form-top" [formGroup]="signUpForm">
       <h3 class="title">Sign Up</h3>
+
       <mat-form-field>
         <mat-label>First Name</mat-label>
         <input type="text" matInput formControlName="firstName" />
       </mat-form-field>
+
       <div class="wrapper-error">
         <app-input-errors
           [showErrors]="showErrors('firstName')"
@@ -13,10 +15,12 @@
           [errorMappingKey]="'firstName'"
         ></app-input-errors>
       </div>
+
       <mat-form-field>
         <mat-label>Second Name</mat-label>
         <input type="text" matInput formControlName="secondName" />
       </mat-form-field>
+
       <div class="wrapper-error">
         <app-input-errors
           [showErrors]="showErrors('secondName')"
@@ -24,6 +28,7 @@
           [errorMappingKey]="'secondName'"
         ></app-input-errors>
       </div>
+
       <mat-form-field>
         <mat-label>Email</mat-label>
         <input
@@ -33,6 +38,7 @@
           placeholder="Ex. pat@example.com"
         />
       </mat-form-field>
+
       <div class="wrapper-error">
         <app-input-errors
           [showErrors]="showErrors('email')"
@@ -40,6 +46,7 @@
           [errorMappingKey]="'email'"
         ></app-input-errors>
       </div>
+
       <mat-form-field>
         <mat-label>Password</mat-label>
         <input
@@ -49,6 +56,7 @@
           placeholder="The password has at least 8 values"
         />
       </mat-form-field>
+
       <div class="wrapper-error">
         <app-input-errors
           [showErrors]="showErrors('password')"
@@ -56,6 +64,7 @@
           [errorMappingKey]="'password'"
         ></app-input-errors>
       </div>
+
       <button
         mat-raised-button
         class="btn-sign"

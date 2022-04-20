@@ -13,9 +13,13 @@ import {
 })
 export class HomeComponent implements OnInit {
   carouselCard = CAROUSEL_CARD;
+
   innerCarousel = INNER_CAROUSEL;
+
   linkItem = LINK_ITEM;
+
   faqParagraph = FAQ_PARAGRAPH;
+
   changeBlockDirection = false;
 
   constructor() {

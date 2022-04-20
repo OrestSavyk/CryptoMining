@@ -9,7 +9,9 @@ import { FieldErrors } from './error-mapping.const';
 })
 export class InputErrorsComponent implements OnChanges {
   @Input() showErrors: boolean;
+
   @Input() fieldErrors: ValidationErrors;
+
   @Input() errorMappingKey: string;
 
   errorText: string;
@@ -24,7 +26,9 @@ export class InputErrorsComponent implements OnChanges {
     if (!err) {
       return;
     }
+
     const fieldErr = Object.keys(err)[0];
+
     this.errorText = this.errorMappingKey
       ? FieldErrors[this.errorMappingKey][fieldErr]
       : FieldErrors[fieldErr];
