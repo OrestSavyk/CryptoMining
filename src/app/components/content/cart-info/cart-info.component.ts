@@ -9,11 +9,13 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class CartInfoComponent implements OnInit {
   item: Cart;
+
   constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {
     this.loadDataModal();
   }
+
   loadDataModal() {
     this.item = this.modalService.selectedItem$.getValue();
   }

@@ -101,14 +101,17 @@
 ::ng-deep .mat-expansion-panel-body {
   padding-top: 10px !important;
 }
+
 ::ng-deep .mat-tab-header {
   min-height: 120px;
 }
+
 ::ng-deep .mat-tab-header .mat-tab-labels {
   justify-content: center;
   height: 100%;
   min-width: 100%;
 }
+
 ::ng-deep .mat-tab-label .mat-tab-label-content {
   display: flex !important;
   white-space: normal !important;
@@ -117,6 +120,7 @@
   min-width: 172px;
   min-height: 120px;
 }
+
 ::ng-deep .mat-tab-label {
   height: 120px !important;
 }
@@ -127,6 +131,7 @@
     min-width: 220px !important;
   }
 }
+
 @media (min-width: 768px) {
   .faq {
     grid-template-columns: repeat(2, 50%);

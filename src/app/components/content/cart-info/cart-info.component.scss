@@ -7,10 +7,12 @@
     Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
+
 .wrapper-link-back {
   display: flex;
   margin-bottom: 30px;
   justify-content: flex-start;
+
   a {
     display: flex;
     justify-content: center;
@@ -19,12 +21,14 @@
     height: 36px;
     border-radius: 50%;
   }
+
   mat-icon {
     width: 100%;
     height: 100%;
     margin-left: 3px;
   }
 }
+
 ::ng-deep .mat-button,
 .mat-icon-button,
 .mat-stroked-button,
@@ -66,12 +70,14 @@
 
 .modal-price {
   margin: 50px auto 20px;
+
   .price {
     color: $clr-blue-1;
     margin: 5% auto;
     font-size: 22px;
     font-weight: 600;
   }
+
   .modal-availability {
     font-weight: 500;
     display: flex;

@@ -12,9 +12,11 @@ export class EnterUserService {
   isLoginUser$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private httpClient: HttpClient) {}
+
   getLogins(): Observable<Login[]> {
     return this.httpClient.get<Login[]>(this.url);
   }
+
   addNewUser(newUser: SignUp): Observable<SignUp> {
     return this.httpClient.post<SignUp>(this.url, newUser);
   }

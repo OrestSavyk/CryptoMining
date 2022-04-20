@@ -9,15 +9,19 @@ import { Cart } from '../models/CartTool';
 export class CartService {
   url = 'https://crypto-miningbest.herokuapp.com/minerTools';
   constructor(private httpClient: HttpClient) {}
+
   getTool(): Observable<Cart[]> {
     return this.httpClient.get<Cart[]>(this.url);
   }
+
   removeTool(id): Observable<{}> {
     return this.httpClient.delete(`${this.url}/${id}`);
   }
+
   addTool(newTool: Cart): Observable<Cart> {
     return this.httpClient.post<Cart>(this.url, newTool);
   }
+
   editTool(id: string, editedCart: Cart): Observable<Cart> {
     return this.httpClient.put<Cart>(`${this.url}/${id}`, editedCart);
   }

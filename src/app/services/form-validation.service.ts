@@ -9,9 +9,14 @@ export class FormValidationService {
 
   isValidEmail(control: AbstractControl): ValidationErrors {
     const currentEmailValue = control.value;
-    if (!currentEmailValue || /^[\w\+\.\-]+\@(([\w\-])+\.)+[a-z\-]+$/.test(currentEmailValue)) {
+
+    if (
+      !currentEmailValue ||
+      /^[\w\+\.\-]+\@(([\w\-])+\.)+[a-z\-]+$/.test(currentEmailValue)
+    ) {
       return null;
     }
+
     return { email: true };
   }
 }

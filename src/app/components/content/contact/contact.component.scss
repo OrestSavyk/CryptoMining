@@ -5,10 +5,12 @@
 .left {
   padding: 15px;
 }
+
 .left h3 {
   font-size: 28px;
   font-family: sans-serif;
 }
+
 .left-info {
   font-size: 18px;
   font-family: sans-serif;
@@ -22,39 +24,47 @@
   font-size: 17px;
   margin-bottom: 0px;
 }
+
 .left-gratitude-post {
   font-weight: 500;
   font-size: 17px;
   color: rgb(20, 20, 20);
   margin-bottom: 0px;
 }
+
 .right {
   background-color: rgb(0, 132, 255);
 }
+
 .right-top {
   display: block;
   background-color: rgb(0, 132, 255);
   padding: 20px;
 }
+
 .right-top h3 {
   font-size: 27px;
   font-weight: 500;
   font-family: sans-serif;
   color: rgb(20, 20, 20);
 }
+
 .under-bnt-link {
   font-family: sans-serif;
   font-size: 15px;
   color: rgb(20, 20, 20);
   margin-top: 20px;
 }
+
 .under-bnt-link a {
   text-decoration: none;
   color: rgb(22, 52, 148);
 }
+
 .right-form {
   display: block;
 }
+
 .right-input-data {
   justify-content: space-between;
   display: block;
@@ -62,19 +72,23 @@
   font-weight: 500;
   color: rgb(20, 20, 20);
 }
+
 .right-input-data-radio {
   display: flex;
   font-weight: 500;
   width: 50%;
   color: rgb(20, 20, 20);
 }
+
 .input-setradio {
   display: grid;
   color: rgb(20, 20, 20);
 }
+
 .input-radio label {
   display: block;
 }
+
 .right-input-data input {
   width: 100%;
   height: 35px;
@@ -84,6 +98,7 @@
   outline: none;
   box-sizing: border-box;
 }
+
 .right-input-data textarea {
   display: block;
   border-radius: 5px;
@@ -95,10 +110,12 @@
   min-height: 100%;
   max-width: 100%;
 }
+
 .top-radio {
   display: block;
   padding-bottom: 20px;
 }
+
 .right-form button {
   width: 100%;
   height: 45px;
@@ -111,11 +128,13 @@
   margin-top: 15px;
   cursor: pointer;
 }
+
 .right-form p {
   font-family: sans-serif;
   font-size: 13px;
   color: rgba(19, 18, 18, 0.856);
 }
+
 .mat-radio-button.mat-accent ::ng-deep .mat-radio-inner-circle,
 .mat-radio-button.mat-accent
   .mat-radio-ripple
@@ -124,61 +143,77 @@
 .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
   background-color: #24f1d9;
 }
-.mat-radio-button.mat-accent.mat-radio-checked ::ng-deep .mat-radio-outer-circle {
+
+.mat-radio-button.mat-accent.mat-radio-checked
+  ::ng-deep
+  .mat-radio-outer-circle {
   border-color: #24f1d9;
 }
+
 ::ng-deep .mat-radio-label {
   margin-top: 5px;
-
 }
+
 @media (min-width: 520px) {
   .right-top {
     padding: 40px;
   }
+
   .left {
     padding: 40px;
   }
 }
+
 @media (min-width: 768px) {
   .header {
     display: grid;
     grid-template-columns: 50% 50%;
   }
+
   .left {
     margin: auto;
   }
+
   .right {
     background-color: rgb(0, 132, 255);
     border-bottom-left-radius: 150px;
     overflow: hidden;
   }
+
   .right-top {
     margin: 30px auto 40px auto;
     padding: 25px;
   }
 }
+
 @media (min-width: 1024px) {
   .header {
     grid-template-columns: 40% 60%;
   }
+
   .left {
     padding: 40px;
   }
+
   .right-top {
     padding: 20px 40px;
     max-width: 490px;
   }
+
   .right-input-data {
     display: grid;
     grid-template-columns: 50% 50%;
   }
+
   .input-setradio {
     padding-left: 30%;
   }
+
   .mat-radio-button {
     margin: 5px 0px;
   }
 }
+
 @media (min-width: 1440px) {
   .right-top {
     max-width: 690px;

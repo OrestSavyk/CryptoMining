@@ -12,6 +12,7 @@
     </p>
     <p class="left-gratitude-post">~Crypto Mining Tools Team</p>
   </div>
+
   <div class="right">
     <div class="right-top">
       <h3>Crypto Mining Tools Sales Form</h3>
@@ -20,6 +21,7 @@
         the following questions so we can get a better understanding of your
         needs.
       </p>
+
       <form
         class="right-form"
         [formGroup]="contactForm"
@@ -29,22 +31,27 @@
           >Real Name
           <input id="inputName" type="text" formControlName="name" />
         </label>
+
         <label for="inputCompany" class="right-input-data"
           >Company Name (optional)
           <input id="inputCompany" type="text" formControlName="company" />
         </label>
+
         <label for="inputEmail" class="right-input-data"
           >Email
           <input id="inputEmail" type="text" formControlName="email" />
         </label>
+
         <label for="inputPhone" class="right-input-data"
           >Phone Number
           <input id="inputPhone" type="text" formControlName="phone" />
         </label>
+
         <label for="inputCountry" class="right-input-data"
           >Country
           <input id="inputCountry" type="text" formControlName="country" />
         </label>
+
         <label for="inputSocialChain" class="right-input-data"
           >Social Platform Handle(optional)
           <input
@@ -53,6 +60,7 @@
             formControlName="socialChain"
           />
         </label>
+
         <div class="top-radio">
           <label class="right-input-data-radio">I'm thinking about</label>
           <div class="input-setradio">
@@ -66,12 +74,14 @@
                 value="Buying"
                 >Buying</mat-radio-button
               >
+
               <mat-radio-button
                 class="input-radio"
                 labelPosition="after"
                 value="Selling"
                 >Selling</mat-radio-button
               >
+
               <mat-radio-button
                 class="input-radio"
                 labelPosition="after"
@@ -81,6 +91,7 @@
             </mat-radio-group>
           </div>
         </div>
+
         <label for="inputMessage" class="right-input-data"
           >Message/Note
           <textarea
@@ -90,9 +101,11 @@
             maxlength="500"
           ></textarea>
         </label>
+
         <button mat-raised-button type="submit" [disabled]="!contactForm.valid">
           Submit
         </button>
+
         <p class="under-bnt-link">
           This site is protected by reCAPTCHA and the Google
           <a>Privacy Policy</a> and <a>Terms of Service</a> apply.

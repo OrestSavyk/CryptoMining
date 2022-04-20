@@ -8,10 +8,13 @@ import { NAV_FOOT_BTN, ICON_FOOTER } from './footer.constants';
 })
 export class FooterComponent implements OnInit {
   navFootBtn: any[] = NAV_FOOT_BTN;
+
   iconFoot: any[] = ICON_FOOTER;
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
   link(link: string) {
     this.router.navigate([`${link}`]);
   }

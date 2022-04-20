@@ -10,17 +10,21 @@
   margin-bottom: 70px;
   color: $clr-black-2;
 }
+
 .header-wrapper {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
+
 .mat-slide-toggle {
   max-width: fit-content;
 }
+
 .top-form {
   padding: 10px 20px;
 }
+
 .admin-form {
   display: flex;
   flex-direction: column;
@@ -36,6 +40,7 @@
   font-size: 22px;
   border: $border-1 $clr-blue-1;
   color: $clr-blue-1;
+
   &:hover {
     transition: $transition-08;
     box-shadow: 1px 1px 6px rgba(190, 186, 186, 0.788);
@@ -83,6 +88,7 @@ td.mat-footer-cell:last-of-type {
   cursor: pointer;
   border-radius: 4px;
 }
+
 .btn-table-edit {
   &:hover {
     transition: $transition-08;

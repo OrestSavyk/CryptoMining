@@ -16,18 +16,29 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CartComponent implements OnInit {
   filterItems = FILTER_ITEM;
+
   sortItems = SORT_ITEM;
-  @Input()
-  cardItem: Cart[] = [];
+
+  @Input() cardItem: Cart[] = [];
+
   basketItem: BasketCart[] = [];
+
   item: any;
+
   filterItemValue: any;
+
   sortItemValue: any;
+
   searchValue: any;
+
   pageSizeOptions = [4, 6, 8, 10, 25];
+
   pageSize: number = 8;
+
   startIndex: number = 0;
+
   endIndex: number = 8;
+
   constructor(
     private cartService: CartService,
     public modal: MatDialog,
@@ -40,30 +51,39 @@ export class CartComponent implements OnInit {
     if (JSON.parse(localStorage.getItem('basketItems'))) {
       this.basketItem = JSON.parse(localStorage.getItem('basketItems'));
     }
+
     this.loadCards();
   }
+
   private loadCards(): void {
     this.cartService.getTool().subscribe((value: Cart[]) => {
       this.cardItem = value;
     });
   }
+
   onFilterHash(): void {
     this.cardItem = this.cardItem.filter(
       (value) => value.hash > this.filterItemValue
     );
   }
+
   onSortItem(): void {
     this.cardItem.sort((a, b) => {
       let first = a[this.sortItemValue],
         second = b[this.sortItemValue];
+
       return first - second;
     });
   }
+
   onResetFilter(): void {
     this.sortItemValue = '';
+
     this.filterItemValue = '';
+
     this.loadCards();
   }
+
   onEnterSearchTool(): void {
     if (this.searchValue == '') {
       this.ngOnInit();
@@ -76,13 +96,18 @@ export class CartComponent implements OnInit {
       });
     }
   }
+
   clearSearcher() {
     this.searchValue = '';
+
     this.loadCards();
   }
+
   onOpenModal(item: Cart): void {
     this.modalHelperService.selectedItem$.next(item);
+
     let dialogRef = this.modal.open(ModalBehaviorComponent);
+
     dialogRef.afterClosed().subscribe((result) => {});
   }
 
@@ -96,22 +121,29 @@ export class CartComponent implements OnInit {
       price: item.price,
       amountPrice: 0,
     };
+
     const toolAlreadyExist = this.basketItem.find(
       (item) => item.id === selectedItem.id
     );
+
     if (toolAlreadyExist) {
       toolAlreadyExist.amount++;
     } else {
       this.basketItem = [...this.basketItem, selectedItem];
     }
+
     this.toastr.success(`${item.headname} ${item.name} added to basket`);
+
     this.basketService.basketItemsLength$.next(this.basketItem.length);
+
     localStorage.setItem('basketItems', JSON.stringify(this.basketItem));
   }
 
   onPageChange(event: PageEvent) {
     this.startIndex = event.pageIndex * event.pageSize;
+
     this.endIndex = this.startIndex + event.pageSize;
+
     return event;
   }
 }

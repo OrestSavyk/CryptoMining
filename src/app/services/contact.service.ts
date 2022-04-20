@@ -9,10 +9,13 @@ import { Contact } from '../models/contactData';
 export class ContactService {
   url = 'https://crypto-miningbest.herokuapp.com/contactData';
   constructor(private httpClient: HttpClient) {}
+
   getContactValue(): Observable<Contact[]> {
     return this.httpClient.get<Contact[]>(this.url);
   }
+
   addContactValue(contactValue: Contact): Observable<Contact> {
+
     return this.httpClient.post<Contact>(this.url, contactValue);
   }
 }

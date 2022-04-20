@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Cart } from 'src/app/models/CartTool';
+
 const MODAL_CART_DATA: Cart = {
   id: '',
   image: '',

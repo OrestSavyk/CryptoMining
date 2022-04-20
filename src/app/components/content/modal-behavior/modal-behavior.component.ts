@@ -9,17 +9,18 @@ import { ModalService } from 'src/app/services/modal.service';
   styleUrls: ['./modal-behavior.component.scss'],
 })
 export class ModalBehaviorComponent implements OnInit {
-  @Input()
-  item: Cart;
+  @Input() item: Cart;
 
   constructor(private modalService: ModalService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadDataModal();
   }
+
   loadDataModal() {
     this.item = this.modalService.selectedItem$.getValue();
   }
+
   redirectTo(id: any) {
     this.router.navigateByUrl(`/shop/${id}`);
   }
